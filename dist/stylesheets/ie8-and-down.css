@@ -1,0 +1,10 @@
+
+button#open-button {display:none;}
+
+div#_preload_div_ {display:none !important;}
+
+#canvas p {
+	color:#DAA520;
+	font-family: sans-serif;
+	font-size: 1em;
+}

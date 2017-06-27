@@ -1,7 +1,89 @@
 /* General Styles */
+html 
+	font-size: 16px
+
+#tophat
+	background-color: #000
+	z-index: 9999
+	border-bottom: #FFF 1px solid
+	color: #FFF
+
+	.chapter
+		font-size: 1em
+		@media (max-width: 1137px)
+		 font-size: 0.8em
+	ul
+		li
+			a
+				font:
+					family: $franklin
+					weight: 700
+				text-transform: uppercase
+				text-decoration: none
+				color: #FFF
+
+				span
+					padding: 5px
+
+			&:hover
+				span
+					background-color: $dark-red
 
 
-.container
+#logo
+	width: 250px
+	height: 100%
+	float: left
+	line-height: 55px
+	vertical-align: middle
+	img
+		width: 90%
+	@media (max-width: 1137px)
+		width: 160px
+
+.tophat-share-tools
+	float: right
+	font-size: 24px
+	margin: 8px 10px 0 0
+	color: #FFF
+	span
+		cursor: pointer
+		vertical-align: middle
+		margin-right: 8px
+		&:hover
+			color: #CCC 
+	@media (max-width: 1055px)
+		font-size: 16px
+		line-height: 40px
+		margin: 2px 10px 0 0
+
+.active
+	span
+		background-color: $dark-red
+
+	svg
+		visibility: visible
+
+.desktop-series
+	@media (max-width: 931px)
+		display: none
+
+.mobile-series
+	@media (min-width: 931px)
+		display: none
+
+.img-responsive
+	display: block
+	width: 100%
+	height: auto
+
+.ad--leaderboard
+	margin: 20px 10% 10px 10%
+	width: 800px
+	@media (max-width: $size-tablet)
+		display: none
+
+.container-story
 	width: 1000px
 	margin: 0 auto
 	
@@ -9,34 +91,47 @@
 		width: auto
 		padding: 0 20px
 
-
-	//temp
-	//border: 1px solid red
-	//min-height: 1000px
-	&--header
-		position: relative
-
-	&--article
-		position: relative
-		overflow-x: hidden
-		//&:before
-		//	content: ''
-		//	position: absolute
-		//	top: 0
-		//	left: 610px
-		//	bottom: 0
-		//	width: 1px
-		//	background-color: #CCC	
-		//	z-index: 1
-		//	@media (max-width: $no-rail)
-		//		display: none
-
-
 	&--interactive
-		width: 1200px
+		max-width: 2000px
+		margin-bottom: 25px
 		@media (max-width: 1220px)
 			width: auto
 			padding: 0 10px
+
+.about
+	h3
+		text-transform: uppercase
+		font:
+			family: $franklin
+		color: $dark-red
+	.center
+		margin: 0 auto
+
+	#podcast
+		background-color: #eee
+		padding: 10px
+	
+
+.subscribe
+	background-color: #eee
+	padding: 2%
+	+links(#bb0a1e, underline)
+
+	h3
+		margin: 0
+
+.newsletter
+	margin-top: 20px !important
+	text-align: center
+	line-height: 1.5
+	+links(#bb0a1e, underline)
+
+	form
+		margin-top: 10px
+
+#comments
+	max-width: 1000px
+	margin: 0 auto
 
 
 /* Keyframes */

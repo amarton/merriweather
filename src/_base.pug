@@ -1,16 +1,3 @@
-mixin footer(credits)
-	footer.footer
-		section.footer__credits
-			ul
-				each credit in credits
-					li.label #{credit.role}
-					li #{credit.name}
-		section.footer__comments
-			include includes/comments.html
-		section.footer__logo
-			img(src="dist/images/baltimore-sun-logo-white.png" width="300")
-
-
 doctype html
 //if lt IE 7
 	<html class="no-js lt-ie9 lt-ie8 lt-ie7">
@@ -25,7 +12,7 @@ html(class="no-js", lang="en")
 
 		//Basic page needs
 		meta(charset="utf-8")
-		title 
+		title Shoot to Kill: Why Baltimore is one of the most lethal cities in the U.S.
 		meta(name="description", content="")
 		meta(name="author", content="")
 
@@ -33,26 +20,37 @@ html(class="no-js", lang="en")
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
 
 		//CSS
-		link(rel="stylesheet", type="text/css", href="dist/stylesheets/style.css")
+		link(rel="stylesheet", href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css")
+		link(rel="stylesheet", type="text/css", href="dist/stylesheets/style.css?v=1.2")
+
+		//Call html5shiv for IE9 and an alt stylesheet for IE8 fallback
+		//if lt IE 9
+			script(src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js")
+		|	<!--[if lte IE 8]>
+		|		<link rel="stylesheet" type="text/css" href="dist/stylesheets/ie8-and-down.css" />
+		|	<![endif]-->
 
 		//Fonts
 		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Prata|Roboto+Condensed:400,700")
+		
+		noscript
+			link(rel="stylesheet", href="dist/stylesheets/ie8-and-down.css")
 
 		//Facebook OpenGraph
-		meta(property="og:title", content="")
-		meta(property="og:url", content="")
-		meta(property="og:image", content="")
+		meta(property="og:title", content="Shoot to Kill")
+		meta(property="og:url", content="http://data.baltimoresun.com/news/shoot-to-kill/")
+		meta(property="og:image", content="http://data.baltimoresun.com/news/shoot-to-kill/dist/images/s2ksocial-thumb.png")
 		meta(property="og:site_name", content="The Baltimore Sun")
-		meta(property="og:description", content="")
+		meta(property="og:description", content="Baltimore is one of the most lethal cities in the United States. How did we get there?")
 		meta(property="fb:app_id", content="310302989040998")
 
 		//Twitter 
 		meta(name="twitter:card", content="summary")
 		meta(name="twitter:site", content="@baltimoresun")
 		meta(name="twitter:creator", content="@baltimoresun")
-		meta(name="twitter:title", content="")
-		meta(name="twitter:description", content="")
-		meta(name="twitter:image", content="")
+		meta(name="twitter:title", content="Shoot to Kill")
+		meta(name="twitter:description", content="Baltimore is one of the most lethal cities in the United States. How did we get there?")
+		meta(name="twitter:image", content="http://data.baltimoresun.com/news/shoot-to-kill/dist/images/shoot-to-kill-thumb-twitter.png")
 		meta(name="twitter:domain", content="baltimoresun.com")
 
 		//Omniture Code
@@ -65,20 +63,105 @@ html(class="no-js", lang="en")
 		- for (var i = 1; i <= 3; i++)
 			link(rel="prefetch" href="")
 
-	body
-		script(src="http://www.baltimoresun.com/thirdpartyservice?disablessor=true")
+	body(onload="init();")
+		script(src="http://www.baltimoresun.com/thirdpartyservice?disablenav=true&disablessor=true", async)
 		div(data-trb-thirdpartynav)
+		div#intro
+			canvas(id="canvas", width="1000", height="600", style="max-width: 100%;")
+				p Please enable JavaScript and use a modern browser to fully experience this presentation. If JavaScript is disabled, scroll down to begin.<br />
+				img(src="dist/images/s2k-logo.png")
+			div#_preload_div_(style="display: inline-block; height:100px; width: 100px; margin-top:100px;position:absolute;text-align: center;")
+				span(style="display: inline-block; height: 100%; vertical-align: middle;")
+				img(src="dist/images/_preloader.gif", style="vertical-align: middle; max-height: 100%;")
+			button#open-button READ STORY
+		nav#tophat.navbar.navbar-fixed-top.navbar-inverse
+			div.container-fluid
+				div.navbar-header
+					button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tophat-collapse" aria-expanded="false")
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					#logo
+						a(href="http://www.baltimoresun.com")
+							img(src="dist/images/baltimore-sun-logo-white.png")
+					.tophat-share-tools
+						span.icon-facebook
+						span.icon-twitter
+
+				div#tophat-collapse.collapse.navbar-collapse
+					ul.nav.navbar-nav.navbar-right
+						li.chapter
+							a(href="#chapter-intro")
+								span Intro
+						li.chapter
+							a(href="#chapter-1")
+								span Chapter 1
+						li.chapter
+							a(href="#chapter-2")
+								span Chapter 2
+						li.chapter
+							a(href="#chapter-3")
+								span Chapter 3
+						li.chapter
+							a(href="#chapter-4")
+								span Chapter 4
+						li.chapter
+							a(href="#chapter-5")
+								span Chapter 5
+						li.dropdown.chapter
+							a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Series 
+								div.caret
+							ul.dropdown-menu
+								li
+									a(href="http://www.baltimoresun.com/news/maryland/baltimore-city/bal-shoot-to-kill-part-two-story.html") 
+										.desktop-series Part 2: Some Baltimore neighborhoods condemned to endure a shocking degree of violence
+										.mobile-series Part 2
+								li
+									a(href="http://www.baltimoresun.com/news/maryland/investigations/bal-shoot-to-kill-part-three-story.html")
+										.desktop-series Part 3: Baltimore emergency rooms struggle to care for severely wounded patients
+										.mobile-series Part 3
 
 		//block for story layout
 		block content
 
 		include includes/ads/ad-for-body--leaderboard.html
 
-		//footer mixin
-		+footer([{'role': 'That Role','name': 'This Person'},{'role': 'This Role', 'name': 'That Person'}])
+		//footer
+		footer.footer
+			section.footer__credits
+				ul.footer__credits--main
+					li.label Reporting
+					li Justin George
+				ul
+					li.label Editing
+					li Laura Smitherman
+					li Diana Sugg
+					li Richard Martin
+				ul
+					li.label Visuals
+					li Amy Davis
+					li Karl Merton Ferron
+					li Lloyd Fox
+					li Emma Patti Harris
+					li Algerina Perna
+					li Kevin Richardson
+					
+
+				ul
+					li.label Design / Development / Graphics
+					li Adam Marton
+					li Caroline Pate
+					li Jin Kim
+
+			.footer__logo
+				small
+					a(href="http://www.tronc.com/privacy-policy/", style="margin:0,auto;color:#fff;text-decoration:none;") Privacy Policy<br><br>
+				img(src="dist/images/baltimore-sun-logo-white.png" width="300")
 
 
-
+		section.footer__comments
+			include includes/comments.html
 
 
 
@@ -88,10 +171,15 @@ html(class="no-js", lang="en")
 		//Load jQuery CDN, fall back to local version if necessary		
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
 		script.
-			window.jQuery || document.write('<script src="src/scripts/jquery-1.10.2.min.js">\x3C/script>')
+			window.jQuery || document.write('<script src="dist/min/jquery-1.10.2.min.js">\x3C/script>')
 
 		//Load the rest
-		//script(src="dist/min/javascript-min.js")
+		script(src="https://use.typekit.net/nta3eyd.js")
+		script.
+			try{Typekit.load({ async: true });}catch(e){}
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
+		script(src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js")
+		script(src="https://code.createjs.com/createjs-2015.11.26.min.js")
 		script(src="dist/min/app.min.js")
 
 		//Configuration for scrollReveal.js
@@ -103,3 +191,8 @@ html(class="no-js", lang="en")
 			 	vFactor: 0.5
 			}
 			window.sr = new scrollReveal(config);
+
+			$('#open-button').click(function() {
+			$('#intro').toggleClass('close');
+			$('#open-button').hide();
+			});

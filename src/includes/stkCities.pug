@@ -1,0 +1,43 @@
+.stkCities
+	//- h2 Lethality rates 
+	//- 	span across the United States
+	//- p.chatter Baltimore is among the most lethal cities in the country. 
+	//- 	| See how it compares to other major cities below.
+	.graphic
+		.cities
+			//- .cityOutline(data-city="0")
+			.cityOutline.cityOutline--0.activeCity(data-city="0")
+				img(src="dist/images/cityBaltimore.png")
+			.cityOutline.cityOutline--1(data-city="1")
+				img(src="dist/images/cityMilwaukee.png")
+			.cityOutline.cityOutline--2(data-city="2")
+				img(src="dist/images/cityCharlotte.png")
+			.cityOutline.cityOutline--3(data-city="3")
+				img(src="dist/images/cityNashville.png")
+			.cityOutline.cityOutline--4(data-city="4")
+				img(src="dist/images/cityNewYork.png")
+			.cityOutline.cityOutline--5(data-city="5")
+				img(src="dist/images/cityDC.png")
+			.cityOutline(data-city="0")
+				i.icon2-cw
+		.cityNameBlock
+			h3.cityName.jsFade Baltimore
+		.cityStats
+			.statList
+				h4 2015 statistics
+				p Fatal shootings: 
+					span.nonFatStat.jsFade 300
+				p Non-fatal shootings: 
+					span.fatStat.jsFade 637
+				p 
+					| For every 
+					span.jsFade.perShot 3.1
+					|  people shot, 
+					br
+					span one dies.
+				p.jsFade.cityDisclaimer Source: Baltimore Police Department
+			.graph
+				h4 % fatal shootings
+				img.jsFade.cityGraph(src="dist/images/graphBaltimore.png")
+				img.baseGraph(src="dist/images/graphBase.png")
+		p.source *Washington, D.C., counts non-fatal shootings as any time a person is shot at; the other cities count when victims are struck by gunfire.

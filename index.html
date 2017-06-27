@@ -11,48 +11,60 @@
   <head>
     <!--Basic page needs-->
     <meta charset="utf-8">
-    <title> </title>
+    <title>Shoot to Kill: Why Baltimore is one of the most lethal cities in the U.S.</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <!--Mobile Specific Metas-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="dist/stylesheets/style.css">
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css">
+    <link rel="stylesheet" type="text/css" href="dist/stylesheets/style.css?v=1.2">
+    <!--Call html5shiv for IE9 and an alt stylesheet for IE8 fallback-->
+    <!--if lt IE 9script(src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js")
+    -->
+    	<!--[if lte IE 8]>
+    		<link rel="stylesheet" type="text/css" href="dist/stylesheets/ie8-and-down.css" />
+    	<![endif]-->
     <!--Fonts-->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Prata|Roboto+Condensed:400,700">
+    <noscript>
+      <link rel="stylesheet" href="dist/stylesheets/ie8-and-down.css">
+    </noscript>
     <!--Facebook OpenGraph-->
-    <meta property="og:title" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+    <meta property="og:title" content="Shoot to Kill">
+    <meta property="og:url" content="http://data.baltimoresun.com/news/shoot-to-kill/">
+    <meta property="og:image" content="http://data.baltimoresun.com/news/shoot-to-kill/dist/images/s2ksocial-thumb.png">
     <meta property="og:site_name" content="The Baltimore Sun">
-    <meta property="og:description" content="">
+    <meta property="og:description" content="Baltimore is one of the most lethal cities in the United States. How did we get there?">
     <meta property="fb:app_id" content="310302989040998">
     <!--Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@baltimoresun">
     <meta name="twitter:creator" content="@baltimoresun">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="">
+    <meta name="twitter:title" content="Shoot to Kill">
+    <meta name="twitter:description" content="Baltimore is one of the most lethal cities in the United States. How did we get there?">
+    <meta name="twitter:image" content="http://data.baltimoresun.com/news/shoot-to-kill/dist/images/shoot-to-kill-thumb-twitter.png">
     <meta name="twitter:domain" content="baltimoresun.com">
     <!--Omniture Code--><script>
 	((((window.trb || (window.trb = {})).data || (trb.data = {})).metrics || (trb.data.metrics = {})).thirdparty = {
-		pageName: 'bs:dataproject:news:maryland:education:unsettled-journeys-part-1:dataproject.',
-		channel: 'news:maryland:education',
-		server: 'data.baltimoresun.com',
-		hier1: 'baltimoresun:news:maryland:education',
-		hier2: 'news:maryland:education',
-		prop1: 'D=pageName',
-		prop2: 'news',
-		prop38: 'dataproject',
-		prop57: 'D=c38',
-		eVar20: 'baltimoresun',
-		eVar21: 'D=c38',
-		eVar34: 'D=ch',
-		eVar35: 'D=pageName',
-		events:''
+	pageName: 'bs:data:news:maryland:shoot-to-kill:dataproject.',
+	channel: 'news:maryland',
+	server: 'data.baltimoresun.com',
+	hier1: 'baltimoresun:news:maryland',
+	hier2: 'news:maryland',
+	prop1: 'D=pageName',
+	prop2: 'news',
+	prop38: 'dataproject',
+	prop57: 'D=c38',
+	eVar20: 'baltimoresun',
+	eVar21: 'D=c38',
+	eVar34: 'D=ch',
+	eVar35: 'D=pageName',
+	events:''
+
 	});  
 </script>
+
     <!--BS Ad Code--><!-- Start: GPT Async -->
 <script type='text/javascript'>
   var gptadslots=[];
@@ -91,432 +103,1041 @@
     <link rel="prefetch" href="">
     <link rel="prefetch" href="">
   </head>
-  <body>
-    <script src="http://www.baltimoresun.com/thirdpartyservice?disablessor=true"></script>
+  <body onload="init();">
+    <script src="http://www.baltimoresun.com/thirdpartyservice?disablenav=true&amp;disablessor=true" async></script>
     <div data-trb-thirdpartynav></div>
+    <div id="intro">
+      <canvas id="canvas" width="1000" height="600" style="max-width: 100%">
+        <p>Please enable JavaScript and use a modern browser to fully experience this presentation. If JavaScript is disabled, scroll down to begin.<br /></p><img src="dist/images/s2k-logo.png">
+      </canvas>
+      <div id="_preload_div_" style="display: inline-block; height:100px; width: 100px; margin-top:100px;position:absolute;text-align: center"><span style="display: inline-block; height: 100%; vertical-align: middle"></span><img src="dist/images/_preloader.gif" style="vertical-align: middle; max-height: 100%"></div>
+      <button id="open-button">READ STORY</button>
+    </div>
+    <nav class="navbar navbar-fixed-top navbar-inverse" id="tophat">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#tophat-collapse" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+          <div id="logo"><a href="http://www.baltimoresun.com"><img src="dist/images/baltimore-sun-logo-white.png"></a></div>
+          <div class="tophat-share-tools"><span class="icon-facebook"></span><span class="icon-twitter"></span></div>
+        </div>
+        <div class="collapse navbar-collapse" id="tophat-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="chapter"><a href="#chapter-intro"><span>Intro</span></a></li>
+            <li class="chapter"><a href="#chapter-1"><span>Chapter 1</span></a></li>
+            <li class="chapter"><a href="#chapter-2"><span>Chapter 2</span></a></li>
+            <li class="chapter"><a href="#chapter-3"><span>Chapter 3</span></a></li>
+            <li class="chapter"><a href="#chapter-4"><span>Chapter 4</span></a></li>
+            <li class="chapter"><a href="#chapter-5"><span>Chapter 5</span></a></li>
+            <li class="dropdown chapter"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Series 
+                <div class="caret"></div></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://www.baltimoresun.com/news/maryland/baltimore-city/bal-shoot-to-kill-part-two-story.html"> 
+                    <div class="desktop-series">Part 2: Some Baltimore neighborhoods condemned to endure a shocking degree of violence</div>
+                    <div class="mobile-series">Part 2</div></a></li>
+                <li><a href="http://www.baltimoresun.com/news/maryland/investigations/bal-shoot-to-kill-part-three-story.html">
+                    <div class="desktop-series">Part 3: Baltimore emergency rooms struggle to care for severely wounded patients</div>
+                    <div class="mobile-series">Part 3</div></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!--block for story layout-->
-    <div class="header">
-      <!--.header__background-video
-      video(loop="true" width="100%" height="100%" autoplay muted)
-      	source(src="" type="video/mp4")
-      	source(src="" type="video/webm")
-      -->
-      <div class="header__text">
-        <div class="container container--header">
-          <div class="header__part-no">Series title</div>
-          <div class="header__title">Title</div>
-        </div>
-      </div>
-    </div>
+    <!--section.header
+    .header__background-video
+    	video(loop="true" width="100%" height="100%" autoplay muted)
+    		source(src="" type="video/mp4")
+    		source(src="" type="video/webm")
+    .header__text
+    	.container-story
+    		.header__title 
+    			include ../dist/images/gun.svg 
+    			span Shoot to 
+    			span.header__title--red Kill
+    		.header__chatter 
+    			span Baltimore is one of the most lethal cities in the United States. 
+    			span.header__chatter--red How did we get there?
+    
+    -->
     <!--load photo gallery			-->
-    <div class="overlay"></div>
-    <div class="gallery" id="gallery">
-      <div class="gallery__visible-photo">
-        <div class="gallery__photos">
-          <div class="gallery__photo" style="background-image: url('dist/images/example.jpg')"></div>
-          <div class="gallery__photo" style="background-image: url('dist/images/example.jpg')"></div>
-          <div class="gallery__photo" style="background-image: url('dist/images/example.jpg')"></div>
-        </div>
-        <div class="gallery__caption"></div>
-      </div>
-      <div class="gallery__info">
-        <div class="gallery__progress-bar"></div>
-        <div class="gallery__toggle-caption">
-          <div class="gallery__control gallery__control--clickable">CAPTION</div>
-        </div>
-        <div class="gallery__controls">
-          <div class="gallery__control gallery__control--slide gallery__control--clickable" data-dir="left"><span class="icon-arrow-left3"></span></div>
-          <div class="gallery__control gallery__control--counter"><span id="gallery__current-img"> 1 </span> of 3</div>
-          <div class="gallery__control gallery__control--slide gallery__control--clickable" data-dir="right"><span class="icon-arrow-right3"></span></div>
-        </div>
-        <div class="gallery__close">
-          <div class="gallery__control gallery__control--close gallery__control--clickable"><span class="icon-close"></span></div>
+    <section id="chapter-intro">
+      <div class="container-story">
+        <div class="article">
+          <div class="article__byline">By Justin George, The Baltimore Sun</div>
+          <div class="article__dateline">September 30, 2016</div>
+          <p class="article__dropcap" data-dropcap="Q"><span>uinzell Covington went on a shooting “caper” for the first time in the late 1990s with his cousins and friends. The tough guys who raised him in ways of the streets pulled the trigger that day. Afterward, over Chinese takeout, Covington tried to ingratiate himself with the crew by declaring that their victim got what he deserved.</span></p>
+          <p>He was about 13 years old. Growing up in Baltimore, he knew it was wrong to shoot a man. Still, he said, he didn’t feel remorse. What he did feel was that his crew had newfound respect for him.</p>
+          <p>By 15, he was the one doing the shooting. Over the next dozen years, Covington learned to do it well. He used 9 mm guns that held 16 bullets and Mac-10 submachine guns. He lured victims to his turf, where he could scout for witnesses and surveillance cameras, in what he called his “Miranda check” — a macabre reference to the right to remain silent.</p>
+          <p>He also knew where to aim.</p>
         </div>
       </div>
-    </div>
-    <div class="container container--article">
-      <div class="article">
-        <div class="article__byline">Byline</div>
-        <div class="article__dateline">Date</div>
-        <!--menu for series-->
-        <figure class="inline-media inline-media--pullquote inline-media--small inline-media--has-title inline-media--not-mobile" data-sr>
-          <div class="inline-media__title"><a href="#">More in the series</a></div>
-          <ul class="parts-menu">
-            <!--Part 2-->
-            <li class="parts-menu__item parts-menu__item"><a href="#"><img class="parts-menu__thumbnail" src="dist/images/example.jpg" width="75">
-                <div class="parts-menu__part-no">Part 2 <span class="parts-menu__date"> Date </span></div>
-                <div class="parts-menu__title">Title</div></a></li>
-            <!--Part 2, inactive-->
-            <!--Part 3, inactive-->
-            <li class="parts-menu__item parts-menu__item"><a href="#"><img class="parts-menu__thumbnail" src="dist/images/example.jpg" width="75">
-                <div class="parts-menu__part-no">Part 3 <span class="parts-menu__date"> Date </span></div>
-                <div class="parts-menu__title">Title</div></a></li>
-            <!--Part 3, inactive-->
-          </ul>
+      <!--full-width inline video-->
+      <div class="featured-video" id="featured-video">
+        <figure class="fv__video">
+          <iframe src="https://player.vimeo.com/video/185014164" width="80%" height="560" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </figure>
-        <p class="article__dropcap" data-dropcap="H"><span>ere is an example of a paragraph with a dropcap. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sem purus, accumsan et pellentesque vel, gravida ut augue. </span></p>
-        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-        <p>Suspendisse vitae molestie enim. Nam est quam, pulvinar vitae ipsum non, rutrum tincidunt sapien. Suspendisse orci est, rhoncus eget auctor ut, elementum a sapien. Suspendisse semper egestas sem sed cursus. Etiam sed mauris lorem. Vestibulum accumsan commodo vestibulum.</p>
-        <!--large inline video-->
-        <div class="featured-video" id="featured-video">
-          <figure class="fv__video">
-            <iframe src="https://player.vimeo.com/video/143650587" width="100%" height="560" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <div class="container-story">
+        <div class="article">
+          <p>“If I shoot you in the leg, I know what I'm going to get,” said Covington, who is serving a 25-year sentence for murder. “If I shoot you in the stomach, I know what I'm going to get. If I shoot you in the head, I definitely know what I'm going to get. I'm going to get your demise.”</p>
+          <p>Covington's evolution into a killer encapsulates a trend driving gun violence around the country: Increasingly, people are shooting to kill. Criminals are stockpiling higher-caliber guns, many with extended magazines that hold more than 20 bullets. Police and hospitals are seeing a growing number of victims who have been shot in the head or shot repeatedly. And trauma doctors are finding it more difficult to save gunshot victims.</p>
+          <p>In many places, if you get shot, you are more likely to die than ever before.</p>
+          <p>In Baltimore, one of every three people struck by gunfire dies, up from one death in every four shootings the previous decade. It ranks as one of the most lethal of America's largest cities, according to a Baltimore Sun analysis. Two other cities — Washington and New Orleans — shared the brutal distinction of one in three shootings ending in a homicide in 2015. Like Baltimore, several cities have seen the death grip tighten. In Chicago, one in 10 people died after being shot in 2000; now one in six perishes.               </p>
+          <p>Last year, the odds for gunshot victims worsened in at least 10 of the nation's largest cities, The Sun found.</p>
+          <div class="inline-media inline-media--big about">
+            <hr>
+            <h3>About this series</h3>
+            <div style="line-height:1.5">Baltimore Sun reporter Justin George spent nine months during the 2015-2016 school year at Marquette University in Milwaukee as part of the O'Brien Fellowship in Public Service Journalism, working on “Shoot to Kill” while mentoring college students and speaking to journalism classes. He traveled to five cities to research gun violence; analyzed crime data from cities across the U.S.; reviewed dozens of studies on violent crime, trauma and guns; and interviewed more than 80 people, including homicide detectives, police chiefs, hit men, ex-offenders, researchers, emergency room doctors, nurses, trauma surgeons, family members of victims, neighborhood residents, prosecutors and survivors of shootings. Four college students served as research assistants as part of the O'Brien Fellowship program. They were Wyatt Massey, Hannah H. Kirby, Natalie Wickman and Matthew Kulling.</div><br>
+            <aside id="podcast">
+              <h4>Listen: Justin George podcast interview</h4>
+              <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/286209589&amp;amp;color=ff5500&amp;amp;auto_play=false&amp;amp;hide_related=true&amp;amp;show_comments=false&amp;amp;show_user=true&amp;amp;show_reposts=false"></iframe>
+            </aside><br> 
+<br>
+<center style="font-size:.75em;">Produced with support from</center><a href="http://www.marquette.edu/comm/obrien-fellowship/" target="_new"><img src="dist/images/fellowship.jpg" style="width:100%;max-width:370px;display:block;margin-bottom:10px;margin:0 auto"></a>
+            <hr>
+          </div>
+          <p>The Baltimore Sun undertook a yearlong investigation into this rarely studied phenomenon, documenting patterns of lethality based on hundreds of crime statistics, hospital data and gun trace reports as well as interviews with police chiefs, homicide detectives, criminologists, medical experts, community activists, victims of gun violence and the perpetrators themselves.</p>
+          <p>Researchers said lethality is a significant part of the homicide equation, with implications for policing, public health and trauma care, but in-depth study has been hampered by a paucity of statistics.</p>
+          <p>Historically, gun violence research in the U.S. has been inhibited by a lack of federal funding and data — many police departments only track what they are required to report to the FBI, which doesn't include how often people survive shootings, where on the body people are shot and how many times.</p>
+          <div class="inline-media inline-media--big subscribe">
+            <h3>Support our investigative journalism</h3></br> Become a Baltimore Sun subscriber today to support stories like this one. <a href="http://ad.baltimoresun.com/land-article/" target="_blank">Start getting full access to our signature journalism for just $4.99 for 3 months.</a>
+</br>
+          </div>
+          <p>That leaves a focus on body counts and homicide rates, which can be traced back nearly a century. While the nation's overall violent crime rate declined starting in the 1990s, a city's homicide rate typically fluctuates, sometimes significantly, leaving criminologists to puzzle over the causes behind spikes and dips.</p>
+          <p>Just five years ago, Baltimore public officials were celebrating a drop in the annual homicide count below 200. This year, that marker was crossed in August.</p>
+          <p>The latest crime wave in a number of cities — Baltimore, Chicago, Milwaukee and Washington, to name a few — has prompted deeper soul-searching. Deteriorating police-community relations have been blamed for a sharp increase in shootings and homicides, as have gang conflicts and entrenched societal ills such as segregation, poverty and joblessness.</p>
+          <p>But one often-overlooked trend has been consistent over the years, the Sun analysis found: Lethal force has become more so.</p>
+          <p>In Baltimore, where there were nearly 1,000 shootings last year, a one-in-four lethality rate means about 250 victims die. A one-in-three rate means more than 330 people die. So even if shootings subside, the number of gun deaths remains elevated. </p>
+          <p>On the streets, particularly in poor, black neighborhoods, residents are witnessing increasingly deadly tactics. More shooters are aiming for the head and firing multiple rounds into victims.</p>
+          <figure class="inline-media inline-media--pic inline-media--full" data-sr><img src="dist/images/s2k-shoot.jpg">
+            <figcaption class="inline-media--pic__caption">Detail photo of a Glock .40-caliber handgun being fired at the Northeast District police station’s qualification range.</figcaption>
+            <btn class="inline-media--pic__open-gallery"><a href="http://www.baltimoresun.com/bal-shoot-to-kill-lethality-in-baltimore-20160929-photogallery.html" target="_blank">SEE MORE PHOTOS</a></btn>
           </figure>
+          <p>The number of fatal head shots in the city rose steadily from about 13 percent two decades ago to 62 percent last year. Meanwhile, the number of cadavers with 10 or more bullets more than doubled in the past decade, according to the Maryland medical examiner’s office, which tallied the bullet wounds at the request of The Sun.</p>
+          <p>Now, roughly two-thirds of city homicide victims are either shot in the head or multiple times. Many suffer both fates.</p>
+          <p>Guns have also become more deadly, as the weapon of choice for criminals and then law enforcement shifted from the revolver to the semiautomatic pistol, which can fire more bullets without reloading. Nationally, the number of 9 mm and .40-caliber guns taken off the streets surged during the past four years, as seizures of less powerful .22-caliber guns remained relatively flat.</p>
+          <p>In Maryland, seizures of 9 mm handguns overtook .22-caliber guns for the first time last year. Most were recovered from Baltimore's streets, where the saying goes: “Buy every gun that comes through; don't let it be the gun that kills you.”</p>
+          <p>Many of the guns are equipped with extended magazines, allowing a shooter to fire from a distance and “walk down” a victim, continuously firing. The sale of “extendos” with more than 10 rounds are banned in Maryland, where they are prized in street cultures, tucked under belts and into pants as a fashion statement. In Baltimore, police are finding up to 80 shell casings at a single crime scene.</p>
+          <!--large pull quote-->
+          <figure class="inline-media inline-media--pullquote inline-media--big" data-sr>
+            <hr>
+            <div class="inline-media--pullquote__text">&ldquo;Something’s changed in the mentality of the people shooting. Very reckless. Everyone’s got a gun, and everyone is willing to do these shootouts.&rdquo;</div>
+            <div class="inline-media--pullquote__src">former D.C. police chief Cathy L. Lanier</div>
+            <hr>
+          </figure>
+          <p>Metropolitan Police Chief Cathy L. Lanier, who retired last month after more than a decade in Washington, keeps a photo of a 100-round magazine seized by police on her cellphone as a reminder of the firepower out there.</p>
+          <p>Law enforcement officials across the country say they've observed insidious circumstances that are difficult to quantify. Reckless shootings in the daytime. Vigilante justice and contract killers. Gang rules that codify when violence should be used — and street rules limiting violence against bystanders being ignored.</p>
+          <p>“The criminals are more brazen,” said Baltimore police Maj. Donald Bauer, who leads the homicide unit.</p>
+          <p>While shooters' motives vary, experts and those caught in the crossfire note a ruthlessness on the streets where criminals with more sophisticated weaponry aren't just using guns to intimidate rivals or rob. They are using them to take people out with greater success.</p>
+          <p>In Baltimore and other cities with a deeply entrenched “no-snitching” ethos, the emphasis is on leaving behind no witnesses and no one to retaliate.</p>
+          <p>“It's very common for someone to walk up and empty a pistol at close range,” said criminologist David M. Kennedy, describing the “extreme” hold that gangs and drug crews have in cities like Baltimore, Washington and New Orleans. “It's going in with a heightened intent to actually kill you.”</p>
+          <p>Those same criminals have honed strategies to keep weapons at the ready. Guns are stashed in trash cans, hung from gutter grates by string and stashed in other nooks where they can be quickly recovered when needed. (Covington says he kept part of his arsenal under an apartment complex's washing machine.)</p>
+          <p>Or people serve as “human holsters,” carrying guns for felons, according to Milwaukee Police Chief Edward A. Flynn.</p>
+          <p>And in Baltimore, hit men for hire have become fixtures on the streets.</p>
+          <p>Police recently began tracking the so-called 10 Grand Club, an organized gang of hit men willing to kill for that price, and prosecutors say that's double the typical fee. (Covington became a contract killer but also says he “killed out of friendship” for free if a woman approached him about taking out her rapist or her child's molester.)</p>
+          <p>Not even decades of advancements in trauma medicine can stem the carnage.</p>
+          <p>Even as patients with major injuries from other assaults and car accidents have seen their chances improve dramatically, gunshot victims have watched their chances of survival plummet. Studies by hospitals and trauma centers across the country, including Baltimore's top-ranked medical systems, have documented this contrarian trend.</p>
+          <p>“We feel this represents a true change in violence intensity,” Johns Hopkins Hospital researchers concluded a decade ago. Doctors say it has gotten worse since then.</p>
+          <p>This has left communities nationwide reeling, with violence concentrated in traumatized neighborhoods where mothers are forming support groups, not only to help each other cope but in a desperate search for ways to stop the killing. A nationwide network of grief is starting to take shape, with more support groups banding together and becoming politically active.</p>
+          <p>“We're all facing similar dynamics,” said Corneilius Scott, who volunteers as executive director of Mothers of Murdered Sons and Daughters in Baltimore. “There's a lot of concern and not many answers.”</p>
+          <p>At the group's meetings, parents are talking about “sensitizing” young men to the effects of violence. They believe — and social science is finding — that their boys need to be taught empathy, lest they become trapped in a cycle, repeatedly exposed to violence and becoming more likely to commit it.</p>
         </div>
       </div>
-    </div>
-    <div class="container container--article">
-      <div class="article">
-        <!--ad--><div class="ad ad--cube">
-
-	<!-- Beginning Async AdSlot 1 for Ad unit trb.baltimoresun/news  ### size: [[300,250]] -->
-	<!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[1]]) -->
-	<div id='div-gpt-ad-430294160021529928-1'>
-		<script type='text/javascript'>
-			googletag.cmd.push(function() { googletag.display('div-gpt-ad-430294160021529928-1'); });
-		</script>
-	</div>
-	<!-- End AdSlot 1 -->
-
-</div>
-        <p>Mauris dapibus lectus ut imperdiet lobortis. Aenean tempus sapien ac augue malesuada, at posuere arcu sodales. Sed at dapibus justo. Donec tempus nec felis convallis consequat. </p>
-        <p>Suspendisse vitae molestie enim. Nam est quam, pulvinar vitae ipsum non, rutrum tincidunt sapien. Suspendisse orci est, rhoncus eget auctor ut, elementum a sapien. Suspendisse semper egestas sem sed cursus. Etiam sed mauris lorem. Vestibulum accumsan commodo vestibulum.</p>
-        <p>Sed viverra, libero a sagittis condimentum, dui sapien cursus mauris, a aliquet mi mauris ac augue.  Sed id ligula ac enim luctus euismod. Etiam dapibus venenatis magna. Suspendisse ac condimentum massa, sit amet egestas risus. Vestibulum tempus diam ac malesuada pellentesque.                   </p>
-      </div>
-    </div>
-    <div class="container container--article">
-      <div class="article">
-        <p>Maecenas aliquet in sapien et finibus. Fusce tincidunt ligula mauris, sit amet vulputate elit lacinia sit amet. Etiam interdum mi id est lacinia, quis tincidunt sapien accumsan.  Fusce arcu orci, iaculis vel laoreet non, fermentum vitae turpis. </p>
-        <p>Maecenas varius rutrum tellus eget mollis. Praesent ut euismod ante, eu laoreet erat. In eu posuere lectus. Cras leo turpis, accumsan eu sem eget, gravida ultrices magna. Quisque vitae odio imperdiet, cursus tellus condimentum, tincidunt est.</p>
-        <p>Proin lacinia convallis dolor ac elementum. Quisque venenatis augue ipsum, ut sollicitudin libero sagittis non. Praesent finibus semper enim vitae volutpat. Nullam placerat non ipsum eu laoreet.</p>
-        <!--small pull quote in sidebar-->
-        <div class="inline-media inline-media--pullquote inline-media--small" data-sr>
-          <div class="inline-media--pullquote__text">&ldquo;Pull quote&rdquo;</div>
-          <div class="inline-media--pullquote__src">Quote attribution</div>
-        </div>
-        <div class="article__chapter-title">
-          <div class="article__chapter-title__text">Chapter title</div>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sem purus, accumsan et pellentesque vel, gravida ut augue. Praesent quis pretium ipsum, eget efficitur neque. Sed et congue libero. Praesent dapibus posuere lobortis. Suspendisse pretium sed ex nec tristique. </p>
-        <!--large photo gallery link in sidebar-->
-        <figure class="inline-media inline-media--pic inline-media--big" data-sr><img src="dist/images/example.jpg">
-          <figcaption class="inline-media--pic__caption">Caption goes here</figcaption>
-          <btn class="inline-media--pic__open-gallery">OPEN GALLERY</btn>
-        </figure>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-        <!--multiphoto package - photos enter from left and right-->
-        <figure class="media-package"><img class="media-package__img media-package__img--left" src="dist/images/vertical-example.jpg" data-sr="enter left"><img class="media-package__img media-package__img--right" src="dist/images/example.jpg" data-sr="enter right">
-          <div class="media-package__caption">Caption for multiphoto package</div>
-        </figure>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <!--chart or interactive in sidebar-->
-        <figure class="inline-media inline-media--chart inline-media--small inline-media--has-title" data-sr>
-          <div class="inline-media__title">Chart			</div>
-<div class="pop-charts">
-
-	<div class="pop-charts__tabs">
-		<div class="pop-charts__tab is-selected" data-chart="0"> Chart 1 </div>
-		<div class="pop-charts__tab" data-chart="1"> Chart 2 </div>
-	</div>
-
-	<div class="pop-chart pop-chart--bmore is-visible">
-		<div class="pop-chart__title"> Chart 1 Title </div>
-		<canvas id="canvas4" height="350" width="350"></canvas>
-	</div>
-
-	<div class="pop-chart pop-chart--us">
-		<div class="pop-chart__title"> Chart 2 Title </div>
-		<canvas id="canvas3" height="350" width="350"></canvas>
-	</div>
-
-</div>
-
-<div class="inline-media__source inline-media--chart__source"> Source </div>
-
-        </figure>
-        <p>Mauris dapibus lectus ut imperdiet lobortis. Aenean tempus sapien ac augue malesuada, at posuere arcu sodales. Sed at dapibus justo. Donec tempus nec felis convallis consequat. </p>
-        <p>Suspendisse vitae molestie enim. Nam est quam, pulvinar vitae ipsum non, rutrum tincidunt sapien. Suspendisse orci est, rhoncus eget auctor ut, elementum a sapien. Suspendisse semper egestas sem sed cursus. Etiam sed mauris lorem. Vestibulum accumsan commodo vestibulum.</p>
-        <p>Sed viverra, libero a sagittis condimentum, dui sapien cursus mauris, a aliquet mi mauris ac augue.  Sed id ligula ac enim luctus euismod. Etiam dapibus venenatis magna. Suspendisse ac condimentum massa, sit amet egestas risus. Vestibulum tempus diam ac malesuada pellentesque.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <!--large pull quote-->
-        <figure class="inline-media inline-media--pullquote inline-media--big" data-sr>
-          <div class="inline-media--pullquote__text">&ldquo;Pull quote&rdquo;</div>
-          <div class="inline-media--pullquote__src">Quote attribution</div>
-        </figure>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <!--small external link-->
-        <figure class="inline-media inline-media--pullquote inline-media--small" data-sr>
-          <div class="inline-media--external-link__title">External link title</div>
-          <div class="inline-media--external-link__content">External link description</div>
-          <div class="inline-media--external-link__link"><a href="#" target="_blank"> Learn more. </a></div>
-        </figure>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <!--full-width link to photo gallery-->
-        <figure class="inline-media inline-media--pic inline-media--full" data-sr="enter bottom"><img src="dist/images/example.jpg">
-          <figcaption class="inline-media--pic__caption">Caption goes here</figcaption>
-          <btn class="inline-media--pic__open-gallery">OPEN GALLERY					</btn>
-        </figure>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <!--timeline mixin-->
-        <div class="inline-media--timeline timeline-container">
-          <div class="tl-item">
-            <div class="tl-date">2001-2003</div>
-            <div class="tl-name">Mauris dapibus lectus ut imperdiet lobortis. Aenean tempus sapien ac augue malesuada, at posuere arcu sodales.</div>
-            <div class="arrow-right"></div>
+    </section>
+    <section id="chapter-1">
+      <div class="container-story">
+        <div class="article">
+          <div class="article__chapter-title"> 
+            <hr>
+            <div class="article__chapter-title__number">
+               <svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="202px" height="151px" viewBox="177.163 265.558 202 151"
+	 overflow="visible" enable-background="new 177.163 265.558 202 151" xml:space="preserve">
+<defs>
+</defs>
+<rect x="14.667" y="345.469" display="none" width="482.993" height="216.162"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+<path display="none"  d="M197.521,252.761l19.722-29.629h14.06l-15.098,22.458l18.872,40.48h-16.229L206.392,258.8
+	l-8.87,12.833v14.438h-14.437v-62.938h14.437V252.761z"/>
+<path display="none" d="M254.511,286.07h-14.72v-62.938h14.72V286.07z"/>
+<path display="none" d="M304.708,273.615v12.455h-39.914v-62.938h14.909v50.483H304.708z"/>
+<path display="none" d="M349.904,273.615v12.455H309.99v-62.938h14.909v50.483H349.904z"/>
+<path display="none" d="M230.253,439.621h-14.438v-25.949h-19.722v25.949h-14.437v-62.938h14.437v24.533h19.722
+	v-24.533h14.438V439.621z"/>
+<path display="none" d="M284.127,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.717-6.228-7.265-14.438-7.265-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S279.598,378.759,284.127,384.892z M255.725,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C260.443,387.723,257.518,389.516,255.725,393.195z"/>
+<path display="none" d="M342.155,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.718-6.228-7.266-14.438-7.266-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S337.625,378.759,342.155,384.892z M313.752,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C318.47,387.723,315.545,389.516,313.752,393.195z"/>
+<path display="none" d="M395.842,389.138h-15.569v50.483h-14.909v-50.483H349.7v-12.455h46.143V389.138z"/>
+<path d="M205.097,275.252c-2.573,0-3.859,1.287-3.859,3.862v21.889
+	c0,0,0,1.287,1.287,1.287c-6.432,9.013-7.718,11.588-3.859,11.588c23.155,0,15.437,19.314,9.005,33.477
+	c-5.146,7.725-10.291,15.451-15.437,21.889c-2.573,3.863-18.009,30.901-9.004,34.765h1.286c-1.286,0-1.286,1.287-1.286,2.574v3.863
+	c0,1.287,0,2.575,2.573,2.575h52.741c1.287,0,2.573-1.288,2.573-2.575v-3.863c0-1.287-1.286-2.574-2.573-2.574h-6.432
+	c5.146,0,7.719,0,7.719,0s1.286-9.014,0-14.163c0-3.863,5.145-7.726,7.718-12.876c2.573-3.862-1.286-16.738,1.286-20.601
+	c2.573-3.863,9.005-6.438,11.578-5.15c1.286,0,59.173,0,59.173,0v-5.15c-2.572-1.287-3.858-5.15-3.858-10.301v-14.163
+	c0-5.15,2.572-6.438,7.719-5.15h34.731c9.005,0,11.578,1.288,11.578-7.726v-3.863h1.285c1.287,0,3.859-2.575,3.859-3.862v-2.575l0,0
+	c1.287,0,1.287,0,1.287,0V281.69c0-1.287,0-1.287-1.287-1.287l0,0v-1.288c0-2.575-2.572-3.862-3.859-3.862h-3.858v-3.863h-5.146
+	l-2.573,3.863h-47.596v1.287v1.288h-41.165l-1.285-1.288v-1.287h-39.878l-3.859-6.438h-7.719v6.438H205.097L205.097,275.252z
+	 M300.29,317.742c6.432,0,10.291,3.862,10.291,10.3v7.725c0,5.15-3.859,10.301-10.291,10.301h-29.588
+	c-6.432,0-11.577-5.15-11.577-10.301v-7.725c0-2.575,1.287-3.862,2.573-6.438c0,2.576,1.286,10.301,6.432,15.451
+	c5.146,6.438,6.432,6.438,6.432,6.438l2.573-2.576c0,0-1.286-2.575-2.573-5.15c-1.286-2.574-2.572-10.3,1.287-18.025H300.29z"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+</svg>
+<span>CHAPTER 1</span>
+            </div>
+            <div class="article__chapter-title__text">More guns, bigger bullets</div>
           </div>
-          <div class="tl-item">
-            <div class="tl-date">2003-2005</div>
-            <div class="tl-name">Suspendisse vitae molestie enim. Nam est quam, pulvinar vitae ipsum non, rutrum tincidunt sapien. Suspendisse orci est, rhoncus eget auctor ut, elementum a sapien. </div>
-            <div class="arrow-right"></div>
-          </div>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class="article__chapter-title">
-          <div class="article__chapter-title__text">Chapter title</div>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-    </div>
-    <!--full-width interactive-->  <div class="container container--interactive">
-      <div class="mapSlide__title"> Full-width interactive </div>
-      <div style="height:400px;max-width:1200px;background:#CCC;"></div>
-    </div>
- 
-
-
-
-    <div class="container container--article">
-      <div class="article">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <figure class="inline-media inline-media--video inline-media--big" data-sr>
-          <iframe src="https://player.vimeo.com/video/142890066?color=ffffff"></iframe>
-        </figure>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-    </div>
-    <!--full-width video or photo grid-->
-    <!--This interactive is prefixed with "vg" for video grid-->
-    <div class="vg">
-      <div class="container container--interactive">
-        <div class="vg__header">Video or image grid</div>
-        <div class="vg__portraits">
-          <div class="vg__spotlight">
-            <div class="vg__spotlight__content">
-              <div class="vg__spotlight__video">
-                <iframe src="" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen autoplay></iframe>
+          <p>Rodney Chase sensed trouble when three young men approached him on Gay Street in Baltimore, but he didn't run, saying he's not the kind to back down from anyone. One of the men pulled a gun; they wanted his NFL Starter jacket, his wallet, anything of value.</p>
+          <p>As Chase took off his jacket, one of the men tried to yank it off, and Chase instinctively hit him. The gunman fired into Chase's belly, and Chase felt as if hot grease had been thrown at him.</p>
+          <p>A woman nearby screamed and called an ambulance. He underwent surgery. Doctors put a screen under his skin to hold in his organs. He wasn't discharged for nearly two months.</p>
+          <p>That was more than two decades ago. Had he been shot today, with the kinds of guns prevalent on Baltimore's streets, he believes he'd be dead.</p>
+          <p>“Luckily it was a .22,” the 58-year-old said recently, lifting his shirt to show off a scar slicing down the middle of his stomach. “I'm grateful for that. If it was bigger, I'd be done.”</p>
+          <!--multiphoto package - photos enter from left, right and bottom-->
+          <figure class="media-package"><img class="media-package__img media-package__img--left img-responsive" src="dist/images/s2k-chase3.jpg" data-sr="enter left" style="width:48%"><img class="media-package__img media-package__img--right img-responsive" src="dist/images/s2k-chase2.jpg" data-sr="enter right" style="width:50%">
+            <div class="media-package__caption"> Rodney Chase has participated in the Violence Intervention Program at the University of Maryland Shock Trauma Center. The program takes patients who come wounded into the hospital from violence and works to help them not be a victim or perpetrator of violence again. Left: Rodney Chase shows his scar from a gunshot wound he sustained. Right: Rodney Chase shows his scar where he was stabbed in an altercation.</div>
+            <!-- figcaption Lloyd Fox-->
+          </figure>
+          <p>He knows Baltimore's streets because that's where he's spent most of his life. He was a drug addict living in an abandoned house when he was seriously injured in a knife attack and ended up at the University of Maryland Shock Trauma Center nearly a year ago. He also was admitted into a hospital program that connects patients with social services in hopes of reducing the recidivism of violence.</p>
+          <p>“I call it ‘Clip City,'” Chase said of Baltimore and the proliferation of guns. “What they got now — they're death dealers. And it's not hard to get 'em.”</p>
+          <p>Gun production in the U.S. set a blistering pace beginning in 2011 to 2014, the latest years for which data is available, doubling and sometimes tripling the annual manufacturing reported in the previous 25 years. </p>
+          <p>Moreover, guns sold now are more powerful — higher-caliber weapons that come with larger magazines and discharge bullets with more force.</p>
+          <p>“All of these factors, over the last several decades, have progressed,” said Jay Wachtel, a 20-year agent of the Bureau of Alcohol, Tobacco, Firearms and Explosives who lectures at California State University at Fullerton. That has led to what he called an “incredible increase in the lethality of guns.”</p>
+          <!--large pull quote-->
+          <figure class="inline-media inline-media--pullquote inline-media--big" data-sr>
+            <hr>
+            <div class="inline-media--pullquote__text">&ldquo;I call it &#8216;Clip City.&#8217; What they got now — they’re death dealers. And it’s not hard to get &#8217;em.&rdquo;</div>
+            <div class="inline-media--pullquote__src">Rodney Chase, violence victim </div>
+            <hr>
+          </figure>
+          <p>Even an inexperienced shooter, Wachtel said, can do a lot of damage with a high-caliber semiautomatic gun. “You don't need to be a very good shot because any organs nearby are going to be pulverized,” he said.</p>
+          <p>Eventually, many of the newer models end up on the streets despite laws aimed at keeping guns out of the hands of felons. Law enforcement officials nationwide say they have noticed an increase in the quality of guns wielded by criminals.</p>
+          <p>“All the cheap guns made in the '80s have either quit functioning or have been recovered by police,” said Los Angeles Homicide Detective John Skaggs, the protagonist in the best-selling book “Ghettoside,” who has closed nearly all of the homicide cases he's handled. “They seem to all be expensive and high-quality now.”</p>
+          <p>In Milwaukee, police are tracking this trend. A decade ago, the top guns seized by police were a 12-gauge shotgun and pistols that cost less than $200 with standard, eight-bullet magazines. This year, the most seized guns were .40-caliber and 9 mm handguns that cost more than $400 and come with magazines that hold nine to 16 bullets.</p>
+          <p>Flynn, Milwaukee's police chief, said most of the guns used in crime — nearly 90 percent — are bought, not stolen. He blamed “straw purchases,” in which people purchase guns for others who wouldn't pass a background check.</p>
+          <p>“The gun of choice of street offenders has shifted over time to higher-quality, higher-caliber of semiautomatic pistols,” said Kennedy, the criminologist who directs the National Network for Safe Communities, a project of the John Jay College of Criminal Justice in New York City.</p>
+          <p>“Since those are the guns that gangs and drug-involved offenders are more likely to have, they're more likely to kill somebody,” he said.</p>
+          <p>In Baltimore, gun seizures this year have already surpassed last year's total by more than 25 percent. The once-ubiquitous “Saturday night specials” — cheaply made .22- or .25-caliber handguns that were banned for a time in Maryland — are no longer as prevalent.</p>
+          <p>Now 9 mm guns are the top gun seized by police, and a Glock .40-caliber was most often used in crimes last year. Those weapons are capable of firing a bullet nearly twice the diameter of the one fired from the original Saturday Night Special.</p>
+          <p>“A lot of big guns out there,” said James “J.T.” Timpson, a community liaison officer with Safe Streets, the city's violence mediation program, which works in high-crime neighborhoods to resolve conflicts without police intervention.</p>
+          <p>Timpson said shooters believe they need “stopping power” to ensure their mark is dead. “We don't have .22s no more,” he said.</p><a name="top-firearms"></a>
+          <hr>
+          <figure class="inline-media inline-media--graphic inline-media--full">
+            <h4 class="inline-media__title">
+               <svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="202px" height="151px" viewBox="177.163 265.558 202 151"
+	 overflow="visible" enable-background="new 177.163 265.558 202 151" xml:space="preserve">
+<defs>
+</defs>
+<rect x="14.667" y="345.469" display="none" width="482.993" height="216.162"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+<path display="none"  d="M197.521,252.761l19.722-29.629h14.06l-15.098,22.458l18.872,40.48h-16.229L206.392,258.8
+	l-8.87,12.833v14.438h-14.437v-62.938h14.437V252.761z"/>
+<path display="none" d="M254.511,286.07h-14.72v-62.938h14.72V286.07z"/>
+<path display="none" d="M304.708,273.615v12.455h-39.914v-62.938h14.909v50.483H304.708z"/>
+<path display="none" d="M349.904,273.615v12.455H309.99v-62.938h14.909v50.483H349.904z"/>
+<path display="none" d="M230.253,439.621h-14.438v-25.949h-19.722v25.949h-14.437v-62.938h14.437v24.533h19.722
+	v-24.533h14.438V439.621z"/>
+<path display="none" d="M284.127,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.717-6.228-7.265-14.438-7.265-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S279.598,378.759,284.127,384.892z M255.725,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C260.443,387.723,257.518,389.516,255.725,393.195z"/>
+<path display="none" d="M342.155,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.718-6.228-7.266-14.438-7.266-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S337.625,378.759,342.155,384.892z M313.752,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C318.47,387.723,315.545,389.516,313.752,393.195z"/>
+<path display="none" d="M395.842,389.138h-15.569v50.483h-14.909v-50.483H349.7v-12.455h46.143V389.138z"/>
+<path d="M205.097,275.252c-2.573,0-3.859,1.287-3.859,3.862v21.889
+	c0,0,0,1.287,1.287,1.287c-6.432,9.013-7.718,11.588-3.859,11.588c23.155,0,15.437,19.314,9.005,33.477
+	c-5.146,7.725-10.291,15.451-15.437,21.889c-2.573,3.863-18.009,30.901-9.004,34.765h1.286c-1.286,0-1.286,1.287-1.286,2.574v3.863
+	c0,1.287,0,2.575,2.573,2.575h52.741c1.287,0,2.573-1.288,2.573-2.575v-3.863c0-1.287-1.286-2.574-2.573-2.574h-6.432
+	c5.146,0,7.719,0,7.719,0s1.286-9.014,0-14.163c0-3.863,5.145-7.726,7.718-12.876c2.573-3.862-1.286-16.738,1.286-20.601
+	c2.573-3.863,9.005-6.438,11.578-5.15c1.286,0,59.173,0,59.173,0v-5.15c-2.572-1.287-3.858-5.15-3.858-10.301v-14.163
+	c0-5.15,2.572-6.438,7.719-5.15h34.731c9.005,0,11.578,1.288,11.578-7.726v-3.863h1.285c1.287,0,3.859-2.575,3.859-3.862v-2.575l0,0
+	c1.287,0,1.287,0,1.287,0V281.69c0-1.287,0-1.287-1.287-1.287l0,0v-1.288c0-2.575-2.572-3.862-3.859-3.862h-3.858v-3.863h-5.146
+	l-2.573,3.863h-47.596v1.287v1.288h-41.165l-1.285-1.288v-1.287h-39.878l-3.859-6.438h-7.719v6.438H205.097L205.097,275.252z
+	 M300.29,317.742c6.432,0,10.291,3.862,10.291,10.3v7.725c0,5.15-3.859,10.301-10.291,10.301h-29.588
+	c-6.432,0-11.577-5.15-11.577-10.301v-7.725c0-2.575,1.287-3.862,2.573-6.438c0,2.576,1.286,10.301,6.432,15.451
+	c5.146,6.438,6.432,6.438,6.432,6.438l2.573-2.576c0,0-1.286-2.575-2.573-5.15c-1.286-2.574-2.572-10.3,1.287-18.025H300.29z"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+</svg>
+<span>TOP FIREARMS USED IN </span><span class="inline-media__title--red"> CRIMES IN BALTIMORE</span>
+            </h4>
+            <p class="inline-media inline-media--graphic__chatter">Police say they are recovering more high-caliber firearms. According to police, 9 mm and .40 caliber handguns and bullets are the most common types of weapons used in crimes in Baltimore City. Below are examples of the most common make and caliber of guns and bullet casings examined by the Baltimore crime lab in 2015. The crime did not necessarily occur in 2015. Standard magazine capacities are listed; Maryland law prohibits the sale of magazines that hold more than 10 bullets.</p>
+            <div class="gungraphic">
+              <div class="col-md-3 col-sm-6 col-xs-6 block">
+                <p class="gunname">Glock .40</p><img src="dist/images/glock-40.jpg">
+                <p class="gunstats">MSRP: <span class="red">$499</span></p>
+                <p class="gunstats">STANDARD CAPACITY:<br> <span class="red">16 ROUNDS</span></p>
+                <p class="gunstats">TOTAL EXAMINED: <span class="red">73</span></p>
+                <hr class="line">
               </div>
-              <div class="vg__spotlight__info">
-                <div class="vg__spotlight__name"></div>
-                <div class="vg__spotlight__age">Age: <span></span></div>
-                <div class="vg__spotlight__country">Country of origin: <span></span></div>
-                <div class="vg__spotlight__language">Native language: <span></span></div>
-                <div class="vg__spotlight__btns">
-                  <div class="vg__spotlight__btn vg__spotlight__btn--other is-selected" data-src="">
-                    <div>in <span></span></div>
+              <div class="col-md-3 col-sm-6 col-xs-6 block">
+                <p class="gunname">S&W .38 SPL</p><img src="dist/images/sw-38.jpg">
+                <p class="gunstats">MSRP: <span class="red">$539</span></p>
+                <p class="gunstats">STANDARD CAPACITY:<br> <span class="red">5 ROUNDS</span></p>
+                <p class="gunstats">TOTAL EXAMINED: <span class="red">60</span></p>
+                <hr class="line">
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6 block">
+                <p class="gunname">Mossberg 12g</p><img src="dist/images/mossberg.jpg">
+                <p class="gunstats">MSRP: <span class="red">$189</span></p>
+                <p class="gunstats">STANDARD CAPACITY:<br> <span class="red">6 ROUNDS</span></p>
+                <p class="gunstats">TOTAL EXAMINED: <span class="red">51</span></p>
+                <hr class="line">
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6 block">
+                <p class="gunname">Ruger 9 mm</p><img src="dist/images/ruger-9.jpg">
+                <p class="gunstats">MSRP: <span class="red">$569</span></p>
+                <p class="gunstats">STANDARD CAPACITY:<br> <span class="red">11 ROUNDS</span></p>
+                <p class="gunstats">TOTAL EXAMINED: <span class="red">48</span></p>
+                <hr class="line">
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6 block">
+                <p class="gunname">Hi-Point 9 mm</p><img src="dist/images/highpoint-9.jpg">
+                <p class="gunstats">MSRP: <span class="red">$199</span></p>
+                <p class="gunstats">STANDARD CAPACITY:<br> <span class="red">9 ROUNDS</span></p>
+                <p class="gunstats">TOTAL EXAMINED: <span class="red">45      </span></p>
+                <hr class="line">
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6 block">
+                <p class="gunname">Glock 9 mm</p><img src="dist/images/glock-9.jpg">
+                <p class="gunstats">MSRP: <span class="red">$499</span></p>
+                <p class="gunstats">STANDARD CAPACITY:<br> <span class="red">18 ROUNDS</span></p>
+                <p class="gunstats">TOTAL EXAMINED: <span class="red">42</span></p>
+                <hr class="line">
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6 block">
+                <p class="gunname">S&W .40</p><img src="dist/images/sw-40.jpg">
+                <p class="gunstats">MSRP: <span class="red">$569</span></p>
+                <p class="gunstats">STANDARD CAPACITY:<br> <span class="red">16 ROUNDS</span></p>
+                <p class="gunstats">TOTAL EXAMINED: <span class="red">37                             </span></p>
+                <hr class="line">
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6 block">
+                <p class="gunname">S&W 9 mm</p><img src="dist/images/sw-9.jpg">
+                <p class="gunstats">MSRP: <span class="red">$569</span></p>
+                <p class="gunstats">STANDARD CAPACITY:<br> <span class="red">11 ROUNDS</span></p>
+                <p class="gunstats">TOTAL EXAMINED: <span class="red">32</span></p>
+                <hr class="line">
+              </div>
+              <div class="col-md-12 source">
+                <p><em> * Gun photos and data displayed are for a specific model of the make/caliber listed in the data collected by Baltimore Police.</em></p>
+                <p><strong style="font-size:.85em;">Source: Baltimore Police Department, firearm manufacturer websites</strong></p>
+                <hr>
+              </div>
+            </div>
+          </figure>
+          <p>Measures aimed at limiting high-capacity magazines haven't kept them off the streets, either.</p>
+          <p>A decade after the federal assault weapons ban expired, Maryland again restricted the number of bullets when lawmakers passed one of the nation's strictest gun control laws in 2013. The law, which regulates certain gun purchases, also prohibits the sale of magazines with more than 10 rounds.</p>
+          <p>Since the law passed, however, dozens of “extendos” have been confiscated in the city, according to police. Officials don't keep exact statistics on the sizes of magazines.</p>
+          <p>Still, only 11 people have been charged in Baltimore and fewer than 100 statewide under the magazine statute. The penalties under the law are stiff. If convicted of committing a felony or violent crime with an extended magazine, defendants face a minimum of five years in prison and a maximum of 20.</p>
+          <p>Baltimore Police Commissioner Kevin Davis said the department's gun violence enforcement division, a new partnership with prosecutors, would investigate why more people haven't been charged.</p>
+          <!--multiphoto package - photos enter from left, right and bottom-->
+          <figure class="media-package"><img class="media-package__img media-package__img--left img-responsive" src="dist/images/s2k-guns1.jpg" data-sr="enter left" style="width:41.8%"><img class="media-package__img media-package__img--right img-responsive" src="dist/images/s2k-guns3.jpg" data-sr="enter right" style="width:56.2%">
+            <div class="media-package__caption">Guns with extended magazines that have been seized in Baltimore. Left: On April 8, 2016, police officers seized a loaded 9 mm pistol with an extended magazine from a suspect who was stopped in a vehicle. Right: On April 19, 2016, Western District Detectives executed a warrant that resulted in the seizure of four handguns.</div>
+            <btn class="inline-media--pic__open-gallery"><a href="http://www.baltimoresun.com/bal-shoot-to-kill-guns-seized-by-baltimore-police-20160929-photogallery.html" target="_blank">SEE MORE PHOTOS</a></btn>
+          </figure>
+          <p>Police in other cities are also finding bigger magazines. In Washington, where gun seizures by police's gun recovery unit were up nearly 50 percent so far this year over last, police noticed more rounds being shot at scenes and signs of multiple shooters. So they began keeping statistics.</p>
+          <p>Last year, about one-third of guns recovered had high-capacity magazines. Through June of this year, nearly half had large clips.</p>
+          <p>With that kind of firepower, homicides spiked in Washington, Baltimore and more than a quarter of the largest American cities last year, pushing the nation's annual murder rate up by the largest margin in nearly 50 years. The higher pace of killing has continued in many cities this year.</p>
+          <p>At the same time, the odds for gunshot victims worsened last year in a number of cities, including Washington, Detroit, San Francisco, Milwaukee, Louisville, Ky., and Charlotte, N.C., The Sun's analysis found. In New York, one in five shooting victims died last year, up from one in seven in 2014. In Nashville, the odds of dying increased year-over-year from one in nine shootings to one in four.</p><a name="lethality-across-us"></a>
+          <hr>
+          <figure class="inline-media inline-media--graphic inline-media--full" data-sr>
+            <h4 class="inline-media__title">
+               <svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="202px" height="151px" viewBox="177.163 265.558 202 151"
+	 overflow="visible" enable-background="new 177.163 265.558 202 151" xml:space="preserve">
+<defs>
+</defs>
+<rect x="14.667" y="345.469" display="none" width="482.993" height="216.162"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+<path display="none"  d="M197.521,252.761l19.722-29.629h14.06l-15.098,22.458l18.872,40.48h-16.229L206.392,258.8
+	l-8.87,12.833v14.438h-14.437v-62.938h14.437V252.761z"/>
+<path display="none" d="M254.511,286.07h-14.72v-62.938h14.72V286.07z"/>
+<path display="none" d="M304.708,273.615v12.455h-39.914v-62.938h14.909v50.483H304.708z"/>
+<path display="none" d="M349.904,273.615v12.455H309.99v-62.938h14.909v50.483H349.904z"/>
+<path display="none" d="M230.253,439.621h-14.438v-25.949h-19.722v25.949h-14.437v-62.938h14.437v24.533h19.722
+	v-24.533h14.438V439.621z"/>
+<path display="none" d="M284.127,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.717-6.228-7.265-14.438-7.265-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S279.598,378.759,284.127,384.892z M255.725,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C260.443,387.723,257.518,389.516,255.725,393.195z"/>
+<path display="none" d="M342.155,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.718-6.228-7.266-14.438-7.266-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S337.625,378.759,342.155,384.892z M313.752,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C318.47,387.723,315.545,389.516,313.752,393.195z"/>
+<path display="none" d="M395.842,389.138h-15.569v50.483h-14.909v-50.483H349.7v-12.455h46.143V389.138z"/>
+<path d="M205.097,275.252c-2.573,0-3.859,1.287-3.859,3.862v21.889
+	c0,0,0,1.287,1.287,1.287c-6.432,9.013-7.718,11.588-3.859,11.588c23.155,0,15.437,19.314,9.005,33.477
+	c-5.146,7.725-10.291,15.451-15.437,21.889c-2.573,3.863-18.009,30.901-9.004,34.765h1.286c-1.286,0-1.286,1.287-1.286,2.574v3.863
+	c0,1.287,0,2.575,2.573,2.575h52.741c1.287,0,2.573-1.288,2.573-2.575v-3.863c0-1.287-1.286-2.574-2.573-2.574h-6.432
+	c5.146,0,7.719,0,7.719,0s1.286-9.014,0-14.163c0-3.863,5.145-7.726,7.718-12.876c2.573-3.862-1.286-16.738,1.286-20.601
+	c2.573-3.863,9.005-6.438,11.578-5.15c1.286,0,59.173,0,59.173,0v-5.15c-2.572-1.287-3.858-5.15-3.858-10.301v-14.163
+	c0-5.15,2.572-6.438,7.719-5.15h34.731c9.005,0,11.578,1.288,11.578-7.726v-3.863h1.285c1.287,0,3.859-2.575,3.859-3.862v-2.575l0,0
+	c1.287,0,1.287,0,1.287,0V281.69c0-1.287,0-1.287-1.287-1.287l0,0v-1.288c0-2.575-2.572-3.862-3.859-3.862h-3.858v-3.863h-5.146
+	l-2.573,3.863h-47.596v1.287v1.288h-41.165l-1.285-1.288v-1.287h-39.878l-3.859-6.438h-7.719v6.438H205.097L205.097,275.252z
+	 M300.29,317.742c6.432,0,10.291,3.862,10.291,10.3v7.725c0,5.15-3.859,10.301-10.291,10.301h-29.588
+	c-6.432,0-11.577-5.15-11.577-10.301v-7.725c0-2.575,1.287-3.862,2.573-6.438c0,2.576,1.286,10.301,6.432,15.451
+	c5.146,6.438,6.432,6.438,6.432,6.438l2.573-2.576c0,0-1.286-2.575-2.573-5.15c-1.286-2.574-2.572-10.3,1.287-18.025H300.29z"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+</svg>
+<span>Lethality rates</span><span class="inline-media__title--red"> across the United States</span>
+            </h4>
+            <p class="inline-media inline-media--graphic__chatter">Baltimore is among the most lethal cities in the country. See how we compare to other major cities below.</p>
+            <div class="stkCities">
+              <div class="graphic">
+                <div class="cities">
+                  <div class="cityOutline cityOutline--0 activeCity" data-city="0"><img src="dist/images/cityBaltimore.png"></div>
+                  <div class="cityOutline cityOutline--1" data-city="1"><img src="dist/images/cityMilwaukee.png"></div>
+                  <div class="cityOutline cityOutline--2" data-city="2"><img src="dist/images/cityCharlotte.png"></div>
+                  <div class="cityOutline cityOutline--3" data-city="3"><img src="dist/images/cityNashville.png"></div>
+                  <div class="cityOutline cityOutline--4" data-city="4"><img src="dist/images/cityNewYork.png"></div>
+                  <div class="cityOutline cityOutline--5" data-city="5"><img src="dist/images/cityDC.png"></div>
+                  <div class="cityOutline" data-city="0"><i class="icon2-cw"></i></div>
+                </div>
+                <div class="cityNameBlock">
+                  <h3 class="cityName jsFade">Baltimore</h3>
+                </div>
+                <div class="cityStats">
+                  <div class="statList">
+                    <h4>2015 statistics</h4>
+                    <p>Fatal shootings: <span class="nonFatStat jsFade">300</span></p>
+                    <p>Non-fatal shootings: <span class="fatStat jsFade">637</span></p>
+                    <p>
+                       For every <span class="jsFade perShot">3.1</span> people shot, <br><span>one dies.</span></p>
+                    <p class="jsFade cityDisclaimer">Source: Baltimore Police Department</p>
                   </div>
-                  <div class="vg__spotlight__btn vg__spotlight__btn--english" data-src="">
-                    <div>in English</div>
+                  <div class="graph">
+                    <h4>% fatal shootings</h4><img class="jsFade cityGraph" src="dist/images/graphBaltimore.png"><img class="baseGraph" src="dist/images/graphBase.png">
                   </div>
                 </div>
-                <div class="vg__spotlight__mobile-dropdown">
-                  <select>
-                    <option value="" disabled selected>Hear another voice:</option>
-                    <option value="exel-estrada">Exel Estrada / Spanish</option>
-                    <option value="carlotta">Carlotta / Italian</option>
-                    <option value="faraz-nadeem">Faraz Nadeem / Urdu</option>
-                    <option value="fayza-al-halabi">Fayza Al halabi / Arabic</option>
-                    <option value="franck-kibinda">Franck Kibinda / French</option>
-                    <option value="franklin-aguilar">Franklin Aguilar / Spanish</option>
-                    <option value="karen-abuel">Karen Abuel / Tagalog</option>
-                    <option value="kibra-buluts">Kibra Buluts / Tigrignya</option>
-                    <option value="maria-lourenco">Maria Lourenco / Portuguese</option>
-                    <option value="mona-al-halabi">Mona Al halabi / Arabic</option>
-                    <option value="monique-ngomba">Monique Ngomba / Sango</option>
-                    <option value="mussa-alenga">Mussa Alenga / Swahili</option>
-                    <option value="nan-wang">Nan Wang / Mandarin, Shangai dialect</option>
-                    <option value="nar-bahadur-darjee">Nar Bahadur Darjee / Nepali</option>
-                    <option value="narmin-aleethawi">Narmin Al Eethawi / Arabic</option>
-                    <option value="norma-argueta">Norma Argueta / Spanish</option>
-                    <option value="reema-alfaheed">Reema Alfaheed / Arabic</option>
-                    <option value="tina-lin">Tina Lin / Mandarin</option>
-                    <option value="vigueur-kibinda">Vigueur Kibinda / French</option>
-                    <option value="yonas-fishaye">Yonas Fishaye / Tigrignya/Amharic</option>
-                  </select>
+                <p class="source">*Washington, D.C., counts non-fatal shootings as any time a person is shot at; the other cities count when victims are struck by gunfire.</p>
+              </div>
+            </div>
+          </figure>
+          <hr>
+          <p>That surprised researchers who said they expect surges in violence to become more haphazard, less planned — therefore resulting in fewer killed.</p>
+          <p>The Sun reviewed statistics from the nation's largest cities that tracked the shooting data necessary to calculate the lethality of gun homicides over the past five years. Half of the 30 biggest cities do.</p>
+          <p>In some cities that kept statistics for a decade or longer, including Baltimore and Chicago, shootings proved to be deadlier over the years, not just last year.</p>
+          <p>Former D.C. Chief Lanier, who has worked with police chiefs across the U.S., sharing ideas and data on the surge in homicides, noted a shift in the mindset of shooters. Criminals are emptying their clips, she said, leaving crime scenes littered with 50 to 60 shell casings, and opening fire in the daytime.</p>
+          <p>“Something's changed in the mentality of the people shooting,” she said. “Very reckless. Everyone's got a gun, and everyone is willing to do these shootouts.”</p>
+        </div>
+      </div>
+    </section>
+    <section id="chapter-2">
+      <div class="container-story">
+        <div class="article">
+          <div class="article__chapter-title"> 
+            <hr>
+            <div class="article__chapter-title__number">
+               <svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="202px" height="151px" viewBox="177.163 265.558 202 151"
+	 overflow="visible" enable-background="new 177.163 265.558 202 151" xml:space="preserve">
+<defs>
+</defs>
+<rect x="14.667" y="345.469" display="none" width="482.993" height="216.162"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+<path display="none"  d="M197.521,252.761l19.722-29.629h14.06l-15.098,22.458l18.872,40.48h-16.229L206.392,258.8
+	l-8.87,12.833v14.438h-14.437v-62.938h14.437V252.761z"/>
+<path display="none" d="M254.511,286.07h-14.72v-62.938h14.72V286.07z"/>
+<path display="none" d="M304.708,273.615v12.455h-39.914v-62.938h14.909v50.483H304.708z"/>
+<path display="none" d="M349.904,273.615v12.455H309.99v-62.938h14.909v50.483H349.904z"/>
+<path display="none" d="M230.253,439.621h-14.438v-25.949h-19.722v25.949h-14.437v-62.938h14.437v24.533h19.722
+	v-24.533h14.438V439.621z"/>
+<path display="none" d="M284.127,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.717-6.228-7.265-14.438-7.265-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S279.598,378.759,284.127,384.892z M255.725,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C260.443,387.723,257.518,389.516,255.725,393.195z"/>
+<path display="none" d="M342.155,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.718-6.228-7.266-14.438-7.266-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S337.625,378.759,342.155,384.892z M313.752,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C318.47,387.723,315.545,389.516,313.752,393.195z"/>
+<path display="none" d="M395.842,389.138h-15.569v50.483h-14.909v-50.483H349.7v-12.455h46.143V389.138z"/>
+<path d="M205.097,275.252c-2.573,0-3.859,1.287-3.859,3.862v21.889
+	c0,0,0,1.287,1.287,1.287c-6.432,9.013-7.718,11.588-3.859,11.588c23.155,0,15.437,19.314,9.005,33.477
+	c-5.146,7.725-10.291,15.451-15.437,21.889c-2.573,3.863-18.009,30.901-9.004,34.765h1.286c-1.286,0-1.286,1.287-1.286,2.574v3.863
+	c0,1.287,0,2.575,2.573,2.575h52.741c1.287,0,2.573-1.288,2.573-2.575v-3.863c0-1.287-1.286-2.574-2.573-2.574h-6.432
+	c5.146,0,7.719,0,7.719,0s1.286-9.014,0-14.163c0-3.863,5.145-7.726,7.718-12.876c2.573-3.862-1.286-16.738,1.286-20.601
+	c2.573-3.863,9.005-6.438,11.578-5.15c1.286,0,59.173,0,59.173,0v-5.15c-2.572-1.287-3.858-5.15-3.858-10.301v-14.163
+	c0-5.15,2.572-6.438,7.719-5.15h34.731c9.005,0,11.578,1.288,11.578-7.726v-3.863h1.285c1.287,0,3.859-2.575,3.859-3.862v-2.575l0,0
+	c1.287,0,1.287,0,1.287,0V281.69c0-1.287,0-1.287-1.287-1.287l0,0v-1.288c0-2.575-2.572-3.862-3.859-3.862h-3.858v-3.863h-5.146
+	l-2.573,3.863h-47.596v1.287v1.288h-41.165l-1.285-1.288v-1.287h-39.878l-3.859-6.438h-7.719v6.438H205.097L205.097,275.252z
+	 M300.29,317.742c6.432,0,10.291,3.862,10.291,10.3v7.725c0,5.15-3.859,10.301-10.291,10.301h-29.588
+	c-6.432,0-11.577-5.15-11.577-10.301v-7.725c0-2.575,1.287-3.862,2.573-6.438c0,2.576,1.286,10.301,6.432,15.451
+	c5.146,6.438,6.432,6.438,6.432,6.438l2.573-2.576c0,0-1.286-2.575-2.573-5.15c-1.286-2.574-2.572-10.3,1.287-18.025H300.29z"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+</svg>
+<span>CHAPTER 2</span>
+            </div>
+            <div class="article__chapter-title__text">Trauma care falls behind</div>
+          </div>
+          <p>The first bullet ripped into his thigh, and he crumpled. </p>
+          <p>Devante Turner-Fordbey dropped to the asphalt on a spring day in West Baltimore two years ago, turned and saw his assailant in a hoodie pointing what looked like a 9 mm. The gun was jammed, and Fordbey began pulling himself up the street on his elbows and forearms as quick as he could. Then he heard the next shot blast.</p>
+          <p>Now the bullets felt like hammer blows. The more the shooter closed in, the more he felt the force of the bullets, which were moving at more than 900 feet per second. Fordbey turned onto his back and put his hands up.</p>
+          <p>“You're good, you're good!” Fordbey yelled. “You got me!”</p>
+          <p>But the shots kept coming. A bullet pierced his chest. Nine sank into his right thigh. One just missed his heart, striking his chest where the words “Nana” for his grandmother are tattooed along with some clouds and doves.</p>
+          <!--multiphoto package - photos enter from left, right and bottom-->
+          <figure class="media-package"><img class="media-package__img media-package__img--left img-responsive" src="dist/images/s2k-fordbey2.jpg" data-sr="enter left" style="width:49%"><img class="media-package__img media-package__img--right img-responsive" src="dist/images/s2k-fordbey3.jpg" data-sr="enter right" style="width:49%"><img class="media-package__img media-package__img--bottom img-responsive" src="dist/images/s2k-fordbey1.jpg" data-sr="enter bottom">
+            <div class="media-package__caption">DEVANTE TURNER-FORDBEY STANDS AT A PLAYGROUND NEAR WHERE HE WAS SHOT 27 TIMES TWO YEARS AGO. LEFT: DEVANTE TURNER-FORDBEY'S TATTOO FOR HIS GRANDMOTHER, ALONG WITH THE SCAR IN HIS CHEST FROM A GUNSHOT WOUND. RIGHT: TURNER-FORDBEY'S SCARS FROM THE BULLETS IN HIS LEG. BOTTOM: TURNER-FORDBEY STANDS IN FRONT OF THE PLAYGROUND.</div>
+            <!--figcaption Karl Merton Ferron-->
+          </figure>
+          <p>Figuring he was going to die, he began to taunt the man standing over him with a gun. “You're a bitch. You're a bitch.”</p>
+          <p>Then a slug sliced into his head, and he blacked out just as he saw the man run away. He figures his survival instinct must have taken over, and he came to as he was trying to crawl away again.</p>
+          <p>“He heard me shuffling on the ground, and I'm trying to get myself off the ground,” Fordbey said. “He came right back and slapped in another clip in the gun. Boom. Boom. Boom. Boom. … I blacked out.”</p>
+          <p>In and out of consciousness he went, while his mother, who lived nearby and came running when word reached her, dug out the slug from his skull and pressed her hand against his neck to stop the bleeding.</p>
+          <figure class="inline-media inline-media--video inline-media--full">
+            <iframe src="https://player.vimeo.com/video/185016069" width="100%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </figure>
+          <p>“I'm sorry, Ma. I'm sorry, Ma. I feel myself leaving, I feel it,” he told her.</p>
+          <p>As a paramedic called his name in the racing ambulance, he thought it was God. “Devante! Devante! Devante!”</p>
+          <p>With advancements in trauma medicine over decades, emergency room patients now have a far better chance of surviving. Patients who have been stabbed are more likely to live. Better care, coupled with safety advancements, has driven deaths from motor vehicle accidents to historic lows.</p>
+          <p>Gunshot victims, however, are less likely to live.</p>
+          <p>In Baltimore, at the University of Maryland Shock Trauma Center, the nation's first hospital devoted to trauma injuries, doctors sought to assess improvements in care. They studied patients over a dozen years and found that chances for surviving “improved significantly.”</p>
+          <p>A notable exception: gunshot victims. In 1999, 9.8 percent of those patients died. By 2008, that rate had risen to 17 percent.</p>
+          <p>The study's authors, including Thomas Scalea, the physician-in-chief at the center, blamed the increasing availability of lethal automatic and semiautomatic weapons on the street. Scalea says that trend continues today. The trauma surgeon said in an interview that he's seeing more “higher-velocity injuries” from high-caliber guns and more bullet wounds per patient.</p>
+          <p>Johns Hopkins Hospital also studied trauma outcomes and found that the fatality rate for patients with gunshot wounds nearly doubled from 9.5 percent between 2000 and 2003 to 18.3 percent for the period through March 2005.</p>
+          <p>The study concluded that the overall fatality rate jumped because patients were arriving in grave shape. More patients were dead on arrival, and more succumbed to their injuries within minutes of arriving at the hospital.</p>
+          <p>The median time before they were pronounced dead: six minutes.</p>
+          <p>The researchers at one of the nation's most respected medical institutions concluded that there was little they could do. “The only way to save these patients is to reach out to them in the community before they are victims of violence,” the study concluded. </p>
+          <p>That was when one in four shooting victims died; now it's one in three.</p><a name="lethality-baltimore"></a>
+          <div class="inline-media inline-media--graphic inline-media--big">
+            <h4 class="inline-media__title"><svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="202px" height="151px" viewBox="177.163 265.558 202 151"
+	 overflow="visible" enable-background="new 177.163 265.558 202 151" xml:space="preserve">
+<defs>
+</defs>
+<rect x="14.667" y="345.469" display="none" width="482.993" height="216.162"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+<path display="none"  d="M197.521,252.761l19.722-29.629h14.06l-15.098,22.458l18.872,40.48h-16.229L206.392,258.8
+	l-8.87,12.833v14.438h-14.437v-62.938h14.437V252.761z"/>
+<path display="none" d="M254.511,286.07h-14.72v-62.938h14.72V286.07z"/>
+<path display="none" d="M304.708,273.615v12.455h-39.914v-62.938h14.909v50.483H304.708z"/>
+<path display="none" d="M349.904,273.615v12.455H309.99v-62.938h14.909v50.483H349.904z"/>
+<path display="none" d="M230.253,439.621h-14.438v-25.949h-19.722v25.949h-14.437v-62.938h14.437v24.533h19.722
+	v-24.533h14.438V439.621z"/>
+<path display="none" d="M284.127,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.717-6.228-7.265-14.438-7.265-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S279.598,378.759,284.127,384.892z M255.725,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C260.443,387.723,257.518,389.516,255.725,393.195z"/>
+<path display="none" d="M342.155,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.718-6.228-7.266-14.438-7.266-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S337.625,378.759,342.155,384.892z M313.752,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C318.47,387.723,315.545,389.516,313.752,393.195z"/>
+<path display="none" d="M395.842,389.138h-15.569v50.483h-14.909v-50.483H349.7v-12.455h46.143V389.138z"/>
+<path d="M205.097,275.252c-2.573,0-3.859,1.287-3.859,3.862v21.889
+	c0,0,0,1.287,1.287,1.287c-6.432,9.013-7.718,11.588-3.859,11.588c23.155,0,15.437,19.314,9.005,33.477
+	c-5.146,7.725-10.291,15.451-15.437,21.889c-2.573,3.863-18.009,30.901-9.004,34.765h1.286c-1.286,0-1.286,1.287-1.286,2.574v3.863
+	c0,1.287,0,2.575,2.573,2.575h52.741c1.287,0,2.573-1.288,2.573-2.575v-3.863c0-1.287-1.286-2.574-2.573-2.574h-6.432
+	c5.146,0,7.719,0,7.719,0s1.286-9.014,0-14.163c0-3.863,5.145-7.726,7.718-12.876c2.573-3.862-1.286-16.738,1.286-20.601
+	c2.573-3.863,9.005-6.438,11.578-5.15c1.286,0,59.173,0,59.173,0v-5.15c-2.572-1.287-3.858-5.15-3.858-10.301v-14.163
+	c0-5.15,2.572-6.438,7.719-5.15h34.731c9.005,0,11.578,1.288,11.578-7.726v-3.863h1.285c1.287,0,3.859-2.575,3.859-3.862v-2.575l0,0
+	c1.287,0,1.287,0,1.287,0V281.69c0-1.287,0-1.287-1.287-1.287l0,0v-1.288c0-2.575-2.572-3.862-3.859-3.862h-3.858v-3.863h-5.146
+	l-2.573,3.863h-47.596v1.287v1.288h-41.165l-1.285-1.288v-1.287h-39.878l-3.859-6.438h-7.719v6.438H205.097L205.097,275.252z
+	 M300.29,317.742c6.432,0,10.291,3.862,10.291,10.3v7.725c0,5.15-3.859,10.301-10.291,10.301h-29.588
+	c-6.432,0-11.577-5.15-11.577-10.301v-7.725c0-2.575,1.287-3.862,2.573-6.438c0,2.576,1.286,10.301,6.432,15.451
+	c5.146,6.438,6.432,6.438,6.432,6.438l2.573-2.576c0,0-1.286-2.575-2.573-5.15c-1.286-2.574-2.572-10.3,1.287-18.025H300.29z"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+</svg>
+<span>Lethality</span><span class="inline-media__title--red"> in Baltimore</span>
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div class="stkHeadshots">
+        <div class="slidesWrapper">
+          <div class="slide slide--0 center" data-pos="0">
+            <h3><span>Homicides </span>have fluctuated</h3>
+            <p class="subhead">But surged in 2015</p>
+          </div>
+          <div class="slide slide--1 right" data-pos="1">
+            <h3><span>Gun homicides </span>have risen</h3>
+            <p class="subhead">From 77% of total homicides in 2000 to 87% in 2015</p>
+          </div>
+          <div class="slide slide--2 right" data-pos="2">
+            <h3>More victims are shot <span>in the head</span></h3>
+            <p class="subhead">
+              The percentage of homicide victims shot in the head is up from 40% in 2000 to 62% in 2015</p>
+          </div>
+          <div class="slide slide--3 right" data-pos="3">
+            <h3>More victims killed by  <br><span>multiple gunshots</span></h3>
+            <p class="subhead">
+              The percentage of homicide victims shot more than once is up from 59% in 2005 to 70% in 2015</p>
+          </div>
+        </div>
+        <div class="statsWrapper">
+          <div class="stat stat--0">
+            <p class="statNum"><span class="dig dig0">2</span><span class="dig dig1">6</span><span class="dig dig2">2</span></p>
+            <p class="year">2000</p>
+          </div>
+          <div class="stat stat--1">
+            <p class="statNum"><span class="dig dig0">2</span><span class="dig dig1">6</span><span class="dig dig2">8</span></p>
+            <p class="year">2005</p>
+          </div>
+          <div class="stat stat--2">
+            <p class="statNum"><span class="dig dig0">2</span><span class="dig dig1">2</span><span class="dig dig2">1</span></p>
+            <p class="year">2010</p>
+          </div>
+          <div class="stat stat--3">
+            <p class="statNum"><span class="dig dig0">3</span><span class="dig dig1">4</span><span class="dig dig2">4</span></p>
+            <p class="year">2015</p>
+          </div>
+        </div>
+        <div class="arrowsWrapper"><i class="icon2-left-dir arrow arrow--left inactive" data-dir="0"></i><i class="icon2-right-dir arrow arrow--right" data-dir="1"></i></div>
+        <div class="positionWrapper"><i class="icon2-circle slidePos slidePos--0 active" data-pos="0"></i><i class="icon2-circle slidePos slidePos--1" data-pos="1"></i><i class="icon2-circle slidePos slidePos--2" data-pos="2"></i><i class="icon2-circle slidePos slidePos--3" data-pos="3"></i></div>
+        <div class="sourceDiv">
+          <p class="source">Source: Baltimore Police Department</p>
+        </div>
+      </div>
+      <div class="container-story">
+        <div class="article">
+          <p>On the streets in a number of cities, gunmen have increasingly aimed for the head. The number of fatal head shots in Milwaukee doubled in 2015 over the year before, and gunshot victims with three to seven bullet wounds jumped 150 percent.</p>
+          <p>It has been a clear, long-term trend in Baltimore, with the number of fatal head shots rising fivefold over the past two decades.</p>
+          <p>Some criminals are cunning enough to know that more of their targets could be wearing body armor, said Baltimore police Maj. Donald Bauer. This year, police seized body armor in multiple drug house raids — something veteran officers said they haven't seen before.</p>
+          <p>And in a cruel twist, some shooters are taking into account that Baltimore has top-notch trauma care, said former police commissioner Anthony Batts. That's why they aim for the head — to “take the trauma center out of the equation,” said Batts, now a consultant with the AWW Group training police commanders.</p>
+          <p>Gunmen are pumping more bullets into victims. People shot multiple times made up less than 60 percent of homicide victims in 2005, the earliest year for which data is available. That rose to 70 percent by last year.</p>
+          <p>The Maryland office of the chief medical examiner recently studied homicide autopsy reports of gunshot victims dating to 2005. About one-third of the victims died from a single gunshot, and that remained constant over the past decade. But the number of victims shot five to nine times doubled, as did those shot 10 or more times. In one case last year, a victim had been shot 38 times.</p>
+          <figure class="inline-media inline-media--pic inline-media--full" data-sr><img src="dist/images/s2k-trauma.jpg">
+            <figcaption class="inline-media--pic__caption">A victim being prepped for surgery after being shot a number of times, during a night in the triage/recovery area at University of Maryland's Shock Trauma Center.</figcaption>
+            <!--figcaption Karl Merton Ferron-->
+          </figure>
+          <p>“I never get a single gunshot wound — never,” said Sue Carol Verrillo, nurse manager of the surgical inpatient care unit at Johns Hopkins Hospital.</p>
+          <p>Hospitals across the nation, including in Denver and Newark, N.J., have reported the same trends — the severity of wounds and the sheer number of them increasing year by year.</p>
+          <p>Angela Sauaia, professor of public health, medicine, and surgery at the University of Colorado's Anschutz Medical Campus, was among a team of researchers that completed a study in June of patients at a Denver trauma hospital, comparing chances of survival from various injuries.</p>
+          <p>Again, they found that gunshot victims stood out for falling behind. Their fatality rate jumped 6 percent — every two years.</p>
+          <p>“There are more injuries to treat, so no wonder the case fatality is increasing,” Sauaia said. “That was not the norm 10 years ago.”</p>
+          <!--large pull quote-->
+          <figure class="inline-media inline-media--pullquote inline-media--big" data-sr>
+            <hr>
+            <div class="inline-media--pullquote__text">&ldquo;We do know there are more bullets, and the injuries of each bullet are more serious. The holes are bigger.&rdquo;</div>
+            <div class="inline-media--pullquote__src">Angela Sauaia, professor of public health, medicine, and surgery at the University of Colorado Anschutz Medical Campus</div>
+            <hr>
+          </figure>
+          <p>Doctors couldn't keep up. “We do know there are more bullets, and the injuries of each bullet are more serious,” she said. “The holes are bigger.”</p>
+          <p>Fordbey, now 24, was one of the lucky ones. Shot 27 times two years ago, he says he was the victim of “karma” after years of Percocet-popping, drug dealing, fights and shootouts.</p>
+          <p>He saw his shooter and believes he was targeted by a rival drug crew over turf. Fordbey toyed with the idea of retaliating — gathering his “boys,” finding the suspect, and shooting him and everyone with him, leaving no witnesses.</p>
+          <p>But he says he gave up “the game” to focus on being a father to his four children. He's relearned how to walk with extensive physical therapy and keeps the bullet his mother dislodged from his head in a box near his bed.</p>
+          <figure class="inline-media inline-media--pic inline-media--full" data-sr><img src="dist/images/s2k-fordbey4.jpg">
+            <figcaption class="inline-media--pic__caption"> DEHNIM FORDBEY, 2, STANDS IN FRONT OF HER FATHER, DEVANTE TURNER-FORDBEY, WHO SAYS THAT HE HAS TURNED HIS LIFE AROUND.</figcaption>
+            <!-- figcaption Karl Merton Ferron-->
+          </figure>
+          <p>Still, he isn't about to give up his credibility on the streets.</p>
+          <p>“I can't be labeled a snitch. I can't be labeled a rat, especially in this city,” he said, explaining why he didn't cooperate with police. “Snitches die.”</p>
+          <p>“Code of the streets, period,” he added. “Snitches get stitches. I honor the street code — the G code. I honored it my whole life. I can't tolerate snitching. I can't. My body, my mindset won't let me tell.”</p>
+          <p>No one has been arrested in his shooting.</p>
+        </div>
+      </div>
+    </section>
+    <section id="chapter-3">
+      <div class="container-story">
+        <div class="article">
+          <div class="article__chapter-title"> 
+            <hr>
+            <div class="article__chapter-title__number">
+               <svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="202px" height="151px" viewBox="177.163 265.558 202 151"
+	 overflow="visible" enable-background="new 177.163 265.558 202 151" xml:space="preserve">
+<defs>
+</defs>
+<rect x="14.667" y="345.469" display="none" width="482.993" height="216.162"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+<path display="none"  d="M197.521,252.761l19.722-29.629h14.06l-15.098,22.458l18.872,40.48h-16.229L206.392,258.8
+	l-8.87,12.833v14.438h-14.437v-62.938h14.437V252.761z"/>
+<path display="none" d="M254.511,286.07h-14.72v-62.938h14.72V286.07z"/>
+<path display="none" d="M304.708,273.615v12.455h-39.914v-62.938h14.909v50.483H304.708z"/>
+<path display="none" d="M349.904,273.615v12.455H309.99v-62.938h14.909v50.483H349.904z"/>
+<path display="none" d="M230.253,439.621h-14.438v-25.949h-19.722v25.949h-14.437v-62.938h14.437v24.533h19.722
+	v-24.533h14.438V439.621z"/>
+<path display="none" d="M284.127,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.717-6.228-7.265-14.438-7.265-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S279.598,378.759,284.127,384.892z M255.725,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C260.443,387.723,257.518,389.516,255.725,393.195z"/>
+<path display="none" d="M342.155,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.718-6.228-7.266-14.438-7.266-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S337.625,378.759,342.155,384.892z M313.752,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C318.47,387.723,315.545,389.516,313.752,393.195z"/>
+<path display="none" d="M395.842,389.138h-15.569v50.483h-14.909v-50.483H349.7v-12.455h46.143V389.138z"/>
+<path d="M205.097,275.252c-2.573,0-3.859,1.287-3.859,3.862v21.889
+	c0,0,0,1.287,1.287,1.287c-6.432,9.013-7.718,11.588-3.859,11.588c23.155,0,15.437,19.314,9.005,33.477
+	c-5.146,7.725-10.291,15.451-15.437,21.889c-2.573,3.863-18.009,30.901-9.004,34.765h1.286c-1.286,0-1.286,1.287-1.286,2.574v3.863
+	c0,1.287,0,2.575,2.573,2.575h52.741c1.287,0,2.573-1.288,2.573-2.575v-3.863c0-1.287-1.286-2.574-2.573-2.574h-6.432
+	c5.146,0,7.719,0,7.719,0s1.286-9.014,0-14.163c0-3.863,5.145-7.726,7.718-12.876c2.573-3.862-1.286-16.738,1.286-20.601
+	c2.573-3.863,9.005-6.438,11.578-5.15c1.286,0,59.173,0,59.173,0v-5.15c-2.572-1.287-3.858-5.15-3.858-10.301v-14.163
+	c0-5.15,2.572-6.438,7.719-5.15h34.731c9.005,0,11.578,1.288,11.578-7.726v-3.863h1.285c1.287,0,3.859-2.575,3.859-3.862v-2.575l0,0
+	c1.287,0,1.287,0,1.287,0V281.69c0-1.287,0-1.287-1.287-1.287l0,0v-1.288c0-2.575-2.572-3.862-3.859-3.862h-3.858v-3.863h-5.146
+	l-2.573,3.863h-47.596v1.287v1.288h-41.165l-1.285-1.288v-1.287h-39.878l-3.859-6.438h-7.719v6.438H205.097L205.097,275.252z
+	 M300.29,317.742c6.432,0,10.291,3.862,10.291,10.3v7.725c0,5.15-3.859,10.301-10.291,10.301h-29.588
+	c-6.432,0-11.577-5.15-11.577-10.301v-7.725c0-2.575,1.287-3.862,2.573-6.438c0,2.576,1.286,10.301,6.432,15.451
+	c5.146,6.438,6.432,6.438,6.432,6.438l2.573-2.576c0,0-1.286-2.575-2.573-5.15c-1.286-2.574-2.572-10.3,1.287-18.025H300.29z"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+</svg>
+<span>CHAPTER 3</span>
+            </div>
+            <div class="article__chapter-title__text">'Rocking you to sleep'</div>
+          </div>
+          <p>The “code” has many connotations on Baltimore streets. To some it's a “gangster” or street code that strictly prohibits snitching to police. To others it's a set of guidelines for when violence is prohibited — no shooting near children or the elderly, for instance — and when violence is warranted, or even required.</p>
+          <p>The Black Guerrilla Family, Baltimore's most powerful gang, distributes typewritten and handwritten rule books to members on the streets and in jail cells. The militaristic rules dictate that infractions can lead to punishment, sometimes death, and include protocols for carrying out violence, such as no shooting near “religious institutions.”</p>
+          <p>Covington, the hit man who says he was an enforcer for the BGF gang, describes the “golden rules” as nuanced in some ways, clear-cut in others.</p>
+          <p>You're never supposed to snitch, even on your enemy, he said. And you're not supposed to target your enemy's “law-abiding citizens” — family members who aren't in the drug game. But if those relatives are “in the life,” he said, they can be targeted.</p>
+          <p>Nowadays, however, rules that might have helped to keep a lid on random, collateral violence are regularly broken, according to law enforcement as well as community activists and residents.</p>
+          <p>Davis, the police commissioner, noted that about half of shootings in Baltimore are carried out in the daytime and most are outside.</p>
+          <p>Baltimore homicide detective Vernon Parker said perpetrators no longer use darkness “as a mask.” They are “more bold,” he said, shooting near churches, schools and other public places.</p>
+          <!--large pull quote-->
+          <figure class="inline-media inline-media--pullquote inline-media--big" data-sr>
+            <hr>
+            <div class="inline-media--pullquote__text">&ldquo;Everybody wants to be a killer. It's more killings going on now because everybody feel like they got to prove themselves.&rdquo;</div>
+            <div class="inline-media--pullquote__src">- Devante Turner-Fordbey, who survived 27 shots</div>
+            <hr>
+          </figure>
+          <p>“People more cold-hearted these days than when I was growing up,” said Fordbey, the man who survived 27 shots. “Everybody wants to be a killer. It's more killings going on now because everybody feel like they got to prove themselves.</p>
+          <p>“Back in the day, I was told, it was like a kind of rule: The old dudes wouldn't allow outsiders to come in the 'hood, and everybody respected the women and children. Now, it's like no respect for nothing. People don't care.”</p>
+          <p>In West Baltimore this summer, shooters opened fire at a church after a funeral and at a candlelight vigil, both being held for other shooting victims. Six people were wounded in those attacks. Eight people were shot last weekend in East Baltimore steps from a makeshift memorial where three weeks earlier a man died and two women were injured in a triple shooting.</p>
+          <figure class="inline-media inline-media--pic inline-media--full" data-sr><img src="dist/images/s2k-memorial.jpg">
+            <figcaption class="inline-media--pic__caption">MEMORIAL BALLOONS FOR A MAN WHO DIED IN A PREVIOUS SHOOTING HANG NEARBY THE SCENE WHERE EIGHT PEOPLE, INCLUDING A 3-YEAR-OLD GIRL, WERE SHOT AT GREENMOUNT AVENUE AND PRESTON STREET LAST WEEKEND. </figcaption>
+          </figure>
+          <p>In Chicago, a South Side gang war sparked a series of shootings. Last year's retaliatory execution of 9-year-old Tyshawn Lee, which became emblematic of the ruthlessness plaguing that city, led his father this year to shoot the girlfriend of a suspect in his son's killing, according to police.</p>
+          <p>The challenge for police is knowing when someone might pull the trigger. Police departments nationwide have turned to predictive policing to try to understand who might be the next killer, or next on a hit list.</p>
+          <p>Chicago police have created the Strategic Subject List, the product of an algorithm that calculates someone's propensity to become a party to violence. A person's score is based on previous police contacts and criminal activity, known affiliations with gang members, social connections or networks, and past injuries from gunshots or assaults.</p>
+          <p>Once a person lands on the list, Chicago police make in-person visits to warn of the “consequences that will result should violent activity continue.” Police hope to reach out to 1,500 people this year.</p>
+          <p>They make up a fraction of the city's population but take part in an outsized share of the violence — in the first three months of this year, about three-quarters of the shooting victims and homicide suspects were already on the list.</p>
+          <p>In Baltimore, a similar undertaking has identified 600 “trigger pullers,” who police believe are the most likely to shoot or be shot. People land on the list for a combination of factors, including a history of violent crime or handgun violations, parole or probation, involvement in previous gun violence.</p>
+          <p>Officers monitor them with a “laser focus,” said Baltimore police Col. Stanley Brandford.</p>
+          <p>In many cities, it's a select club. Suspects and targets often know each other. They may have been friends, lived on the same the street or even be related. Many are in the drug trade together. That familiarity allows for face-to-face disagreements that can end with a trigger pull.</p>
+          <p>“The distance has closed in a lot of these cases, and now they're up on each other,” said Brandford, who has led the Baltimore police homicide unit two times in his career. “These guys stay in these neighborhoods. They really don't travel very far. And the opportunity to get close and do some damage is prevalent in some of these neighborhoods.”</p><a name="baltimore-neighborhoods"></a>
+          <hr>
+          <figure class="inline-media inline-media--graphic inline-media--full" data-sr>
+            <h4 class="inline-media__title">
+               <svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="202px" height="151px" viewBox="177.163 265.558 202 151"
+	 overflow="visible" enable-background="new 177.163 265.558 202 151" xml:space="preserve">
+<defs>
+</defs>
+<rect x="14.667" y="345.469" display="none" width="482.993" height="216.162"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+<path display="none"  d="M197.521,252.761l19.722-29.629h14.06l-15.098,22.458l18.872,40.48h-16.229L206.392,258.8
+	l-8.87,12.833v14.438h-14.437v-62.938h14.437V252.761z"/>
+<path display="none" d="M254.511,286.07h-14.72v-62.938h14.72V286.07z"/>
+<path display="none" d="M304.708,273.615v12.455h-39.914v-62.938h14.909v50.483H304.708z"/>
+<path display="none" d="M349.904,273.615v12.455H309.99v-62.938h14.909v50.483H349.904z"/>
+<path display="none" d="M230.253,439.621h-14.438v-25.949h-19.722v25.949h-14.437v-62.938h14.437v24.533h19.722
+	v-24.533h14.438V439.621z"/>
+<path display="none" d="M284.127,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.717-6.228-7.265-14.438-7.265-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S279.598,378.759,284.127,384.892z M255.725,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C260.443,387.723,257.518,389.516,255.725,393.195z"/>
+<path display="none" d="M342.155,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.718-6.228-7.266-14.438-7.266-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S337.625,378.759,342.155,384.892z M313.752,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C318.47,387.723,315.545,389.516,313.752,393.195z"/>
+<path display="none" d="M395.842,389.138h-15.569v50.483h-14.909v-50.483H349.7v-12.455h46.143V389.138z"/>
+<path d="M205.097,275.252c-2.573,0-3.859,1.287-3.859,3.862v21.889
+	c0,0,0,1.287,1.287,1.287c-6.432,9.013-7.718,11.588-3.859,11.588c23.155,0,15.437,19.314,9.005,33.477
+	c-5.146,7.725-10.291,15.451-15.437,21.889c-2.573,3.863-18.009,30.901-9.004,34.765h1.286c-1.286,0-1.286,1.287-1.286,2.574v3.863
+	c0,1.287,0,2.575,2.573,2.575h52.741c1.287,0,2.573-1.288,2.573-2.575v-3.863c0-1.287-1.286-2.574-2.573-2.574h-6.432
+	c5.146,0,7.719,0,7.719,0s1.286-9.014,0-14.163c0-3.863,5.145-7.726,7.718-12.876c2.573-3.862-1.286-16.738,1.286-20.601
+	c2.573-3.863,9.005-6.438,11.578-5.15c1.286,0,59.173,0,59.173,0v-5.15c-2.572-1.287-3.858-5.15-3.858-10.301v-14.163
+	c0-5.15,2.572-6.438,7.719-5.15h34.731c9.005,0,11.578,1.288,11.578-7.726v-3.863h1.285c1.287,0,3.859-2.575,3.859-3.862v-2.575l0,0
+	c1.287,0,1.287,0,1.287,0V281.69c0-1.287,0-1.287-1.287-1.287l0,0v-1.288c0-2.575-2.572-3.862-3.859-3.862h-3.858v-3.863h-5.146
+	l-2.573,3.863h-47.596v1.287v1.288h-41.165l-1.285-1.288v-1.287h-39.878l-3.859-6.438h-7.719v6.438H205.097L205.097,275.252z
+	 M300.29,317.742c6.432,0,10.291,3.862,10.291,10.3v7.725c0,5.15-3.859,10.301-10.291,10.301h-29.588
+	c-6.432,0-11.577-5.15-11.577-10.301v-7.725c0-2.575,1.287-3.862,2.573-6.438c0,2.576,1.286,10.301,6.432,15.451
+	c5.146,6.438,6.432,6.438,6.432,6.438l2.573-2.576c0,0-1.286-2.575-2.573-5.15c-1.286-2.574-2.572-10.3,1.287-18.025H300.29z"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+</svg>
+<span>Baltimore's most</span><span class="inline-media__title--red"> lethal neighborhoods</span>
+            </h4>
+            <p class="inline-media inline-media--graphic__chatter">We ranked Baltimore neighborhoods by their lethality rates. Click on a neighborhood below to see its statistics.</p>
+            <div class="stkNeighborhoods">
+              <div class="map" id="map"></div>
+              <div class="mobileMap"><img src="dist/images/mobileMap.png">
+                <div class="mobileLegend">
+                  <div class="cartodb-legend choropleth">
+                    <div class="legend-title"># Shootings since 2011</div>
+                    <ul>
+                      <li class="min">&gt; 0</li>
+                      <li class="max">&gt; 59</li>
+                      <li class="graph count_315">
+                        <div class="colors">
+                          <div class="quartile" style="font-size:1em;background-color:#fef0d9"></div>
+                          <div class="quartile" style="font-size:1em;background-color:#fdcc8a"></div>
+                          <div class="quartile" style="font-size:1em;background-color:#fc8d59"></div>
+                          <div class="quartile" style="font-size:1em;background-color:#e34a33"></div>
+                          <div class="quartile" style="font-size:1em;background-color:#b30000"></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
+              <p>For a fullscreen, interactive version on mobile devices, <a href="https://baltsun.carto.com/viz/6679b36e-80ea-11e6-b5c2-0e3ebc282e83/embed_map" target="_blank" rel="noopener">click here.</a></p>
+              <p class="source">Source: Baltimore Police Department</p>
             </div>
+          </figure>
+          <hr>
+          <p>Police say a common tactic shooters use to gain proximity is to work with an accomplice who knows the target. The accomplice lures the target to an area, putting the person at ease to ensure a blind-side attack.</p>
+          <p>In gang parlance, it's known as “rocking you to sleep.”</p>
+          <p>Criminals today know to get close to their target and fire a lot of bullets, said Stuart Myers, a former police officer who runs Op-Tac International, which trains law enforcement in Maryland and elsewhere on weapons and tactics. That's because most criminals aren't good shots, he said.</p>
+          <p>Even police officers, who train and are certified, miss their targets more than they hit them. One study put the average hit rate for officers at less than 30 percent.</p>
+          <p>“If you're close enough to a target, you could close your eyes and pull the trigger,” Myers said. He estimated that range is within three yards. Then, he said, “you will hit your target.”</p>
+          <div class="inline-media inline-media--big subscribe">
+            <h3>Support our investigative journalism</h3></br> Become a Baltimore Sun subscriber today to support stories like this one. <a href="http://ad.baltimoresun.com/land-article/" target="_blank">Start getting full access to our signature journalism for just $4.99 for 3 months.</a>
+</br>
           </div>
-          <div class="vg__portraits-row" data-row="1">
-            <div class="vg__portrait" data-kid="exel-estrada" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Exel Estrada</div>
-                <div class="vg__portrait__lang">Spanish</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="carlotta" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Carlotta</div>
-                <div class="vg__portrait__lang">Italian</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="faraz-nadeem" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Faraz Nadeem</div>
-                <div class="vg__portrait__lang">Urdu</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="fayza-al-halabi" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Fayza Al halabi</div>
-                <div class="vg__portrait__lang">Arabic</div>
-              </div>
-            </div>
-          </div>
-          <div class="vg__portraits-row" data-row="2">
-            <div class="vg__portrait" data-kid="franck-kibinda" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Franck Kibinda</div>
-                <div class="vg__portrait__lang">French</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="franklin-aguilar" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Franklin Aguilar</div>
-                <div class="vg__portrait__lang">Spanish</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="karen-abuel" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Karen Abuel</div>
-                <div class="vg__portrait__lang">Tagalog</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="kibra-buluts" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Kibra Buluts</div>
-                <div class="vg__portrait__lang">Tigrignya</div>
-              </div>
-            </div>
-          </div>
-          <div class="vg__portraits-row" data-row="3">
-            <div class="vg__portrait" data-kid="maria-lourenco" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Maria Lourenco</div>
-                <div class="vg__portrait__lang">Portuguese</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="mona-al-halabi" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Mona Al halabi</div>
-                <div class="vg__portrait__lang">Arabic</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="monique-ngomba" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Monique Ngomba</div>
-                <div class="vg__portrait__lang">Sango</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="mussa-alenga" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Mussa Alenga</div>
-                <div class="vg__portrait__lang">Swahili</div>
-              </div>
-            </div>
-          </div>
-          <div class="vg__portraits-row" data-row="4">
-            <div class="vg__portrait" data-kid="nan-wang" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Nan Wang</div>
-                <div class="vg__portrait__lang">Mandarin, Shangai dialect</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="nar-bahadur-darjee" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Nar Bahadur Darjee</div>
-                <div class="vg__portrait__lang">Nepali</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="narmin-aleethawi" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Narmin Al Eethawi</div>
-                <div class="vg__portrait__lang">Arabic</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="norma-argueta" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Norma Argueta</div>
-                <div class="vg__portrait__lang">Spanish</div>
-              </div>
-            </div>
-          </div>
-          <div class="vg__portraits-row" data-row="5">
-            <div class="vg__portrait" data-kid="reema-alfaheed" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Reema Alfaheed</div>
-                <div class="vg__portrait__lang">Arabic</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="tina-lin" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Tina Lin</div>
-                <div class="vg__portrait__lang">Mandarin</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="vigueur-kibinda" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Vigueur Kibinda</div>
-                <div class="vg__portrait__lang">French</div>
-              </div>
-            </div>
-            <div class="vg__portrait" data-kid="yonas-fishaye" style="background-image: url('dist/images/example.jpg')">
-              <div class="vg__portrait__details">
-                <div class="vg__portrait__name">Yonas Fishaye</div>
-                <div class="vg__portrait__lang">Tigrignya/Amharic</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="vg__expand-btn-container">
-          <div class="vg__expand-btn">Expand</div>
+          <p>Shooters are also reaching for high-caliber guns with large magazines to ensure they hit their mark, according to advocates working to stem the violence. In some neighborhoods, friends or drug crews pool money to buy guns, and they become shared weapons on a given street corner.</p>
+          <p>Chris Wilson said shooters prefer long magazines, as well as hollow-point bullets, which expand upon impact, causing greater tissue damage and blood loss. The “extendos,” which carry more bullets, have become “an obsession” in street culture, he said.</p>
+          <p>“When you get a gun, you got to put an extended on it. You got to. That's policy. You got to be official,” said Wilson, who grew up in Washington, where he was in more than a dozen shootouts.</p>
+          <p>He was sentenced to life in prison at 17 after he shot and killed a man. He served nearly 15 years and moved to Baltimore, where he started a contracting company that connects ex-offenders and the unemployed with jobs.</p>
+          <p>Former Baltimore Deputy Police Commissioner Jerry Rodriguez, who spent the last few years of his law enforcement career in Baltimore after more than 25 years with the Los Angeles Police Department, said he was struck by the “level of determination” among killers in Baltimore. He noted the high number of head shots.</p>
+          <p>“I think there's a meaning behind that. I think there's a purpose behind that,” he said. “It's sending a message, but it's also making sure the outcome is what they want.”</p>
+          <p>Rodriguez, who works for a company developing technological solutions for police departments, said he found “a much more personal type of killing in Baltimore” — a city of 92 square miles — compared to Los Angeles, which sprawls over 470 square miles.</p>
+          <p>But even on the West Coast, police have noted a shift in shooting dynamics. In Los Angeles, gangs in the 1990s often carried out drive-by shootings, which could be indiscriminate and ineffective if the intent was to kill someone in particular. In the last decade, police said, they've been getting out of the car.</p>
+          <!--large pull quote-->
+          <figure class="inline-media inline-media--pullquote inline-media--big" data-sr>
+            <hr>
+            <div class="inline-media--pullquote__text">&ldquo;You want to kill 'em, not wing 'em.&rdquo;</div>
+            <div class="inline-media--pullquote__src">LAPD HOMICIDE DETECTIVE CHRIS BARLING, REFERRING TO THE MENTALITY OF SHOOTERS</div>
+            <hr>
+          </figure>
+          <p>“You want to kill 'em, not wing 'em,” said LAPD Homicide Detective Chris Barling, describing the mentality of shooters.</p>
+          <p>Police also note an almost cavalier attitude among killers.</p>
+          <p>In Baltimore, a gunman caught on video burst into a barbershop in 2013 and pulled the trigger, but his weapon jammed, so he briefly took a step back, fixed it and took aim again. A gunman who had just shot a man in the head late last year did a three-point turn in his car with a nonchalance noted by Davis, the police commissioner, who said he took his time and “drove away like it was nobody's business.”</p>
+          <p>Covington, who said in a series of jailhouse interviews with The Sun that he killed 14 or 15 people and helped carry out hits on several others, explained that he believes the majority of them deserved to die. They were drug dealers, criminals — “people just like me,” he said.</p>
+          <p>He does say that he wishes he hadn't targeted one young victim, a teenager.</p>
+          <p>“But generally speaking, I never really think about it,” he said.</p>
         </div>
       </div>
-    </div>
-    <div class="container container--article">
-      <div class="article">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <!--small link to photo gallery in sidebar-->
-        <figure class="inline-media inline-media--pic inline-media--small" data-sr><img src="dist/images/vertical-example.jpg">
-          <figcaption class="inline-media--pic__caption">Caption goes here</figcaption>
-          <div class="inline-media--pic__open-gallery">OPEN GALLERY</div>
-        </figure>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p class="reporter-email">Contact reporter reporter at <a href="mailto:#" target="_blank"> reporter email </a></p>
-        <!--series menu for mobile-->
-        <figure class="inline-media inline-media--pullquote inline-media--full inline-media--has-title inline-media--mobile" data-sr>
-          <div class="inline-media__title">More in the series</div>
-          <ul class="parts-menu">
-            <!--Part 2-->
-            <li class="parts-menu__item parts-menu__item"><a href="#"><img class="parts-menu__thumbnail" src="dist/images/example.jpg" width="75">
-                <div class="parts-menu__part-no">Part 2 <span class="parts-menu__date"> Date </span></div>
-                <div class="parts-menu__title">Title</div></a></li>
-            <!--Part 2, inactive-->
-            <!--Part 3, inactive-->
-            <li class="parts-menu__item parts-menu__item"><a href="#"><img class="parts-menu__thumbnail" src="dist/images/example.jpg" width="75">
-                <div class="parts-menu__part-no">Part 3 <span class="parts-menu__date"> Date </span></div>
-                <div class="parts-menu__title">Title</div></a></li>
-            <!--Part 3, inactive-->
-          </ul>
-        </figure>
+    </section>
+    <section id="chapter-4">
+      <div class="container-story">
+        <div class="article">
+          <div class="article__chapter-title"> 
+            <hr>
+            <div class="article__chapter-title__number">
+               <svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="202px" height="151px" viewBox="177.163 265.558 202 151"
+	 overflow="visible" enable-background="new 177.163 265.558 202 151" xml:space="preserve">
+<defs>
+</defs>
+<rect x="14.667" y="345.469" display="none" width="482.993" height="216.162"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+<path display="none"  d="M197.521,252.761l19.722-29.629h14.06l-15.098,22.458l18.872,40.48h-16.229L206.392,258.8
+	l-8.87,12.833v14.438h-14.437v-62.938h14.437V252.761z"/>
+<path display="none" d="M254.511,286.07h-14.72v-62.938h14.72V286.07z"/>
+<path display="none" d="M304.708,273.615v12.455h-39.914v-62.938h14.909v50.483H304.708z"/>
+<path display="none" d="M349.904,273.615v12.455H309.99v-62.938h14.909v50.483H349.904z"/>
+<path display="none" d="M230.253,439.621h-14.438v-25.949h-19.722v25.949h-14.437v-62.938h14.437v24.533h19.722
+	v-24.533h14.438V439.621z"/>
+<path display="none" d="M284.127,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.717-6.228-7.265-14.438-7.265-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S279.598,378.759,284.127,384.892z M255.725,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C260.443,387.723,257.518,389.516,255.725,393.195z"/>
+<path display="none" d="M342.155,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.718-6.228-7.266-14.438-7.266-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S337.625,378.759,342.155,384.892z M313.752,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C318.47,387.723,315.545,389.516,313.752,393.195z"/>
+<path display="none" d="M395.842,389.138h-15.569v50.483h-14.909v-50.483H349.7v-12.455h46.143V389.138z"/>
+<path d="M205.097,275.252c-2.573,0-3.859,1.287-3.859,3.862v21.889
+	c0,0,0,1.287,1.287,1.287c-6.432,9.013-7.718,11.588-3.859,11.588c23.155,0,15.437,19.314,9.005,33.477
+	c-5.146,7.725-10.291,15.451-15.437,21.889c-2.573,3.863-18.009,30.901-9.004,34.765h1.286c-1.286,0-1.286,1.287-1.286,2.574v3.863
+	c0,1.287,0,2.575,2.573,2.575h52.741c1.287,0,2.573-1.288,2.573-2.575v-3.863c0-1.287-1.286-2.574-2.573-2.574h-6.432
+	c5.146,0,7.719,0,7.719,0s1.286-9.014,0-14.163c0-3.863,5.145-7.726,7.718-12.876c2.573-3.862-1.286-16.738,1.286-20.601
+	c2.573-3.863,9.005-6.438,11.578-5.15c1.286,0,59.173,0,59.173,0v-5.15c-2.572-1.287-3.858-5.15-3.858-10.301v-14.163
+	c0-5.15,2.572-6.438,7.719-5.15h34.731c9.005,0,11.578,1.288,11.578-7.726v-3.863h1.285c1.287,0,3.859-2.575,3.859-3.862v-2.575l0,0
+	c1.287,0,1.287,0,1.287,0V281.69c0-1.287,0-1.287-1.287-1.287l0,0v-1.288c0-2.575-2.572-3.862-3.859-3.862h-3.858v-3.863h-5.146
+	l-2.573,3.863h-47.596v1.287v1.288h-41.165l-1.285-1.288v-1.287h-39.878l-3.859-6.438h-7.719v6.438H205.097L205.097,275.252z
+	 M300.29,317.742c6.432,0,10.291,3.862,10.291,10.3v7.725c0,5.15-3.859,10.301-10.291,10.301h-29.588
+	c-6.432,0-11.577-5.15-11.577-10.301v-7.725c0-2.575,1.287-3.862,2.573-6.438c0,2.576,1.286,10.301,6.432,15.451
+	c5.146,6.438,6.432,6.438,6.432,6.438l2.573-2.576c0,0-1.286-2.575-2.573-5.15c-1.286-2.574-2.572-10.3,1.287-18.025H300.29z"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+</svg>
+<span>CHAPTER 4</span>
+            </div>
+            <div class="article__chapter-title__text">Hit men for hire</div>
+          </div>
+          <p>In the Murphy Homes public housing project in West Baltimore, which has since been demolished, Covington grew up on the floor above Solothal “Itchy Man” Thomas, one of the city's most notorious hit men.</p>
+          <p>Covington said he regularly saw people shot, beaten, killed. He was 8 or 9 when he saw a man he only knew as “Country Dave” shot to death at the corner of West Lafayette and Argyle avenues. Dave had been a friend, who gave kids in the neighborhood dollars to buy snacks at the corner market.</p>
+          <p>But Covington didn't turn away from the streets, despite dreams of becoming a boxer or an Orioles baseball player like Cal Ripken Jr. Instead, he sized up one of two paths available to him and other teens in his neighborhood: drug dealing or becoming a “cowboy,” someone who robs drug dealers.</p>
+          <p>He chose cowboy.</p>
+          <p>Covington, now 30 and incarcerated in Westover, Md., can't recall whether the man shot on his first shooting caper survived but said he could have gone to jail for his involvement.</p>
+          <!--large pull quote-->
+          <figure class="inline-media inline-media--pullquote inline-media--big" data-sr>
+            <hr>
+            <div class="inline-media--pullquote__text">&ldquo;I had grown men scared of me.&rdquo;</div>
+            <div class="inline-media--pullquote__src">Quinzell Covington, a former Baltimore hit man</div>
+            <hr>
+          </figure>
+          <p>As a teen his “neighborhood fame” grew — “I had grown men scared of me” — and as a man he shifted from random violence to targeted murderousness.</p>
+          <p>He was paid to kill. He once charged as much as $50,000, he says, but that was a “package deal.” He says that he worked in Maryland, Virginia, West Virginia and Ohio.</p>
+          <p>Covington declined to give details about many of his crimes. Baltimore police have suspected his involvement in six to 14 homicide cases.</p>
+          <p>He pleaded guilty to one homicide in Baltimore County. He also pleaded guilty to his role in two other homicides in the city, but received no additional time in exchange for his testimony against a co-defendant. He has been acquitted in another homicide and in one shooting.</p>
+          <p>“He was the guy that would kill people for money, plain and simple — that's how he made a living,” said Baltimore Homicide Detective Frank Miller, adding that Covington was part of a clique of gunmen who took murder-for-hire contracts and robbed drug dealers. “There's been several guys over the years that we've encountered, that was their thing.”</p>
+          <p>Covington joined the Black Guerrilla Family and intimidated witnesses for the gang. He said inmates held on homicide charges would call and ask him to visit witnesses in their cases. Being a friend — “I take friendship very seriously” — he would oblige.</p>
+          <p>Sometimes he didn't have to say a word; he would smell their fear, see the sweat rolling down faces. Other times, he had to say “some pretty hard and nasty words” to make them think twice about testifying.</p>
+          <p>“I don't want to say witness tampering, but in hindsight, it's sort of what it was,” Covington said.</p>
+          <p>The Baltimore Police Department has long struggled with closing homicide cases because investigations are often stymied by a lack of cooperation from witnesses. So far this year, police have only closed 35 percent of homicide cases.</p>
+          <p>As a killer, Covington says, he took steps to evade capture: He wore a ski mask and gloves unless he planned to shoot a victim when they were alone in the woods or in a house — he knew they wouldn't survive to identify him. He lured victims to him so that he could “control the environment.”</p>
+          <p>Covington, who now says he wants to help young people avoid the life he chose, was part of an insidious underground world of hit men for hire in Baltimore.</p>
+          <figure class="inline-media inline-media--video inline-media--full">
+            <iframe src="https://player.vimeo.com/video/185016031" width="100%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </figure>
+          <p>Police say these shooters commit an outsized number of homicides in the city. They embody an intent to kill that's ingrained in the city's street culture.</p>
+          <p>In some cases, federal authorities suspect a single hit man in more than 20 homicides going back decades.</p>
+          <p>In recent months, police said they have been tracking the 10 Grand Club, an organization of hit men. Officers said they learned about the “club” from confidential informants but didn't want to jeopardize investigations by releasing more information.</p>
+          <p>“It's not hard to shop around for a murder for hire,” said Assistant U.S. Attorney Jim Warwick, who has prosecuted a number of hit men in the city. “They will do it very quickly with no thought involved. They just need the money, the weapon, preferably a photograph of the person, if they don't know the person, and where the person can be found.”</p>
+          <p>The typical fee for a hit in Baltimore is $5,000, which may be split between trusted accomplices and subcontracted shooters the hit man may call into action, Warwick said. Some hit men have grown savvy over the years and begun to recruit “younger, violent and cold-blooded individuals” to do the job for them,” he said.</p>
+          <p>They are hired to settle an outstanding drug debt, to kill a woman owed child support or to get back at someone who was perceived to be disrespectful. They typically aim for the head or fire into their victims repeatedly, Warwick said; witnesses are considered collateral damage.</p>
+          <p>“The hit man will kill whoever is with the target as well,” Warwick said. “They're expected to finish the job.”</p>
+          <p>Three cousins who were gang hit men — Kenneth “K Slay” Jones, Donatello “Little Don” Fenner and David Hunter — rank among Baltimore's most notorious shooters, police said. They grew up in their grandmother's home, and police said they provided each other alibis.</p>
+          <p>“Those are some hit men right there,” said Baltimore Homicide Detective Dawnyell Taylor, who considers working Hunter's case, with its sprawling connections to victims, shooters and the BGF, to be her “life's work.”</p>
+          <figure class="inline-media inline-media--pic inline-media--full" data-sr><img src="dist/images/s2k-taylor.jpg">
+            <figcaption class="inline-media--pic__caption">Baltimore Homicide Detective Dawnyell Taylor.</figcaption>
+            <!--figcaption Lloyd Fox-->
+          </figure>
+          <p>Taylor said they are suspected in connection with four to five dozen shootings, often working in tandem to lure victims and then ambush them. Fenner was shot to death in 2010. Hunter got two life sentences plus 40 years last year for shooting a man in the back of the head, and Jones got two life sentences plus 15 years in August for shooting one man and killing another who was rumored to be cooperating with law enforcement.</p>
+          <p>Jones' lawyer, Fareed Hyatt, denied that his client and Hunter were hit men — he said they were broke. He questioned whether police have evidence they committed multiple murders because he hasn't seen it. Both men are appealing their convictions.</p>
+          <p>Surveillance video recorded Hunter's hit: walking on a sidewalk in the daytime and passing his victim, who was headed the other way. That's when prosecutors said Hunter wheeled around, shot Henry Mills in the head, and fled through traffic on busy Greenmount Avenue in East Baltimore, near a playground.</p>
+          <p>Deputy Attorney General Thiru Vignarajah, who prosecuted the case, told jurors it was a “public execution.”</p>
+          <p>Hours after the killing, surveillance video recorded another scene. Hunter and fellow gang members gathered in Mund Park, a few yards from where police had just cleared the crime tape. One man points his finger as if it were the barrel of a gun at another's head. Another man gives Hunter a high five. Prosecutors said they were celebrating.</p>
+          <p>Police worry about the cycle of violence continuing. “I guess the next one's just, you know, just growing up,” said Miller, who investigated Covington.</p>
+          <p>Pat Brown, a criminal profiler in Maryland, said shooters often develop an “attachment disorder” during troubled childhoods, so that they have difficulty forming long-term relationships and often fail to develop a conscience. They often witness death and violence, becoming numb to it.</p>
+          <p>“It becomes a survival of the fittest and you lose empathy for others,” Brown said. “They see people as tools, objects and things.”</p>
+          <p>Baltimore streets breed this kind of mindset, she said. “It has gotten out of control with the lawlessness and hopelessness.”</p>
+          <p>At age 5, Hunter witnessed a man shot in the back of the head. His mother, fearing retaliation, told him not to snitch, to pretend that he saw nothing, Vignarajah said at Hunter's sentencing. Hunter would grow up to kill a man the exact same way.</p>
+          <p>“Mr. Hunter grew up to become the agent of fear, the angel of death that his mother warned him of,” Vignarajah told jurors.</p>
+        </div>
       </div>
-    </div><div class="ad ad--leaderboard">
+    </section>
+    <section id="chapter-5">
+      <div class="container-story">
+        <div class="article">
+          <div class="article__chapter-title"> 
+            <hr>
+            <div class="article__chapter-title__number">
+               <svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="202px" height="151px" viewBox="177.163 265.558 202 151"
+	 overflow="visible" enable-background="new 177.163 265.558 202 151" xml:space="preserve">
+<defs>
+</defs>
+<rect x="14.667" y="345.469" display="none" width="482.993" height="216.162"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+<path display="none"  d="M197.521,252.761l19.722-29.629h14.06l-15.098,22.458l18.872,40.48h-16.229L206.392,258.8
+	l-8.87,12.833v14.438h-14.437v-62.938h14.437V252.761z"/>
+<path display="none" d="M254.511,286.07h-14.72v-62.938h14.72V286.07z"/>
+<path display="none" d="M304.708,273.615v12.455h-39.914v-62.938h14.909v50.483H304.708z"/>
+<path display="none" d="M349.904,273.615v12.455H309.99v-62.938h14.909v50.483H349.904z"/>
+<path display="none" d="M230.253,439.621h-14.438v-25.949h-19.722v25.949h-14.437v-62.938h14.437v24.533h19.722
+	v-24.533h14.438V439.621z"/>
+<path display="none" d="M284.127,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.717-6.228-7.265-14.438-7.265-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S279.598,378.759,284.127,384.892z M255.725,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C260.443,387.723,257.518,389.516,255.725,393.195z"/>
+<path display="none" d="M342.155,384.892c4.624,6.322,7.171,14.626,7.171,23.685c0,8.21-2.642,16.985-6.982,22.835
+	c-4.435,5.851-11.606,9.153-20.099,9.153c-8.209,0-14.814-3.114-19.344-9.059c-4.718-6.228-7.266-14.438-7.266-23.59
+	c0-8.965,2.548-17.174,7.077-23.024c4.623-5.944,11.512-9.152,20.004-9.152S337.625,378.759,342.155,384.892z M313.752,393.195
+	c-1.698,3.586-2.736,9.059-2.736,14.909c0,13.683,3.868,20.477,11.7,20.477c7.549,0,11.229-6.7,11.229-20.382
+	c0-13.683-3.681-20.477-11.323-20.477C318.47,387.723,315.545,389.516,313.752,393.195z"/>
+<path display="none" d="M395.842,389.138h-15.569v50.483h-14.909v-50.483H349.7v-12.455h46.143V389.138z"/>
+<path d="M205.097,275.252c-2.573,0-3.859,1.287-3.859,3.862v21.889
+	c0,0,0,1.287,1.287,1.287c-6.432,9.013-7.718,11.588-3.859,11.588c23.155,0,15.437,19.314,9.005,33.477
+	c-5.146,7.725-10.291,15.451-15.437,21.889c-2.573,3.863-18.009,30.901-9.004,34.765h1.286c-1.286,0-1.286,1.287-1.286,2.574v3.863
+	c0,1.287,0,2.575,2.573,2.575h52.741c1.287,0,2.573-1.288,2.573-2.575v-3.863c0-1.287-1.286-2.574-2.573-2.574h-6.432
+	c5.146,0,7.719,0,7.719,0s1.286-9.014,0-14.163c0-3.863,5.145-7.726,7.718-12.876c2.573-3.862-1.286-16.738,1.286-20.601
+	c2.573-3.863,9.005-6.438,11.578-5.15c1.286,0,59.173,0,59.173,0v-5.15c-2.572-1.287-3.858-5.15-3.858-10.301v-14.163
+	c0-5.15,2.572-6.438,7.719-5.15h34.731c9.005,0,11.578,1.288,11.578-7.726v-3.863h1.285c1.287,0,3.859-2.575,3.859-3.862v-2.575l0,0
+	c1.287,0,1.287,0,1.287,0V281.69c0-1.287,0-1.287-1.287-1.287l0,0v-1.288c0-2.575-2.572-3.862-3.859-3.862h-3.858v-3.863h-5.146
+	l-2.573,3.863h-47.596v1.287v1.288h-41.165l-1.285-1.288v-1.287h-39.878l-3.859-6.438h-7.719v6.438H205.097L205.097,275.252z
+	 M300.29,317.742c6.432,0,10.291,3.862,10.291,10.3v7.725c0,5.15-3.859,10.301-10.291,10.301h-29.588
+	c-6.432,0-11.577-5.15-11.577-10.301v-7.725c0-2.575,1.287-3.862,2.573-6.438c0,2.576,1.286,10.301,6.432,15.451
+	c5.146,6.438,6.432,6.438,6.432,6.438l2.573-2.576c0,0-1.286-2.575-2.573-5.15c-1.286-2.574-2.572-10.3,1.287-18.025H300.29z"/>
+<rect x="5.564" display="none" width="482.994" height="321.769"/>
+</svg>
+<span>CHAPTER 5</span>
+            </div>
+            <div class="article__chapter-title__text">Mothers march</div>
+          </div>
+          <p>Across the nation, those left behind are consoling each other. Some are reaching out to others who have lost loved ones to shootings. Others are getting organized.</p>
+          <p>Cheryl Hayes, whose 27-year-old son was shot to death last year as he was headed to his postal route in Chicago, commiserates with a co-worker whose son was fatally shot after a dispute at a club. They share pictures of their sons, and of their tombstones. The Chicago Bulls insignia is carved into Anthony Hayes' grave marker.</p>
+          <p>“We should be showing each other baby pictures or wedding photos,” said Cheryl Hayes, 54.</p>
+          <p>Her family, it seems, is surrounded by gun violence.</p>
+          <p>Hayes' daughter, Veronika Hayes-Copeland, taught at Harlem Park Middle School in Baltimore in 2006 and watched in horror as students were killed in street violence and at least one was suspected in a homicide. </p>
+          <p>At one point, when shooting broke out at a church across from the school, Hayes-Copeland instinctively ducked while her students ran to the window, unfazed.</p>
+          <!--large pull quote-->
+          <figure class="inline-media inline-media--pullquote inline-media--big" data-sr>
+            <hr>
+            <div class="inline-media--pullquote__text">&ldquo;Shot him in the leg and he was still running. Shot him in the leg again, and then when he fell, shot him five times in the chest. That’s overkill.&rdquo;</div>
+            <div class="inline-media--pullquote__src">Cheryl Hayes, a Chicago woman whose son was shot dead in 2015 and cousin in September</div>
+            <hr>
+          </figure>
+          <p>Last month, Hayes' cousin, Gregory Anthony Sims Jr., 25, was shot dead in the afternoon in Chicago. “Shot him in the leg and he was still running,” she said. “Shot him in the leg again, and then when he fell, shot him five times in the chest. That's overkill.”</p>
+          <p>She said she wants to become more involved in the mothers' movement against violence but has yet to find the strength. </p>
+          <p>Support groups for mothers of slain children are cropping up in Baltimore, Chicago and cities across the country, and their memberships are growing. Once an insular crowd, they are becoming more active.</p>
+          <!--multiphoto package - photos enter from left, right and bottom-->
+          <figure class="media-package"><img class="media-package__img media-package__img--left img-responsive" src="dist/images/s2k-mothers1.jpg" data-sr="enter left" style="width:49.5%"><img class="media-package__img media-package__img--right img-responsive" src="dist/images/s2k-mothers3.jpg" data-sr="enter right" style="width:48.5%">
+            <div class="media-package__caption">A MONTHLY COMMUNITY MEETING FOR MOTHERS OF MURDERED SONS AND DAUGHTERS, HELD AT ST. JOHN'S ALPHA AND OMEGA CHURCH. LEFT: DARLENE JOHNSON, OF BELAIR EDISON, READS THE FUNERAL PROGRAM DESCRIBING HER SLAIN SON. RIGHT: DAPHNE ALSTON, LEFT, THE GROUP’S  CO-FOUNDER, LISTENS TO SPEAKER.</div>
+            <!--figcaption Amy Davis-->
+          </figure>
+          <p>Mothers of Murdered Sons and Daughters in Baltimore plans to set up a booth at festivals and other events to reach more parents and children.</p>
+          <p>Organizers are trying to devise novel ways to reach out to children, using toys and games to teach them to get in touch with their feelings and respond appropriately to the violence to which they have become desensitized.</p>
+          <p>They are also trying more explicit ways of drawing attention to gun violence. This summer, with the help of area funeral homes, the group led a march alongside 10 empty hearses on North Avenue. Similar marches have been held in Atlanta, Cleveland and other cities.</p>
+          <p>Escorted by Baltimore police, the demonstrators stopped several times: at a school, at a church, at March Funeral Home. During the long walk, they loaded their children, hot and tired, into the backs of the hearses, which held coolers of water.</p>
+          <p>At each destination, the several dozen marchers stopped and prayed.</p>
+          <p>They prayed for the people of Baltimore, and they prayed for their sons and daughters in the hearses — the children they had left.</p>
+          <p><em>Baltimore Sun reporter Justin Fenton and intern Wyatt Massey contributed to this article.</em></p>
+          <p class="reporter-email">Contact Justin George at <a href="mailto:jgeorge@baltsun.com" target="_blank"> jgeorge@baltsun.com</a></p>
+          <!--series menu for mobile-->
+          <figure class="inline-media inline-media--big inline-media--has-title" data-sr>
+            <ul class="parts-menu">
+              <h4 class="inline-media__title">More in the series</h4>
+              <!--Part 2-->
+              <li class="parts-menu__item parts-menu__item"><a href="http://www.baltimoresun.com/news/maryland/baltimore-city/bal-shoot-to-kill-part-two-story.html"><img class="parts-menu__thumbnail" src="http://www.trbimg.com/img-57f65c1d/turbine/bal-md-shoot-to-kill-p-visuals-10-fox-20161006/75/75x42" width="75">
+                  <div class="parts-menu__part-no">Part 2 <!--<span class="parts-menu__date"> Date </span>--></div>
+                  <div class="parts-menu__title">Some Baltimore neighborhoods condemned to endure a shocking degree of violence</div></a></li>
+              <!--Part 2, inactive-->
+              <!--Part 3, inactive-->
+              <li class="parts-menu__item parts-menu__item"><a href="http://www.baltimoresun.com/news/maryland/investigations/bal-shoot-to-kill-part-three-story.html"></a><img class="parts-menu__thumbnail" src="http://www.trbimg.com/img-57fe7a08/turbine/bal-shoot-to-kill-medical-challenges-20161012-002/75/75x42" width="75">
+                <div class="parts-menu__part-no">Part 3 <!-- <span class="parts-menu__date"> Date </span>--></div>
+                <div class="parts-menu__title">Baltimore emergency rooms struggle to care for severely wounded patients</div>
+              </li>
+              <!--Part 3, inactive-->
+            </ul>
+          </figure>
+          <!--.inline-media.inline-media--big.newsletter
+          b Sign up for our Crime & Courts newsletter to recieve more stories like this:
+          iframe(src='http://data.baltimoresun.com/mobile/form.html' style='border:0' height="65")
+          
+          
+          -->
+          <!--ad--><div class="ad ad--leaderboard">
 
 	<!-- Beginning Async AdSlot 2 for Ad unit trb.baltimoresun/news  ### size: [[728,90]] -->
 	<!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[2]]) -->
@@ -528,17 +1149,52 @@
 	<!-- End AdSlot 2 -->
 
 </div>
-    <!--footer mixin-->
+        </div>
+      </div>
+    </section><div class="ad ad--leaderboard">
+
+	<!-- Beginning Async AdSlot 2 for Ad unit trb.baltimoresun/news  ### size: [[728,90]] -->
+	<!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[2]]) -->
+	<div id='div-gpt-ad-430294160021529928-2'>
+		<script type='text/javascript'>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-430294160021529928-2'); });
+		</script>
+	</div>
+	<!-- End AdSlot 2 -->
+
+</div>
+    <!--footer-->
     <footer class="footer">
       <section class="footer__credits">
+        <ul class="footer__credits--main">
+          <li class="label">Reporting</li>
+          <li>Justin George</li>
+        </ul>
         <ul>
-          <li class="label">That Role</li>
-          <li>This Person</li>
-          <li class="label">This Role</li>
-          <li>That Person</li>
+          <li class="label">Editing</li>
+          <li>Laura Smitherman</li>
+          <li>Diana Sugg</li>
+          <li>Richard Martin</li>
+        </ul>
+        <ul>
+          <li class="label">Visuals</li>
+          <li>Amy Davis</li>
+          <li>Karl Merton Ferron</li>
+          <li>Lloyd Fox</li>
+          <li>Emma Patti Harris</li>
+          <li>Algerina Perna</li>
+          <li>Kevin Richardson</li>
+        </ul>
+        <ul>
+          <li class="label">Design / Development / Graphics</li>
+          <li>Adam Marton</li>
+          <li>Caroline Pate</li>
+          <li>Jin Kim</li>
         </ul>
       </section>
-      <section class="footer__comments"><!-- Facebook Commenting -->
+      <div class="footer__logo"><small><a href="http://www.tronc.com/privacy-policy/" style="margin:0,auto;color:#fff;text-decoration:none">Privacy Policy<br><br></a></small><img src="dist/images/baltimore-sun-logo-white.png" width="300"></div>
+    </footer>
+    <section class="footer__comments"><!-- Facebook Commenting -->
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -554,20 +1210,22 @@
 <div id="comments">
 	<h1> <span class="icon-comment"></span> Leave a comment </h1>
   <!--replace data-href with page url to enable facebook comments-->
-  <div class="fb-comments" data-href="#" data-width="100%" data-numposts="10" data-colorscheme="light"></div>
+  <div class="fb-comments" data-href="http://data.baltimoresun.com/news/shoot-to-kill/" data-width="100%" data-numposts="10" data-colorscheme="light"></div>
 </div>
-      </section>
-      <section class="footer__logo"><img src="dist/images/baltimore-sun-logo-white.png" width="300"/></section>
-    </footer>
+    </section>
     <!-- Javascript-->
     <!--Load jQuery CDN, fall back to local version if necessary		-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
-      window.jQuery || document.write('<script src="src/scripts/jquery-1.10.2.min.js">\x3C/script>')
+      window.jQuery || document.write('<script src="dist/min/jquery-1.10.2.min.js">\x3C/script>')
       
     </script>
     <!--Load the rest-->
-    <!--script(src="dist/min/javascript-min.js")-->
+    <script src="https://use.typekit.net/nta3eyd.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
     <script src="dist/min/app.min.js"></script>
     <!--Configuration for scrollReveal.js-->
     <script>
@@ -578,6 +1236,11 @@
        	vFactor: 0.5
       }
       window.sr = new scrollReveal(config);
+      
+      $('#open-button').click(function() {
+      $('#intro').toggleClass('close');
+      $('#open-button').hide();
+      });
     </script>
   </body>
 </html>

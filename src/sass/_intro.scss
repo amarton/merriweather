@@ -1,0 +1,72 @@
+	#canvas, #_preload_div_ {
+		position:absolute;
+		margin:auto;
+		left:0;right:0;
+		display: block;
+		background-color:#000;
+  	}
+
+
+	#intro {
+		  //position: absolute;
+		  width: 100%;
+		  height: 100vh;
+		  //height: 600px;
+		  //max-height: 100vh;
+		  //top: 0;
+		  //overflow: hidden;
+		  background-color: #000;
+		  transition: all 1s;
+		  margin: 50px 0px;
+		  text-align:center;
+		  z-index: 500;
+			p {
+				color:#fff;
+			}
+			img {
+				width:95%;
+				max-width:1000px;
+			}
+	}	
+
+	  #intro.close {
+	    //top: 0vh;
+	    //height: 0;
+	    height: 600px; 
+	}
+	@media screen and (max-width: 625px) {
+		#intro.close {
+			height: 350px;
+		}
+	}
+	@media screen and (max-width: 450px) {
+		#intro.close {
+			height: 250px;
+		}
+	}
+	#open-button {
+		  position: relative;
+		  height:50px;
+		  cursor:pointer;
+		  background-color: #454545;
+		  font-size: 1.25em;
+		  color: #000;
+		  border: none;
+		  top:630px;
+		  border-radius: 15px;
+		  padding:10px;
+		  font-weight: 300;
+		  letter-spacing: .1em;
+		}
+		@media screen and (max-width: 500px) {
+			#open-button {
+				font-size: .75em;
+				height:40px;
+				padding:10px;
+				top: 250px;
+			}
+		}
+	#open-button:hover {
+		  background-color: #d2232a;
+		  color:#fff;
+		}

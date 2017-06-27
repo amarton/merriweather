@@ -1,0 +1,26 @@
+.stkNeighborhoods
+	//- h2 Lethality in  
+	//- 	span Baltimore neighborhoods
+	//- p Exploring lethality rates in Baltimore neighborhoods by comparing fatal and non-fatal 
+	//- 	| shootings.
+	.map#map
+	.mobileMap
+		img(src="dist/images/mobileMap.png")
+		.mobileLegend
+			.cartodb-legend.choropleth
+				.legend-title # Shootings since 2011
+				ul
+					li.min &gt; 0
+					li.max &gt; 59
+					li.graph.count_315
+						.colors
+							.quartile(style="font-size:1em;background-color:#fef0d9;")
+							.quartile(style="font-size:1em;background-color:#fdcc8a;")
+							.quartile(style="font-size:1em;background-color:#fc8d59;")
+							.quartile(style="font-size:1em;background-color:#e34a33;")
+							.quartile(style="font-size:1em;background-color:#b30000;")
+	p For a fullscreen, interactive version on mobile devices, 
+		a(href="https://baltsun.carto.com/viz/6679b36e-80ea-11e6-b5c2-0e3ebc282e83/embed_map" 
+		target="_blank" rel="noopener") click here.
+	p.source Source: Baltimore Police Department
+

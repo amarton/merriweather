@@ -1,0 +1,204 @@
+$cubeSize: 12.5%; // Size of city outline divs
+
+.stkCities {
+	max-width: 800px;
+	margin: 0 auto;
+	background-color: white;
+	color: $offblack;
+	h2 {
+		margin: 0.5em 0em;
+		font-family: $franklin;
+		font-size: 26px;
+		font-weight: 700;
+		text-transform: uppercase;
+		span {
+			color: $stkRed;
+			@media(max-width: $bp5) {
+				font-size: 20px;
+				display: block;
+			}
+		}
+	}
+	.chatter {
+		font-family: $franklin;
+		font-size: 14px;
+		font-weight: 700;
+		color: $stkDarkGray;
+	}
+	.graphic {
+		position: relative;
+		font-size: 14px;
+		@media(max-width: $bp7) {
+			font-size: 12px;
+		}
+		@media(max-width: $bp6) {
+			font-size: 10px;
+		}
+		::-webkit-scrollbar { 
+			display: none; 
+		}
+	}
+	.cities {
+		position: relative;
+		overflow-y: hidden;
+		z-index: 1;
+		height: 25em;
+		padding-right: 20px;
+	}
+	.cityOutline {
+		width: $cubeSize;
+		height: 0;
+		border-right: .1em solid $stkLightGray;
+		padding-bottom: $cubeSize;
+		text-align: center;
+		@media(max-width: $bp5) {
+			width: $cubeSize * 1.5;
+			padding-bottom: $cubeSize * 1.5;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+		img {
+			width: 90%;
+			padding: 10%;
+			opacity: .2;
+			@include transition(all 0.5s ease);
+			&:hover {
+				width: 100%;
+				opacity: .75;
+			}
+		}
+		&:last-child{
+			padding-bottom: $cubeSize * 4;
+			@media(max-width: $bp5) {
+				padding-bottom: 100%;
+			}
+		}
+		i {
+			font-size: 2.7em;
+			line-height: 2em;
+			color: $stkLightGray;
+			@include transition(all .5s ease);
+			&:hover {
+				font-size: 3em;
+				color: $offblack;
+			}
+			@media(max-width: $bp5) {
+				font-size: 2em;				
+				&:hover {
+					font-size: 2.3em;
+				}
+			}
+		}
+	}
+	.activeCity {
+		img {
+			width: 100%;
+			opacity: 1;
+		}
+	}
+	.cityNameBlock {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		max-width: 800px;
+		height: 0;
+		padding-top: $cubeSize / 2;
+		padding-bottom: $cubeSize / 2;
+		padding-left: $cubeSize + 3%;
+		border-bottom: .1em solid $stkLightGray;
+		@media(max-width: $bp5) {
+			padding-top: ($cubeSize * 1.5)/2;
+			padding-bottom: ($cubeSize * 1.5)/2;
+			padding-left: ($cubeSize * 1.5) + 2%;
+		}
+	}
+	.cityName {
+		margin: 0;
+		line-height: 0;
+		font-family: $prata;
+		font-weight: 100;
+		font-size: 3.5em;
+		color: $stkRed;
+		@media(max-width: $bp5) {
+			font-size: 2.5em;
+		}
+	}
+	.cityStats {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		padding-top: $cubeSize;
+		padding-left: $cubeSize + 1%;
+		padding-right: 3%;
+		@media(max-width: $bp5) {
+			padding-top: $cubeSize * 1.5;
+			padding-left: ($cubeSize * 1.5) + 1%;
+		}
+		p {
+	 		font-family: $franklin;
+			font-weight: 700;
+			font-size: 1.25em;
+			margin: 0.5em 0;
+			color: $offblack;
+			&.dataDate {
+				font-size: 1em;
+				line-height: 0;
+				margin-bottom: 1.5em;
+				color: $stkLightGray;
+			}
+			&.cityDisclaimer {
+				margin: 20px auto;
+				font-size: .9em;
+				font-weight: 700;
+				color: $stkLightGray;
+			}
+		}
+
+	}
+	.statList {
+		width: 48%;
+		float: left;
+		@media(max-width: $bp5) {
+			width: 100%;
+		}
+		span {
+			color: $stkRed;
+		}
+	}
+	.graph {
+		position: relative;
+		width: 48%;
+		float: right;
+		text-align: left;
+		@media(max-width: $bp5) {
+			display: none;
+		}
+		img {
+			width: 100%;
+		}
+		.cityGraph {
+			position: relative;
+			z-index: 1;
+		}
+		.baseGraph {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			z-index: 0;
+		}
+	}
+	h4 {
+		margin: 0.5em 0;
+		font-family: $franklin;
+		font-weight: 700;
+		font-size: 1.7em;
+		text-transform: uppercase;
+	}
+	.source {
+		margin: 25px auto;
+		font-family: $franklin;
+		font-weight: 700;
+		color: $stkLightGray;
+	}
+}

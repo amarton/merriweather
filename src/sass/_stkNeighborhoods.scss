@@ -1,0 +1,71 @@
+.stkNeighborhoods {
+	max-width: 800px;
+	margin: 0 auto;
+	background-color: white;
+	color: $offblack;
+	h2 {
+		margin: 0.5em 0em;
+		font-family: $franklin;
+		font-size: 26px;
+		font-weight: 700;
+		text-transform: uppercase;
+		span {
+			color: $stkRed;
+			@media(max-width: $bp5) {
+				font-size: 20px;
+				display: block;
+			}
+		}
+	}
+	p, a {
+		font-family: $franklin;
+		font-size: 14px;
+		font-weight: 700;
+		margin: 0;
+	}
+	p {
+		color: $stkDarkGray;
+	}
+	a {
+		color: $goldenrod;
+		text-decoration: none;
+	}
+	.map {
+		height: 800px;
+		margin-top: 2em;
+		background: white;
+		@media(max-width: $bp6) {
+			display: none;
+		}
+		.leaflet-control-attribution {
+			display: none;
+		}
+	}
+	.mobileMap {
+		display: none;
+		position: relative;
+		width: 100%;
+		@media(max-width: $bp6) {
+			display: block;
+		}
+		img {
+			width: 100%;
+		}
+		p {
+			color: $stkLightGray;
+		}
+		.mobileLegend {
+			position: relative;
+			height: 100px;
+		}
+		.cartodb-legend {
+			width: 250px;
+			left: 20px;
+		}
+	}
+	.source {
+		margin: 25px auto;
+		font-family: $franklin;
+		color: $stkLightGray;
+	}
+}
