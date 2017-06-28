@@ -12,7 +12,7 @@ html(class="no-js", lang="en")
 
 		//Basic page needs
 		meta(charset="utf-8")
-		title Shoot to Kill: Why Baltimore is one of the most lethal cities in the U.S.
+		title Merriweather project
 		meta(name="description", content="")
 		meta(name="author", content="")
 
@@ -37,20 +37,20 @@ html(class="no-js", lang="en")
 			link(rel="stylesheet", href="dist/stylesheets/ie8-and-down.css")
 
 		//Facebook OpenGraph
-		meta(property="og:title", content="Shoot to Kill")
-		meta(property="og:url", content="http://data.baltimoresun.com/news/shoot-to-kill/")
-		meta(property="og:image", content="http://data.baltimoresun.com/news/shoot-to-kill/dist/images/s2ksocial-thumb.png")
+		meta(property="og:title", content="merriweather")
+		meta(property="og:url", content="http://data.baltimoresun.com/news/merriweather/")
+		meta(property="og:image", content="http://data.baltimoresun.com/news/merriweather/dist/images/s2ksocial-thumb.png")
 		meta(property="og:site_name", content="The Baltimore Sun")
-		meta(property="og:description", content="Baltimore is one of the most lethal cities in the United States. How did we get there?")
+		meta(property="og:description", content="merriweather merriweather")
 		meta(property="fb:app_id", content="310302989040998")
 
 		//Twitter 
 		meta(name="twitter:card", content="summary")
 		meta(name="twitter:site", content="@baltimoresun")
 		meta(name="twitter:creator", content="@baltimoresun")
-		meta(name="twitter:title", content="Shoot to Kill")
-		meta(name="twitter:description", content="Baltimore is one of the most lethal cities in the United States. How did we get there?")
-		meta(name="twitter:image", content="http://data.baltimoresun.com/news/shoot-to-kill/dist/images/shoot-to-kill-thumb-twitter.png")
+		meta(name="twitter:title", content="merriweather")
+		meta(name="twitter:description", content="merriweather merriweather merriweather")
+		meta(name="twitter:image", content="http://data.baltimoresun.com/news/merriweather/dist/images/shoot-to-kill-thumb-twitter.png")
 		meta(name="twitter:domain", content="baltimoresun.com")
 
 		//Omniture Code
@@ -63,64 +63,9 @@ html(class="no-js", lang="en")
 		- for (var i = 1; i <= 3; i++)
 			link(rel="prefetch" href="")
 
-	body(onload="init();")
-		script(src="http://www.baltimoresun.com/thirdpartyservice?disablenav=true&disablessor=true", async)
+	body
+		script(src="http://www.baltimoresun.com/thirdpartyservice?disablessor=true")
 		div(data-trb-thirdpartynav)
-		div#intro
-			canvas(id="canvas", width="1000", height="600", style="max-width: 100%;")
-				p Please enable JavaScript and use a modern browser to fully experience this presentation. If JavaScript is disabled, scroll down to begin.<br />
-				img(src="dist/images/s2k-logo.png")
-			div#_preload_div_(style="display: inline-block; height:100px; width: 100px; margin-top:100px;position:absolute;text-align: center;")
-				span(style="display: inline-block; height: 100%; vertical-align: middle;")
-				img(src="dist/images/_preloader.gif", style="vertical-align: middle; max-height: 100%;")
-			button#open-button READ STORY
-		nav#tophat.navbar.navbar-fixed-top.navbar-inverse
-			div.container-fluid
-				div.navbar-header
-					button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tophat-collapse" aria-expanded="false")
-						span.sr-only Toggle navigation
-						span.icon-bar
-						span.icon-bar
-						span.icon-bar
-					#logo
-						a(href="http://www.baltimoresun.com")
-							img(src="dist/images/baltimore-sun-logo-white.png")
-					.tophat-share-tools
-						span.icon-facebook
-						span.icon-twitter
-
-				div#tophat-collapse.collapse.navbar-collapse
-					ul.nav.navbar-nav.navbar-right
-						li.chapter
-							a(href="#chapter-intro")
-								span Intro
-						li.chapter
-							a(href="#chapter-1")
-								span Chapter 1
-						li.chapter
-							a(href="#chapter-2")
-								span Chapter 2
-						li.chapter
-							a(href="#chapter-3")
-								span Chapter 3
-						li.chapter
-							a(href="#chapter-4")
-								span Chapter 4
-						li.chapter
-							a(href="#chapter-5")
-								span Chapter 5
-						li.dropdown.chapter
-							a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Series 
-								div.caret
-							ul.dropdown-menu
-								li
-									a(href="http://www.baltimoresun.com/news/maryland/baltimore-city/bal-shoot-to-kill-part-two-story.html") 
-										.desktop-series Part 2: Some Baltimore neighborhoods condemned to endure a shocking degree of violence
-										.mobile-series Part 2
-								li
-									a(href="http://www.baltimoresun.com/news/maryland/investigations/bal-shoot-to-kill-part-three-story.html")
-										.desktop-series Part 3: Baltimore emergency rooms struggle to care for severely wounded patients
-										.mobile-series Part 3
 
 		//block for story layout
 		block content
@@ -132,28 +77,19 @@ html(class="no-js", lang="en")
 			section.footer__credits
 				ul.footer__credits--main
 					li.label Reporting
-					li Justin George
+					li Wesley Case
+
 				ul
 					li.label Editing
-					li Laura Smitherman
-					li Diana Sugg
-					li Richard Martin
+					li Ellen Fishel
 				ul
 					li.label Visuals
-					li Amy Davis
-					li Karl Merton Ferron
 					li Lloyd Fox
-					li Emma Patti Harris
-					li Algerina Perna
-					li Kevin Richardson
 					
-
 				ul
 					li.label Design / Development / Graphics
 					li Adam Marton
-					li Caroline Pate
-					li Jin Kim
-
+	
 			.footer__logo
 				small
 					a(href="http://www.tronc.com/privacy-policy/", style="margin:0,auto;color:#fff;text-decoration:none;") Privacy Policy<br><br>
@@ -174,6 +110,10 @@ html(class="no-js", lang="en")
 			window.jQuery || document.write('<script src="dist/min/jquery-1.10.2.min.js">\x3C/script>')
 
 		//Load the rest
+		
+		<script src="https://use.typekit.net/flu8jvb.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		
 		script(src="https://use.typekit.net/nta3eyd.js")
 		script.
 			try{Typekit.load({ async: true });}catch(e){}

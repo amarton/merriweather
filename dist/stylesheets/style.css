@@ -4364,7 +4364,7 @@ html {
     #tophat ul li a span {
       padding: 5px; }
   #tophat ul li:hover span {
-    background-color: #bb0a1e; }
+    background-color: #a84868; }
 
 #logo {
   width: 250px;
@@ -4396,7 +4396,7 @@ html {
       margin: 2px 10px 0 0; } }
 
 .active span {
-  background-color: #bb0a1e; }
+  background-color: #a84868; }
 
 .active svg {
   visibility: visible; }
@@ -4439,7 +4439,7 @@ html {
 .about h3 {
   text-transform: uppercase;
   font-family: "franklin-gothic-urw", sans-serif;
-  color: #bb0a1e; }
+  color: #a84868; }
 
 .about .center {
   margin: 0 auto; }
@@ -4542,6 +4542,8 @@ html {
   height: 650px;
   max-height: 100vh;
   background-color: #222;
+  background-image: url("mw-taylorswift.jpg");
+  background-size: cover;
   overflow: hidden;
   margin-bottom: 30px; }
   @media (max-width: 1024px) {
@@ -4609,11 +4611,10 @@ html {
   .header__title {
     max-width: 800px;
     margin: 0 10% 0 10%;
-    font-family: "franklin-gothic-urw", sans-serif;
-    font-size: 13em;
+    font-family: "proxima-nova";
+    font-size: 3em;
     font-weight: 700;
     line-height: 1;
-    text-transform: uppercase;
     text-align: center; }
     @media (max-width: 1024px) {
       .header__title {
@@ -4625,7 +4626,7 @@ html {
       .header__title {
         font-size: 40px; } }
     .header__title--red {
-      color: #bb0a1e !important; }
+      color: #a84868 !important; }
     .header__title svg {
       width: 100px;
       height: 100px;
@@ -4665,7 +4666,7 @@ html {
       .header__chatter {
         font-size: 1.3em; } }
     .header__chatter--red {
-      color: #bb0a1e !important; }
+      color: #a84868 !important; }
 
 /* Footer, comments styles */
 .footer {
@@ -4677,7 +4678,7 @@ html {
     margin: 0 auto;
     color: white;
     text-align: center;
-    font-family: "franklin-gothic-urw", sans-serif;
+    font-family: "proxima-nova";
     font-weight: 700; }
     .footer__credits::after {
       clear: both;
@@ -4714,7 +4715,7 @@ html {
     background-color: #E0E0E0;
     text-align: center;
     padding: 30px 0;
-    font-family: "franklin-gothic-urw", sans-serif;
+    font-family: "proxima-nova";
     font-size: 30px; }
     @media (max-width: 500px) {
       .footer__share {
@@ -4740,7 +4741,7 @@ html {
     .footer__comments h1 {
       text-align: center;
       margin: 0 0 10px 0;
-      font-family: "franklin-gothic-urw", sans-serif;
+      font-family: "proxima-nova";
       font-size: 30px;
       font-weight: 400; }
     @media (max-width: 550px) {
@@ -4878,10 +4879,10 @@ html {
 /* Article Styles */
 .article p {
   max-width: 800px;
-  font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  font-size: 1em;
+  font-family: "ff-tisa-web-pro";
+  font-size: 1.1em;
   color: #555555;
-  line-height: 1.5;
+  line-height: 1.65;
   margin: 10px 10% 15px 10%; }
   .article p a:link, .article p a:visited, .article p a:hover, .article p a:active {
     color: dark-red;
@@ -4890,7 +4891,7 @@ html {
     .article p {
       margin: 0 auto 25px auto; } }
   .article p.reporter-email {
-    font-family: "franklin-gothic-urw", sans-serif;
+    font-family: "proxima-nova";
     color: #555555;
     padding-top: 10px;
     border-top: 1px solid #888888; }
@@ -4899,7 +4900,7 @@ html {
       text-decoration: underline; }
 
 .article__byline {
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: "proxima-nova";
   color: #555555;
   margin-bottom: 0px;
   text-transform: uppercase; }
@@ -4911,13 +4912,13 @@ html {
       display: block; } }
 
 .article__dateline {
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: "proxima-nova";
   font-style: italic;
   color: #555555;
   margin-bottom: 40px; }
 
 .article__dropcap span {
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: "proxima-nova";
   font-size: 2em;
   color: #555555; }
   @media (max-width: 1024px) {
@@ -4928,15 +4929,15 @@ html {
       font-size: 1.3em; } }
 
 .article__dropcap--intro {
-  color: #bb0a1e !important;
+  color: #a84868 !important;
   font-weight: 700; }
 
 .article__dropcap:before {
   content: attr(data-dropcap);
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: "proxima-nova";
   font-size: 275px;
   font-weight: 700;
-  color: #bb0a1e;
+  color: #a84868;
   line-height: 210px;
   position: static;
   float: left;
@@ -4956,7 +4957,7 @@ html {
     .article__chapter-title {
       margin: 100px auto 20px auto; } }
   .article__chapter-title__number {
-    font-family: "franklin-gothic-urw", sans-serif;
+    font-family: "proxima-nova";
     font-size: 1.7em;
     color: #555555; }
     @media (max-width: 515px) {
@@ -4976,16 +4977,16 @@ html {
           padding-top: 6px; } }
   .article__chapter-title__text {
     display: inline-block;
-    font-family: "franklin-gothic-urw", sans-serif;
+    font-family: "proxima-nova";
     font-size: 2.75em;
-    color: #bb0a1e;
+    color: #a84868;
     text-transform: uppercase; }
     @media (max-width: 515px) {
       .article__chapter-title__text {
         font-size: 2em; } }
 
 .inline-media__title {
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: "proxima-nova";
   font-weight: 700;
   text-transform: uppercase;
   color: #555555; }
@@ -4993,23 +4994,23 @@ html {
     color: #555555;
     text-decoration: none; }
   .inline-media__title a:hover {
-    color: #bb0a1e; }
+    color: #a84868; }
   .inline-media__title svg {
     height: 30px;
     width: 30px;
     padding-top: 10px; }
     .inline-media__title svg path {
-      fill: #bb0a1e; }
+      fill: #a84868; }
     @media (max-width: 515px) {
       .inline-media__title svg {
         height: 25px;
         width: 25px;
         padding-top: 8px; } }
   .inline-media__title--red {
-    color: #bb0a1e !important; }
+    color: #a84868 !important; }
 
 .inline-media__source {
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: "proxima-nova";
   font-size: 12px;
   color: #555555;
   text-align: left; }
@@ -5058,7 +5059,7 @@ html {
 
 .inline-media--pullquote {
   border-width: 2px 0 5px 0;
-  color: #bb0a1e;
+  color: #a84868;
   font-family: "Prata", "Old Standard TT", "Georgia", "Times", serif;
   font-size: 2em; }
   @media (max-width: 960px) {
@@ -5069,7 +5070,7 @@ html {
   .inline-media--pullquote__src {
     margin-top: 10px;
     padding: 0 10px 0 10px;
-    font-family: "franklin-gothic-urw", sans-serif;
+    font-family: "proxima-nova";
     font-size: 14px;
     color: #555555;
     text-transform: uppercase; }
@@ -5082,7 +5083,7 @@ html {
       .inline-media--graphic h4 {
         font-size: 1.5em; } }
   .inline-media--graphic__chatter {
-    font-family: "franklin-gothic-urw", sans-serif !important;
+    font-family: "proxima-nova" !important;
     font-weight: 700; }
 
 .inline-media--pic {
@@ -5093,7 +5094,7 @@ html {
     height: auto; }
   .inline-media--pic__caption, .media-package__caption {
     padding: 10px;
-    font-family: "franklin-gothic-urw", sans-serif;
+    font-family: "proxima-nova";
     font-size: 14px;
     line-height: 1.5;
     color: #555555;
@@ -5104,16 +5105,16 @@ html {
     padding: 5px 10px 0 10px;
     text-transform: uppercase; }
   .inline-media--pic__open-gallery {
-    font-family: "franklin-gothic-urw", sans-serif;
+    font-family: "proxima-nova";
     font-size: 16px;
     font-weight: 700;
-    color: #bb0a1e;
+    color: #a84868;
     display: block;
     width: 100%;
     text-align: center;
     cursor: pointer; }
     .inline-media--pic__open-gallery a:link, .inline-media--pic__open-gallery a:visited, .inline-media--pic__open-gallery a:hover, .inline-media--pic__open-gallery a:active {
-      color: #bb0a1e;
+      color: #a84868;
       text-decoration: none; }
     .inline-media--pic__open-gallery:hover, .inline-media--pic__open-gallery a:hover {
       color: #888888; }
@@ -5133,14 +5134,14 @@ html {
   margin-bottom: 10px; }
 
 .inline-media--external-link__content {
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: "proxima-nova";
   font-size: 18px;
   color: #555; }
 
 .inline-media--external-link__link {
   text-align: center;
   margin-top: 10px;
-  font-family: "franklin-gothic-urw", sans-serif;
+  font-family: "proxima-nova";
   font-size: 18px; }
   .inline-media--external-link__link a:link, .inline-media--external-link__link a:visited, .inline-media--external-link__link a:hover, .inline-media--external-link__link a:active {
     color: maroon;
@@ -5192,10 +5193,10 @@ html {
         width: 100%;
         margin: 0 0 10px 0; } }
   .media-package__open-gallery {
-    font-family: "franklin-gothic-urw", sans-serif;
+    font-family: "proxima-nova";
     font-size: 16px;
     font-weight: 700;
-    color: #bb0a1e;
+    color: #a84868;
     display: block;
     width: 100%;
     text-align: center;
@@ -5243,6 +5244,14 @@ html {
     position: absolute;
     top: -9px;
     left: -12px; }
+
+.parallax-swift {
+  background-image: url("mw-taylorswift.jpg");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 @font-face {
   font-family: 'fontello';
