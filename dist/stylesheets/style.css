@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   box-sizing: border-box; }
 
@@ -4345,6 +4344,9 @@ button.close {
 html {
   font-size: 16px; }
 
+body {
+  margin-top: -10px; }
+
 #tophat {
   background-color: #000;
   z-index: 9999;
@@ -4539,13 +4541,12 @@ html {
   color: #fff; }
 
 .header {
-  height: 650px;
-  max-height: 100vh;
-  background-color: #222;
-  background-image: url("mw-taylorswift.jpg");
+  background-image: url("../images/mw-taylorswift.jpg");
+  height: 600px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
-  margin-bottom: 30px; }
+  background-color: #000; }
   @media (max-width: 1024px) {
     .header {
       height: 250px; } }
@@ -4610,7 +4611,7 @@ html {
         padding-top: 10px; } }
   .header__title {
     max-width: 800px;
-    margin: 0 10% 0 10%;
+    margin: 30% 10% 0 10%;
     font-family: "proxima-nova";
     font-size: 3em;
     font-weight: 700;
@@ -4800,6 +4801,50 @@ html {
   .parts-menu__title {
     font-size: 16px;
     margin-top: 5px; }
+
+.w3-button {
+  border: none;
+  display: inline-block;
+  outline: 0;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap; }
+
+.w3-black {
+  color: #fff !important;
+  background-color: #000 !important; }
+
+.w3-display-left {
+  float: left;
+  margin-left: 25px;
+  position: relative;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -700%); }
+
+.w3-display-right {
+  float: right;
+  margin-right: 25px;
+  position: relative;
+  top: 50%;
+  right: 0%;
+  transform: translate(0, -700%); }
+
+.slide-caption {
+  color: #fff !important;
+  background-color: #000 !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  font-size: 18px !important;
+  padding: 0.01em 16px;
+  right: 0;
+  bottom: 0; }
 
 .featured-video {
   position: relative;
@@ -5245,527 +5290,13 @@ html {
     top: -9px;
     left: -12px; }
 
-.parallax-swift {
-  background-image: url("mw-taylorswift.jpg");
+.paralax {
   height: 500px;
   background-attachment: fixed;
-  background-position: center;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background-color: #000; }
 
-@font-face {
-  font-family: 'fontello';
-  src: url("font/fontello.eot?3683660");
-  src: url("font/fontello.eot?3683660#iefix") format("embedded-opentype"), url("font/fontello.woff2?3683660") format("woff2"), url("font/fontello.woff?3683660") format("woff"), url("font/fontello.ttf?3683660") format("truetype"), url("font/fontello.svg?3683660#fontello") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'fontello';
-    src: url('../font/fontello.svg?3683660#fontello') format('svg');
-  }
-}
-*/
-[class^="icon2-"]:before, [class*=" icon2-"]:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Font smoothing. That was taken from TWBS */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-
-.icon2-right-dir:before {
-  content: '\e800'; }
-
-/* '' */
-.icon2-left-dir:before {
-  content: '\e801'; }
-
-/* '' */
-.icon2-angle-circled-down:before {
-  content: '\e802'; }
-
-/* '' */
-.icon2-cw:before {
-  content: '\e803'; }
-
-/* '' */
-.icon2-circle-empty:before {
-  content: '\f10c'; }
-
-/* '' */
-.icon2-circle:before {
-  content: '\f111'; }
-
-/* '' */
-.stkCities {
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: white;
-  color: #0d0d0d; }
-  .stkCities h2 {
-    margin: 0.5em 0em;
-    font-family: " franklin-gothic-urw", sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    text-transform: uppercase; }
-    .stkCities h2 span {
-      color: #bb0a1e; }
-      @media (max-width: 500px) {
-        .stkCities h2 span {
-          font-size: 20px;
-          display: block; } }
-  .stkCities .chatter {
-    font-family: " franklin-gothic-urw", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: #555555; }
-  .stkCities .graphic {
-    position: relative;
-    font-size: 14px; }
-    @media (max-width: 700px) {
-      .stkCities .graphic {
-        font-size: 12px; } }
-    @media (max-width: 600px) {
-      .stkCities .graphic {
-        font-size: 10px; } }
-    .stkCities .graphic ::-webkit-scrollbar {
-      display: none; }
-  .stkCities .cities {
-    position: relative;
-    overflow-y: hidden;
-    z-index: 1;
-    height: 25em;
-    padding-right: 20px; }
-  .stkCities .cityOutline {
-    width: 12.5%;
-    height: 0;
-    border-right: 0.1em solid #888888;
-    padding-bottom: 12.5%;
-    text-align: center; }
-    @media (max-width: 500px) {
-      .stkCities .cityOutline {
-        width: 18.75%;
-        padding-bottom: 18.75%; } }
-    .stkCities .cityOutline:hover {
-      cursor: pointer; }
-    .stkCities .cityOutline img {
-      width: 90%;
-      padding: 10%;
-      opacity: .2;
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      transition: all 0.5s ease; }
-      .stkCities .cityOutline img:hover {
-        width: 100%;
-        opacity: .75; }
-    .stkCities .cityOutline:last-child {
-      padding-bottom: 50%; }
-      @media (max-width: 500px) {
-        .stkCities .cityOutline:last-child {
-          padding-bottom: 100%; } }
-    .stkCities .cityOutline i {
-      font-size: 2.7em;
-      line-height: 2em;
-      color: #888888;
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      transition: all 0.5s ease; }
-      .stkCities .cityOutline i:hover {
-        font-size: 3em;
-        color: #0d0d0d; }
-      @media (max-width: 500px) {
-        .stkCities .cityOutline i {
-          font-size: 2em; }
-          .stkCities .cityOutline i:hover {
-            font-size: 2.3em; } }
-  .stkCities .activeCity img {
-    width: 100%;
-    opacity: 1; }
-  .stkCities .cityNameBlock {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    max-width: 800px;
-    height: 0;
-    padding-top: 6.25%;
-    padding-bottom: 6.25%;
-    padding-left: 15.5%;
-    border-bottom: 0.1em solid #888888; }
-    @media (max-width: 500px) {
-      .stkCities .cityNameBlock {
-        padding-top: 9.375%;
-        padding-bottom: 9.375%;
-        padding-left: 20.75%; } }
-  .stkCities .cityName {
-    margin: 0;
-    line-height: 0;
-    font-family: "Prata", serif;
-    font-weight: 100;
-    font-size: 3.5em;
-    color: #bb0a1e; }
-    @media (max-width: 500px) {
-      .stkCities .cityName {
-        font-size: 2.5em; } }
-  .stkCities .cityStats {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding-top: 12.5%;
-    padding-left: 13.5%;
-    padding-right: 3%; }
-    @media (max-width: 500px) {
-      .stkCities .cityStats {
-        padding-top: 18.75%;
-        padding-left: 19.75%; } }
-    .stkCities .cityStats p {
-      font-family: " franklin-gothic-urw", sans-serif;
-      font-weight: 700;
-      font-size: 1.25em;
-      margin: 0.5em 0;
-      color: #0d0d0d; }
-      .stkCities .cityStats p.dataDate {
-        font-size: 1em;
-        line-height: 0;
-        margin-bottom: 1.5em;
-        color: #888888; }
-      .stkCities .cityStats p.cityDisclaimer {
-        margin: 20px auto;
-        font-size: .9em;
-        font-weight: 700;
-        color: #888888; }
-  .stkCities .statList {
-    width: 48%;
-    float: left; }
-    @media (max-width: 500px) {
-      .stkCities .statList {
-        width: 100%; } }
-    .stkCities .statList span {
-      color: #bb0a1e; }
-  .stkCities .graph {
-    position: relative;
-    width: 48%;
-    float: right;
-    text-align: left; }
-    @media (max-width: 500px) {
-      .stkCities .graph {
-        display: none; } }
-    .stkCities .graph img {
-      width: 100%; }
-    .stkCities .graph .cityGraph {
-      position: relative;
-      z-index: 1; }
-    .stkCities .graph .baseGraph {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      z-index: 0; }
-  .stkCities h4 {
-    margin: 0.5em 0;
-    font-family: " franklin-gothic-urw", sans-serif;
-    font-weight: 700;
-    font-size: 1.7em;
-    text-transform: uppercase; }
-  .stkCities .source {
-    margin: 25px auto;
-    font-family: " franklin-gothic-urw", sans-serif;
-    font-weight: 700;
-    color: #888888; }
-
-.stkNeighborhoods {
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: white;
-  color: #0d0d0d; }
-  .stkNeighborhoods h2 {
-    margin: 0.5em 0em;
-    font-family: " franklin-gothic-urw", sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    text-transform: uppercase; }
-    .stkNeighborhoods h2 span {
-      color: #bb0a1e; }
-      @media (max-width: 500px) {
-        .stkNeighborhoods h2 span {
-          font-size: 20px;
-          display: block; } }
-  .stkNeighborhoods p, .stkNeighborhoods a {
-    font-family: " franklin-gothic-urw", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    margin: 0; }
-  .stkNeighborhoods p {
-    color: #555555; }
-  .stkNeighborhoods a {
-    color: #daa520;
-    text-decoration: none; }
-  .stkNeighborhoods .map {
-    height: 800px;
-    margin-top: 2em;
-    background: white; }
-    @media (max-width: 600px) {
-      .stkNeighborhoods .map {
-        display: none; } }
-    .stkNeighborhoods .map .leaflet-control-attribution {
-      display: none; }
-  .stkNeighborhoods .mobileMap {
-    display: none;
-    position: relative;
-    width: 100%; }
-    @media (max-width: 600px) {
-      .stkNeighborhoods .mobileMap {
-        display: block; } }
-    .stkNeighborhoods .mobileMap img {
-      width: 100%; }
-    .stkNeighborhoods .mobileMap p {
-      color: #888888; }
-    .stkNeighborhoods .mobileMap .mobileLegend {
-      position: relative;
-      height: 100px; }
-    .stkNeighborhoods .mobileMap .cartodb-legend {
-      width: 250px;
-      left: 20px; }
-  .stkNeighborhoods .source {
-    margin: 25px auto;
-    font-family: " franklin-gothic-urw", sans-serif;
-    color: #888888; }
-
-.stkHeadshots {
-  position: relative;
-  width: 100%;
-  height: 420px;
-  padding: 2em 0;
-  margin-bottom: 1em;
-  background-color: #0d0d0d;
-  font-size: 14px;
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-  overflow: hidden; }
-  @media (max-width: 700px) {
-    .stkHeadshots {
-      font-size: 12px;
-      height: 350px; } }
-  @media (max-width: 500px) {
-    .stkHeadshots {
-      height: 320px; } }
-  .stkHeadshots .slidesWrapper {
-    position: relative;
-    top: 0;
-    height: 30%;
-    max-width: 800px;
-    margin: 0 auto; }
-    @media (max-width: 500px) {
-      .stkHeadshots .slidesWrapper {
-        height: 40%; } }
-  .stkHeadshots h3 {
-    width: 100%;
-    margin: 0 auto;
-    font-size: 2.7em; }
-    .stkHeadshots h3 span {
-      color: #bb0a1e; }
-    @media (max-width: 800px) {
-      .stkHeadshots h3 {
-        padding: 0 .2em;
-        font-size: 2.4em; } }
-    @media (max-width: 700px) {
-      .stkHeadshots h3 {
-        font-size: 2.2em; } }
-    @media (max-width: 600px) {
-      .stkHeadshots h3 {
-        font-size: 1.9em; } }
-    @media (max-width: 600px) {
-      .stkHeadshots h3 br {
-        display: none; } }
-  .stkHeadshots .subhead {
-    width: 90%;
-    margin: 1em auto;
-    color: white;
-    font-size: 1.15em; }
-    @media (max-width: 700px) {
-      .stkHeadshots .subhead {
-        width: 70%; } }
-    @media (max-width: 500px) {
-      .stkHeadshots .subhead {
-        width: 90%; } }
-  .stkHeadshots .slide {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-    .stkHeadshots .slide.left {
-      left: -1000%; }
-    .stkHeadshots .slide.right {
-      left: 1000%; }
-  .stkHeadshots .statsWrapper {
-    height: 45%;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center; }
-  .stkHeadshots .stat {
-    display: inline-block;
-    position: relative;
-    width: 24%;
-    height: 100%;
-    margin: 0; }
-    @media (max-width: 500px) {
-      .stkHeadshots .stat {
-        width: 32%; }
-        .stkHeadshots .stat--0 {
-          display: none; } }
-  .stkHeadshots .statNum {
-    position: absolute;
-    bottom: .5em;
-    width: 100%;
-    margin: 0;
-    color: white;
-    font-size: 4em;
-    font-family: "Prata", serif; }
-  .stkHeadshots .year {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin: 0;
-    color: #bb0a1e;
-    font-size: 1.5em;
-    font-family: " franklin-gothic-urw", sans-serif; }
-  .stkHeadshots .arrowsWrapper {
-    position: relative;
-    top: -40%;
-    width: 100%;
-    min-width: 320px;
-    max-width: 1200px;
-    margin: 0 auto;
-    z-index: 2; }
-    @media (max-width: 900px) {
-      .stkHeadshots .arrowsWrapper {
-        width: 70%;
-        position: relative;
-        top: 10%;
-        margin: 0 auto; } }
-    @media (max-width: 500px) {
-      .stkHeadshots .arrowsWrapper {
-        top: 0; } }
-  .stkHeadshots .arrow {
-    position: absolute;
-    font-size: 5em;
-    cursor: pointer;
-    -webkit-transition: color 0.5s ease;
-    -moz-transition: color 0.5s ease;
-    transition: color 0.5s ease; }
-    .stkHeadshots .arrow.inactive {
-      color: #555555;
-      cursor: default; }
-    .stkHeadshots .arrow--left {
-      left: 0; }
-    .stkHeadshots .arrow--right {
-      right: 0; }
-    @media (max-width: 900px) {
-      .stkHeadshots .arrow {
-        font-size: 2.5em;
-        line-height: 1.5em; }
-        .stkHeadshots .arrow--left {
-          left: 1.5em; }
-        .stkHeadshots .arrow--right {
-          right: 1.5em; } }
-  .stkHeadshots .positionWrapper {
-    position: relative;
-    top: 10%;
-    width: 100%;
-    max-width: 800px;
-    margin: 1em auto;
-    text-align: center;
-    z-index: 1; }
-    @media (max-width: 500px) {
-      .stkHeadshots .positionWrapper {
-        top: 0; } }
-  .stkHeadshots .slidePos {
-    margin: 0 .2em;
-    vertical-align: middle;
-    font-size: 1.5em;
-    color: #555555;
-    cursor: pointer;
-    -webkit-transition: color 0.5s ease;
-    -moz-transition: color 0.5s ease;
-    transition: color 0.5s ease; }
-    .stkHeadshots .slidePos.active {
-      color: white;
-      cursor: default; }
-  .stkHeadshots .sourceDiv {
-    position: relative;
-    bottom: -10%;
-    width: 100%;
-    margin: 0 auto;
-    max-width: 800px; }
-    @media (max-width: 500px) {
-      .stkHeadshots .sourceDiv {
-        bottom: 0; } }
-  .stkHeadshots .source {
-    margin: 0 auto;
-    color: #888888;
-    text-align: right; }
-
-.gungraphic {
-  max-width: 1000px;
-  width: 100%; }
-  .gungraphic .block {
-    text-align: center;
-    border-left: 1px solid #cdcdcd;
-    border-right: 1px solid #cdcdcd;
-    margin-top: 25px;
-    font-family: "franklin-gothic-urw",sans-serif;
-    line-height: 150%; }
-  .gungraphic .gunname {
-    font-family: prata, serif;
-    font-size: 1.5em; }
-  @media only screen and (max-width: 950px) {
-    .gungraphic .gunname {
-      font-size: 1.5em; } }
-  @media only screen and (max-width: 500px) {
-    .gungraphic .gunname {
-      font-size: .9em; } }
-  .gungraphic .block img {
-    max-width: 200px;
-    width: 95%; }
-  .gungraphic .line {
-    width: 50%;
-    margin-top: 25px; }
-  .gungraphic .red {
-    color: #bb0a1e; }
-  .gungraphic .source {
-    color: #888;
-    clear: both; }
-
-p.gunstats {
-  font-family: "franklin-gothic-urw",sans-serif;
-  line-height: 1; }
-
-@media only screen and (max-width: 500px) {
-  p.gunstats {
-    font-size: 1em;
-    line-height: 1 !important; } }
+.lead {
+  font-size: 1.75em !important; }

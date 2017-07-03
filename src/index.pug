@@ -2,10 +2,6 @@ extends _base.pug
 
 block content
 		.header
-			//.header__background-video
-				video(loop="true" width="100%" height="100%" autoplay muted)
-					source(src="" type="video/mp4")
-					source(src="" type="video/webm")
 			.header__text
 				.container.container--header
 					.header__title 50 years of Merriweather Post Pavillion
@@ -16,62 +12,142 @@ block content
 					.article__byline By Wesley Case, The Baltimore Sun
 					.article__dateline July 14, 2017
 
+					p.lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+					
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+
+			figure.inline-media.inline-media--pic.inline-media--full
+				.paralax(style="background-image: url('dist/images/mw-who.jpg')")
+					figcaption.inline-media--pic__caption Pictured: Crowd for The Who at Merriweather Post Pavillion 
+
+
+			.container-story
+				.article
+					.article__chapter-title 
+						.article__chapter-title__text History
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+					figure.inline-media.inline-media--pic.inline-media--full <!--(data-sr)-->
+						img(src="dist/images/mw-1981schedule.jpg")
+						figcaption.inline-media--pic__caption Old poster
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+					figure.inline-media.inline-media--pic.inline-media--full
+						.mySlides
+							img(src="dist/images/mw-joplin.jpg", style="width:100%")
+							.slide-caption Janice Joplin
+						.mySlides
+							img(src="dist/images/mw-buffet.jpg", style="width:100%")
+							.slide-caption Jimmy Buffett
+						.mySlides
+							img(src="dist/images/mw-santana.jpg", style="width:100%")
+							.slide-caption Santana
+						.mySlides
+							img(src="dist/images/mw-nelson-carter.jpg", style="width:100%")
+							.slide-caption Willie Nelson and Jimmie Carter
+						button(class="w3-button w3-black w3-display-left", onclick="plusDivs(-1)") &#10094;
+						button(class="w3-button w3-black w3-display-right", onclick="plusDivs(1)") &#10095;
+						figcaption.inline-media--pic__caption Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
+						btn.inline-media--pic__open-gallery
+						p CLICK THROUGH GALLERY
+
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+			figure.inline-media.inline-media--pic.inline-media--full
+				.paralax(style="background-image: url('dist/images/mw-kendricklamar.jpg')")
+					figcaption.inline-media--pic__caption Pictured: Kendrick Lamar at Merriweather Post Pavillion 
+
+			.container-story
+				.article
+					.article__chapter-title 
+						.article__chapter-title__text Chapter Two
+
+				.article
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
 					
+					//full-width interactive
+					include includes/interactives/example.html		
+
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+
+					figure.inline-media.inline-media--pic.inline-media--full
+						.mySlides2
+							img(src="dist/images/mw-johnmayer.jpg", style="width:100%")
+							.slide-caption John Mayer
+						.mySlides2
+							img(src="dist/images/mw-vampireweekend.jpg", style="width:100%")
+							.slide-caption Vampire Weekend
+						.mySlides2
+							img(src="dist/images/mw-thecure.jpg", style="width:100%")
+							.slide-caption The Cure
+						.mySlides2
+							img(src="dist/images/mw-petty.jpg", style="width:100%")
+							.slide-caption Tom Petty
+						.mySlides2
+							img(src="dist/images/mw-kanye.jpg", style="width:100%")
+							.slide-caption Kanye West							
+						button(class="w3-button w3-black w3-display-left", onclick="plusDivs2(-1)") &#10094;
+						button(class="w3-button w3-black w3-display-right", onclick="plusDivs2(1)") &#10095;
+						figcaption.inline-media--pic__caption Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
+						btn.inline-media--pic__open-gallery
+						p CLICK THROUGH GALLERY
+
+
+				
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
 
 
 
 			figure.inline-media.inline-media--pic.inline-media--full
-				img(src="dist/images/mw-taylorswift.jpg")
-				figcaption.inline-media--pic__caption Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
-				btn.inline-media--pic__open-gallery
-					a(href="http://www.baltimoresun.com/bal-shoot-to-kill-lethality-in-baltimore-20160929-photogallery.html" target="_blank") SEE MORE PHOTOS
+				.paralax(style="background-image: url('dist/images/mw-arcticmonkeys.jpg')")
+					figcaption.inline-media--pic__caption Pictured: Arctic Monkey's at Merriweather Post Pavillion 
 
-
-			.container-story
-				.article
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
-
-					
-					//large pull quote
-					
-					figure.inline-media.inline-media--pullquote.inline-media--big(data-sr)
-						hr
-						.inline-media--pullquote__text &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.&rdquo;
-						.inline-media--pullquote__src former OXES member Nat Fowler
-						hr
-
-
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
-
-
-		section#chapter-1
 			.container-story
 				.article
 					.article__chapter-title 
-						hr
-						.article__chapter-title__text Merriweather history
+						.article__chapter-title__text Chapter Three
 
+				.article
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
 
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 	
 
-
-					//full-width interactive
-					include includes/interactives/example.html		
-
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
-
-					//multiphoto package - photos enter from left, right and bottom
+					//multiphoto package
 					figure.media-package
-						img.media-package__img.media-package__img--left(src="dist/images/mw-johnmayer.jpg" data-sr="enter left" class="img-responsive" style="width:49%")
-						img.media-package__img.media-package__img--right(src="dist/images/mw-arcticmonkeys.jpg" data-sr="enter right" class="img-responsive" style="width:49%")
-						img.media-package__img.media-package__img--bottom(src="dist/images/mw-1981schedule.jpg" data-sr="enter bottom" class="img-responsive")
+						img.media-package__img.media-package__img--left(src="dist/images/mw-virgin.jpg" class="img-responsive" style="width:49%")
+						img.media-package__img.media-package__img--right(src="dist/images/mw-virgin2.png" class="img-responsive" style="width:49%")
+						img.media-package__img.media-package__img--bottom(src="dist/images/mw-lilith.jpg" class="img-responsive")
 						.media-package__caption Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
 						//figcaption Karl Merton Ferron
 
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 	
+
+
 					.inline-media.inline-media--big.subscribe
 						 
 						h3 Support our investigative journalism
@@ -86,6 +162,13 @@ block content
 					//iframe(src="https://player.vimeo.com/video/185014164" width="80%" height="560" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
 
 
+					//large pull quote
+					
+					figure.inline-media.inline-media--pullquote.inline-media--big(data-sr)
+						hr
+						.inline-media--pullquote__text &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.&rdquo;
+						.inline-media--pullquote__src former OXES member Nat Fowler
+						hr
 
 
 					p.reporter-email Contact XXX at <a href="mailto:xxx@baltsun.com" target="_blank"> xxx@baltsun.com</a>
