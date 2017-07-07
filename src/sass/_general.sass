@@ -4,6 +4,7 @@ html
 
 body
 	margin-top: -10px
+	background: $dark-grey
 
 #tophat
 	background-color: #000
@@ -85,6 +86,10 @@ body
 	width: 800px
 	@media (max-width: $size-tablet)
 		display: none
+.container-topper
+	width: 100%
+	margin: 0 auto
+
 
 .container-story
 	width: 1000px
@@ -101,6 +106,23 @@ body
 			width: auto
 			padding: 0 10px
 
+
+.container-story-green
+	width: 100%
+	margin: 0 auto
+	background: #22b8a8
+	padding-bottom: 25px
+	padding-top: 10px
+
+
+.container-story-pink
+	width: 100%
+	margin: 0 auto
+	background: #bd476f
+	padding-bottom: 25px
+	padding-top: 10px
+
+
 .about
 	h3
 		text-transform: uppercase
@@ -116,12 +138,14 @@ body
 	
 
 .subscribe
-	background-color: #eee
+	background-color: $pink
+	color: #fff
 	padding: 2%
-	+links(#bb0a1e, underline)
+	+links($green, underline)
 
 	h3
 		margin: 0
+		font-family: $proxima
 
 .newsletter
 	margin-top: 20px !important

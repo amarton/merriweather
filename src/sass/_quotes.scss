@@ -1,0 +1,62 @@
+blockquote
+	display: block
+	padding:  15px 20px 15px 45px
+	margin:  0 0 20px
+	position:  relative
+	margin-top:  25px
+	font-family:  serif
+	font-size:  1.5em
+	line-height:  140%
+	color:  #fff
+	text-align:  justify
+	width: 90%
+	max-width:  700px
+	margin:  0 auto
+	height: 150px
+	overflow:  hidden
+	margin-left:  25%
+
+blockquote: : before
+	content:  "\201C" /*Unicode for Left Double Quote*/
+	font-family:  Georgia, serif
+	font-size:  60px
+	font-weight:  bold
+	color:  #daa520
+	padding-top:  15px
+	padding-right:  25px
+	position:  absolute
+	left:  1px
+	top: 5px
+
+
+blockquote: : after
+	content:  ""
+
+
+#source 
+	margin-top:  10px
+	font-family:  sans-serif
+	font-size:  .65em
+	text-transform:  uppercase
+	color:  #daa520
+
+#arrow-right 
+	color:  #daa520
+	font-size:  5em
+	float: right
+	margin-right:  25px
+	padding-top:  20px
+	cursor:  pointer
+
+#arrow-left 
+	color:  #daa520
+	font-size:  5em
+	float: left
+	margin-right:  25px
+	padding-top:  20px
+	cursor:  pointer
+	display:  none
+
+.headshot
+	float:  left
+	overflow:  hidden

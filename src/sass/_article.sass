@@ -8,7 +8,7 @@
 		font:
 			family: $tisa
 			size: 1.1em
-		color: $dark-grey
+		color: #fff
 		line-height: 1.65
 		margin: 10px 10% 15px 10%
 		+links(dark-red, underline)
@@ -25,9 +25,12 @@
 	&__byline
 		font:
 			family: $proxima
-		color: $dark-grey
+		color: #fff
 		margin-bottom: 0px
+		padding-top: 20px
 		text-transform: uppercase
+		margin: 0 auto
+		text-align: center
 
 		span
 
@@ -41,9 +44,10 @@
 	&__dateline
 		font:
 			family: $proxima
-			style: italic
-		color: $dark-grey
+		color: #fff
 		margin-bottom: 40px
+		text-align: center
+
 
 	&__dropcap
 		
@@ -113,8 +117,8 @@
 			font:
 				family: $proxima
 				size: 2.75em
-			color: $dark-red
-			text-transform: uppercase
+			color: $green
+			//text-transform: uppercase
 			@media (max-width: $size-phone1)
 				font-size: 2em
 
@@ -244,9 +248,25 @@
 				family: $proxima
 				size: 14px
 			line-height: 1.5
-			color: $dark-grey
-			text-transform: uppercase
+			color: #fff
+			//text-transform: uppercase
 			text-align: left
+			clear: both
+			background: $pink
+			font-size: 1.25em
+		
+		&__caption-paralax
+			padding: 10px
+			font:
+				family: $proxima
+				size: 14px
+			line-height: 1.5
+			color: #fff
+			//text-transform: uppercase
+			text-align: left
+			padding-left: 10%
+			font-size: 1.25em
+			background: $pink
 
 		&__source
 			text-align: right
@@ -331,7 +351,7 @@
 	+clearfix
 	margin: 20px auto
 	padding: 20px 0
-	background-color: white
+	background-color: $dark-grey
 	
 	&__img
 		float: left
@@ -411,3 +431,85 @@
 
 .lead
 	font-size: 1.75em !important
+	max-width: 1000px !important
+
+
+
+//QUOTE BOX STYLES
+
+
+#quote-container
+	width: 100%
+	background: $pink
+	background-image:  url("../images/headshot.png")
+	background-repeat:  no-repeat
+	background-position:  left 
+	background-size:  250px
+	margin-top: 25px
+	margin-bottom: 25px
+
+blockquote
+	display: block
+	padding:  15px 20px 15px 45px
+	margin:  0 0 20px
+	position:  relative
+	margin-top:  25px
+	font-family:  $tisa
+	font-size:  1.5em
+	line-height:  140%
+	color:  #fff
+	text-align:  justify
+	width: 90%
+	max-width: 700px
+	margin:  0 auto
+	height: 200px
+	overflow:  hidden
+	margin-left:  25%
+
+blockquote
+	&:before
+		content:  "\201C" /*Unicode for Left Double Quote*/
+		font-family: $tisa
+		font-size:  60px
+		font-weight:  bold
+		color:  #75072d
+		padding-top:  15px
+		padding-right:  25px
+		position:  absolute
+		left:  1px
+		top: 5px
+
+
+blockquote
+	&:after
+		content:  ""
+
+
+#source 
+	margin-top:  10px
+	font-family: $proxima
+	font-size:  .65em
+	text-transform:  uppercase
+	color: #75072d
+
+#arrow-right 
+	color: #75072d
+	font-size:  5em
+	float: right
+	margin-right:  25px
+	padding-top:  20px
+	cursor:  pointer
+
+#arrow-left 
+	color:  #75072d
+	font-size:  5em
+	float: left
+	margin-right:  25px
+	padding-top:  20px
+	cursor:  pointer
+	display:  none
+
+.headshot
+	float:  left
+	overflow:  hidden
+

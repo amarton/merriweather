@@ -3,29 +3,47 @@ extends _base.pug
 block content
 		.header
 			.header__text
-				.container.container--header
-					.header__title 50 years of Merriweather Post Pavillion
+				.container-topper
+					.mySlidesTop
+						img(src="dist/images/mw-arcticmonkeys.jpg")
+						.top-caption Pictured: The Arctic Monkeys at Merriweather Post
+					.mySlidesTop
+						img(src="dist/images/mw-thecure.jpg")
+						.top-caption Pictured: The Cure at Merriweather Post
+					
 
 		section#chapter-intro
-			.container-story
+			.container-story-green
 				.article
+					.header__title 50 years of
+						span.title-big <br> Merriweather Post Pavillion
 					.article__byline By Wesley Case, The Baltimore Sun
 					.article__dateline July 14, 2017
 
+			.container-story-pink
+				.article
+
 					p.lead Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
 					
+
+			.container-story
+				.article
+
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
 
 
 			figure.inline-media.inline-media--pic.inline-media--full
 				.paralax(style="background-image: url('dist/images/mw-who.jpg')")
-					figcaption.inline-media--pic__caption Pictured: Crowd for The Who at Merriweather Post Pavillion 
+				figcaption.inline-media--pic__caption-paralax Pictured: Crowd for The Who at Merriweather Post Pavillion 
 
 
 			.container-story
 				.article
 					.article__chapter-title 
-						.article__chapter-title__text History
+						.article__chapter-title__text <img src="dist/images/guitar.png" style="width:70px;">History
 
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
 
@@ -40,6 +58,7 @@ block content
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
 
 					figure.inline-media.inline-media--pic.inline-media--full
+						.click-through Use arrows to click through gallery
 						.mySlides
 							img(src="dist/images/mw-joplin.jpg", style="width:100%")
 							.slide-caption Janice Joplin
@@ -54,9 +73,7 @@ block content
 							.slide-caption Willie Nelson and Jimmie Carter
 						button(class="w3-button w3-black w3-display-left", onclick="plusDivs(-1)") &#10094;
 						button(class="w3-button w3-black w3-display-right", onclick="plusDivs(1)") &#10095;
-						figcaption.inline-media--pic__caption Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
-						btn.inline-media--pic__open-gallery
-						p CLICK THROUGH GALLERY
+
 
 
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
@@ -67,23 +84,33 @@ block content
 
 			figure.inline-media.inline-media--pic.inline-media--full
 				.paralax(style="background-image: url('dist/images/mw-kendricklamar.jpg')")
-					figcaption.inline-media--pic__caption Pictured: Kendrick Lamar at Merriweather Post Pavillion 
+				figcaption.inline-media--pic__caption-paralax Pictured: Kendrick Lamar at Merriweather Post Pavillion 
 
 			.container-story
 				.article
 					.article__chapter-title 
-						.article__chapter-title__text Chapter Two
+						.article__chapter-title__text <img src="dist/images/drum.png" style="width:70px;">Chapter Two
 
 				.article
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
 
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
 
+			//full-width inline video
+			#featured-video.featured-video
+				figure.fv__video
+					iframe(src="https://player.vimeo.com/video/2814266" width="100%" height="560" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
+			.container-story
+				.article
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
+
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
 					
-					//full-width interactive
-					include includes/interactives/example.html		
+			//full-width interactive
+			include includes/interactives/quotes.html		
 
+			.container-story
+				.article
 
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
 
@@ -92,6 +119,7 @@ block content
 
 
 					figure.inline-media.inline-media--pic.inline-media--full
+						.click-through Use arrows to click through gallery
 						.mySlides2
 							img(src="dist/images/mw-johnmayer.jpg", style="width:100%")
 							.slide-caption John Mayer
@@ -109,9 +137,7 @@ block content
 							.slide-caption Kanye West							
 						button(class="w3-button w3-black w3-display-left", onclick="plusDivs2(-1)") &#10094;
 						button(class="w3-button w3-black w3-display-right", onclick="plusDivs2(1)") &#10095;
-						figcaption.inline-media--pic__caption Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
 						btn.inline-media--pic__open-gallery
-						p CLICK THROUGH GALLERY
 
 
 				
@@ -123,12 +149,12 @@ block content
 
 			figure.inline-media.inline-media--pic.inline-media--full
 				.paralax(style="background-image: url('dist/images/mw-arcticmonkeys.jpg')")
-					figcaption.inline-media--pic__caption Pictured: Arctic Monkey's at Merriweather Post Pavillion 
+				figcaption.inline-media--pic__caption-paralax Pictured: Arctic Monkey's at Merriweather Post Pavillion 
 
 			.container-story
 				.article
 					.article__chapter-title 
-						.article__chapter-title__text Chapter Three
+						.article__chapter-title__text <img src="dist/images/sax.png" style="width:50px;">Chapter Three
 
 				.article
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
@@ -156,10 +182,6 @@ block content
 
 			//UNUSED ELEMENTS
 
-			//full-width inline video
-			//#featured-video.featured-video
-				//figure.fv__video
-					//iframe(src="https://player.vimeo.com/video/185014164" width="80%" height="560" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
 
 
 					//large pull quote
