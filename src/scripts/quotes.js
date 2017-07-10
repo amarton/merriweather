@@ -27,7 +27,7 @@ var data = [
 
       $('#quote').html(quote);
       $('#source').html(source);
-      $('#quote-container').css("background-image", "url(" + image + ")");
+      $('#headshot').html("<img src='" + image + "' height='200px'>");
 
        nextlinkID = ++quoteID;
        prevlinkID = nextlinkID - 2;

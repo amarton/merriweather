@@ -11,6 +11,8 @@
 	text-align: center
 	cursor: pointer
 	white-space: nowrap
+	@media (max-width: 600px)
+		padding: 5px 5px	
 
 .w3-black
 	color: #fff
@@ -23,6 +25,8 @@
 	top: 50%
 	left: 0%
 	transform: translate(0%,-900%)
+	@media (max-width: 700px)
+		transform: translate(0,-300%)
 
 .w3-display-right
 	float: right
@@ -31,6 +35,8 @@
 	top: 50%
 	right: 0%
 	transform: translate(0,-900%)
+	@media (max-width: 700px)
+		transform: translate(0,-300%)
 
 .slide-caption
 	color: #fff
@@ -68,3 +74,9 @@
 	padding-top: 5px
 	color: $pink
 	font-size: 1em
+	@media (max-width: 850px)
+		top: 430px	
+	@media (max-width: 650px)
+		top: 330px	
+	@media (max-width: 450px)
+		top: 230px	

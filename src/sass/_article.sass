@@ -89,8 +89,7 @@
 		margin: 50px 10% 20px 10%
 		max-width: 800px
 		font-weight: 700
-		@media (max-width: $no-rail)
-			margin: 100px auto 20px auto		
+
 
 		&__number
 			font:
@@ -267,6 +266,8 @@
 			padding-left: 10%
 			font-size: 1.25em
 			background: $pink
+			@media (max-width: 500px)
+				display: none
 
 		&__source
 			text-align: right
@@ -428,10 +429,15 @@
 	background-repeat: no-repeat
 	background-size: cover
 	background-color: #000
+	@media (max-width: 500px)
+		display: none
 
 .lead
 	font-size: 1.75em !important
 	max-width: 1000px !important
+	width: 80%
+	@media (max-width: 500px)
+		font-size: 1.25em !important
 
 
 
@@ -441,13 +447,13 @@
 #quote-container
 	width: 100%
 	background: $pink
-	background-image:  url("../images/headshot.png")
+	//background-image:  url("../images/headshot.png")
 	background-repeat:  no-repeat
 	background-position:  left 
 	background-size:  250px
 	margin-top: 25px
 	margin-bottom: 25px
-
+	
 blockquote
 	display: block
 	padding:  15px 20px 15px 45px
@@ -455,16 +461,30 @@ blockquote
 	position:  relative
 	margin-top:  25px
 	font-family:  $tisa
-	font-size:  1.5em
+	font-size:  1.25em
 	line-height:  140%
 	color:  #fff
-	text-align:  justify
-	width: 90%
-	max-width: 700px
+	width: 50%
+	max-width: 750px
 	margin:  0 auto
 	height: 200px
 	overflow:  hidden
 	margin-left:  25%
+	@media (max-width: 850px)
+		font-size: 1em
+	@media (max-width: 600px)
+		font-size: 1em
+		width: 80%
+		margin-left: 25px
+		height: 200px
+		overflow: none
+	@media (max-width: 500px)
+		font-size: 1em
+		width: 80%
+		margin-left: 15px
+	@media (max-width: 400px)
+		height: 300px
+
 
 blockquote
 	&:before
@@ -488,7 +508,7 @@ blockquote
 #source 
 	margin-top:  10px
 	font-family: $proxima
-	font-size:  .65em
+	font-size:  .9em
 	text-transform:  uppercase
 	color: #75072d
 
@@ -499,6 +519,9 @@ blockquote
 	margin-right:  25px
 	padding-top:  20px
 	cursor:  pointer
+	@media (max-width: 500px)
+		margin-right: 5px
+
 
 #arrow-left 
 	color:  #75072d
@@ -508,8 +531,12 @@ blockquote
 	padding-top:  20px
 	cursor:  pointer
 	display:  none
+	@media (max-width: 500px)
+		margin-right: 5px
 
-.headshot
+#headshot
 	float:  left
 	overflow:  hidden
+	@media (max-width: 650px)
+		display: none
 
