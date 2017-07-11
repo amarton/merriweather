@@ -12,7 +12,7 @@ html(class="no-js", lang="en")
 
 		//Basic page needs
 		meta(charset="utf-8")
-		title Merriweather project
+		title 50 Years of Merriweather Post Pavillion | The Baltimore Sun
 		meta(name="description", content="")
 		meta(name="author", content="")
 
@@ -20,7 +20,6 @@ html(class="no-js", lang="en")
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
 
 		//CSS
-		link(rel="stylesheet", href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css")
 		link(rel="stylesheet", type="text/css", href="dist/stylesheets/style.css?v=1.2")
 
 		//Call html5shiv for IE9 and an alt stylesheet for IE8 fallback
@@ -30,27 +29,25 @@ html(class="no-js", lang="en")
 		|		<link rel="stylesheet" type="text/css" href="dist/stylesheets/ie8-and-down.css" />
 		|	<![endif]-->
 
-		//Fonts
-		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Prata|Roboto+Condensed:400,700")
 		
 		noscript
 			link(rel="stylesheet", href="dist/stylesheets/ie8-and-down.css")
 
 		//Facebook OpenGraph
-		meta(property="og:title", content="merriweather")
-		meta(property="og:url", content="http://data.baltimoresun.com/news/merriweather/")
-		meta(property="og:image", content="http://data.baltimoresun.com/news/merriweather/dist/images/s2ksocial-thumb.png")
+		meta(property="og:title", content="50 years of Merriweather Post Pavillion")
+		meta(property="og:url", content="http://data.baltimoresun.com/features/merriweather/")
+		meta(property="og:image", content="http://data.baltimoresun.com/features/merriweather/dist/images/fb-thumb.png")
 		meta(property="og:site_name", content="The Baltimore Sun")
-		meta(property="og:description", content="merriweather merriweather")
+		meta(property="og:description", content="Read the Baltimore Sun feature about this legendary music venue")
 		meta(property="fb:app_id", content="310302989040998")
 
 		//Twitter 
 		meta(name="twitter:card", content="summary")
 		meta(name="twitter:site", content="@baltimoresun")
 		meta(name="twitter:creator", content="@baltimoresun")
-		meta(name="twitter:title", content="merriweather")
-		meta(name="twitter:description", content="merriweather merriweather merriweather")
-		meta(name="twitter:image", content="http://data.baltimoresun.com/news/merriweather/dist/images/shoot-to-kill-thumb-twitter.png")
+		meta(name="twitter:title", content="50 years of Merriweather Post Pavillion")
+		meta(name="twitter:description", content="Read the Baltimore Sun feature about this legendary music venue")
+		//meta(name="twitter:image", content="http://data.baltimoresun.com/features/merriweather/dist/images/twitter-thumb.png")
 		meta(name="twitter:domain", content="baltimoresun.com")
 
 		//Omniture Code
@@ -84,7 +81,9 @@ html(class="no-js", lang="en")
 					li Ellen Fishel
 				ul
 					li.label Visuals
-					li Lloyd Fox
+					li Michael Ares
+					li Emma Patti Harris
+					li Concert photos courtesy of Merriweather Post Pavillion
 					
 				ul
 					li.label Design / Development / Graphics
@@ -111,14 +110,9 @@ html(class="no-js", lang="en")
 
 		//Load the rest
 		
-		<script src="https://use.typekit.net/flu8jvb.js"></script>
+		<script src="https://use.typekit.net/xzk0snu.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
-		
-		script(src="https://use.typekit.net/nta3eyd.js")
-		script.
-			try{Typekit.load({ async: true });}catch(e){}
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
-		script(src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js")
 		script(src="https://code.createjs.com/createjs-2015.11.26.min.js")
 		script(src="dist/min/app.min.js")
 
@@ -180,17 +174,3 @@ html(class="no-js", lang="en")
 			    setTimeout(carousel, 2000); // Change image every 2 seconds
 			}
 
-		//Configuration for scrollReveal.js
-		script.
-			var config = {
-				enter: 'right',
-				move: '50px',
-			 	scale:    { direction: 'up', power: '0' },
-			 	vFactor: 0.5
-			}
-			window.sr = new scrollReveal(config);
-
-			$('#open-button').click(function() {
-			$('#intro').toggleClass('close');
-			$('#open-button').hide();
-			});

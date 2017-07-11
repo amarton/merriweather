@@ -1,8 +1,8 @@
 
 var data = [
-      {"id":1,"quote":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.","source":"- James Murphy, LCD Soundsystem", "image":"dist/images/headshot.png"},
-      {"id":2,"quote":"Rurabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem.","source":"- Daniel Ash, Love & Rockets", "image":"dist/images/headshot2.png"},
-      {"id":3,"quote":"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum.","source":"Frank Black, The Pixies", "image":"dist/images/headshot.png"}
+      {"id":1,"quote":"It doesn’t look anything like any other venue in America. Physically, Merriweather has an appearance of some sort of indoor-outdoor space. It just has it all. It’s in the middle of the woods. You just feel like you bore out a tree and moved in.","source":"- Marc Roberge, singer of O.A.R.", "image":"dist/images/quote-oar.png"},
+      {"id":2,"quote":"When we were in high school, we developed this phrase that was ‘Merriweather’ for this kind of music. It was a lot of [psychedelic] music we were listening to at the time. Anything that had this grand, epic kind of psych. You can imagine it being great listening to outdoors. We’d be like, ‘That’s so Merriweather, that sound.’","source":"- Dave Portner, a.k.a. Avey Tare of Animal Collective", "image":"dist/images/quote-avytare.png"},
+      {"id":3,"quote":"We never thought we’d get to headline a venue like this. The place keeps getting better and better every time we come back.","source":"- Jason Isbell during his Merriweather Post Pavilion concert on June 30", "image":"dist/images/quote-jason.png"}
     ];
 
 
