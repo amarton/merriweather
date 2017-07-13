@@ -4476,7 +4476,9 @@ body {
 .subscribe {
   background-color: #bd476f;
   color: #fff;
-  padding: 2%; }
+  padding: 2%;
+  margin: 0 auto !important;
+  margin-top: 50px !important; }
   .subscribe a:link, .subscribe a:visited, .subscribe a:hover, .subscribe a:active {
     color: #22b8a8;
     text-decoration: underline; }
@@ -4635,10 +4637,9 @@ body {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
-    color: #bd476f;
     text-transform: uppercase;
     font-family: "proxima-nova";
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 1;
     text-align: center;
     padding-top: 25px;
@@ -4686,14 +4687,30 @@ body {
     .header__chatter--red {
       color: #8d0c0c !important; }
 
-span.title-big {
-  font-weight: 900;
-  font-size: 2em;
-  color: #fff;
-  padding-top: 50px; }
+.title-small {
+  font-size: 1.75em;
+  color: #bd476f; }
+  @media (max-width: 700px) {
+    .title-small {
+      font-size: 1.25em; } }
   @media (max-width: 500px) {
-    span.title-big {
-      font-size: 1.5em; } }
+    .title-small {
+      font-size: 1em; } }
+
+.title-big {
+  font-weight: 900;
+  font-size: 3em;
+  color: #fff; }
+  @media (max-width: 500px) {
+    .title-big {
+      font-size: 2.5em; } }
+
+.title-tag {
+  font-size: .75em;
+  color: #bd476f; }
+  @media (max-width: 700px) {
+    .title-tag {
+      font-size: 1em; } }
 
 .mySlidesTop {
   width: 100%;
@@ -4801,7 +4818,6 @@ span.title-big {
   margin: 0 0 40px 0;
   padding: 0;
   font-family: "franklin-gothic-urw", sans-serif;
-  text-transform: uppercase;
   font-weight: 700; }
   .parts-menu h4 {
     text-align: center;
@@ -4839,15 +4855,19 @@ span.title-big {
     font-size: 14px;
     font-family: "franklin-gothic-urw", sans-serif;
     font-weight: 700;
-    color: #555;
+    color: #fff;
     text-transform: uppercase; }
   .parts-menu__date {
-    color: #888;
-    font-weight: 400;
-    margin-left: 10px; }
+    color: #22b8a8;
+    font-weight: 100;
+    font-size: .75em; }
   .parts-menu__title {
-    font-size: 16px;
-    margin-top: 5px; }
+    font-size: 1em;
+    margin-top: 5px;
+    color: #fff; }
+    @media (max-width: 500px) {
+      .parts-menu__title {
+        font-size: .75em; } }
 
 .w3-button {
   border: none;
@@ -4880,6 +4900,9 @@ span.title-big {
   @media (max-width: 700px) {
     .w3-display-left {
       transform: translate(0, -300%); } }
+  @media (max-width: 500px) {
+    .w3-display-left {
+      transform: translate(0, -500%); } }
 
 .w3-display-right {
   float: right;
@@ -4891,6 +4914,9 @@ span.title-big {
   @media (max-width: 700px) {
     .w3-display-right {
       transform: translate(0, -300%); } }
+  @media (max-width: 500px) {
+    .w3-display-right {
+      transform: translate(0, -500%); } }
 
 .slide-caption {
   color: #fff;
@@ -5127,7 +5153,7 @@ span.title-big {
   font-family: "proxima-nova";
   font-weight: 700;
   text-transform: uppercase;
-  color: #1e1e1e; }
+  color: #bd476f; }
   .inline-media__title a:link, .inline-media__title a:visited, .inline-media__title a:hover, .inline-media__title a:active {
     color: #1e1e1e;
     text-decoration: none; }
@@ -5311,7 +5337,8 @@ span.title-big {
       padding-top: 56.25%; } }
   .inline-media--video iframe {
     display: block;
-    margin: 0 auto; }
+    margin: 0 auto;
+    background: #fff; }
     @media (min-width: 1900px) {
       .inline-media--video iframe {
         width: 50%; } }
@@ -5416,7 +5443,7 @@ span.title-big {
   font-size: 1.75em !important;
   max-width: 1000px !important;
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto !important; }
   @media (max-width: 500px) {
     .lead {
       font-size: 1.25em !important; } }
@@ -5449,7 +5476,7 @@ blockquote {
   @media (max-width: 950px) {
     blockquote {
       font-size: 1em; } }
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     blockquote {
       font-size: 1em;
       width: 80%;
@@ -5514,7 +5541,7 @@ blockquote:after {
   float: left;
   position: relative;
   bottom: -25px; }
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     #headshot {
       display: none; } }
 
@@ -5533,3 +5560,21 @@ blockquote:after {
   font-size: 2em;
   color: #bd476f;
   cursor: pointer; }
+
+.article-bottom {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "ff-tisa-web-pro";
+  color: #fff;
+  font-size: 1.1em; }
+  @media (max-width: 800px) {
+    .article-bottom {
+      padding-left: 25px; } }
+
+span.bottom-title {
+  color: #bd476f;
+  font-weight: 700;
+  font-family: "proxima-nova"; }
+  @media (max-width: 515px) {
+    span.bottom-title {
+      font-size: 1em; } }
